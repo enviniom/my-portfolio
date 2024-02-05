@@ -1,0 +1,439 @@
+{
+  "title": "Portafolio de",
+  "basics": {
+    "title": "Sobre mí",
+    "name": "Jhon Colmenares",
+    "label": "Desarrollador Fullstack con mas 8 años de experiencia en el desarrollo de aplicaciones web",
+    "image": "/cv1.jpg",
+    "email": "jhonccr@gmail.com",
+    "phone": "+57 318 657 24 67",
+    "url": "https://playkru.com",
+    "summary": "Cuento con +8 años de experiencia como Desarrollador Web. Desarrollo en diferentes lenguajes de programación para la creación de APIs y Aplicaciones Web y Móviles. He trabajado en diferentes entornos: desde inicio de proyectos hasta modificación de proyectos en producción para mejora de lo existente y crear nuevas funcionalidades.",
+    "location": {
+      "address": "",
+      "postalCode": "54001",
+      "city": "Cúcuta",
+      "countryCode": "CO",
+      "region": "Colombia"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "jhonccr",
+        "url": "https://www.linkedin.com/in/enviniom/"
+      },
+      {
+        "network": "GitHub",
+        "username": "jhonccr",
+        "url": "https://github.com/enviniom"
+      }
+    ]
+  },
+  "work": {
+    "title": "Experiencia laboral",
+    "items": [
+      {
+        "name": "Brinks",
+        "position": "Desarrollador Backend",
+        "url": "www.google.com",
+        "startDate": "2023-11-01",
+        "endDate": "2024-02-01",
+        "summary": "Aplicación web para streaming de contenido de video dedicado a deportes universitarios. | Tecnologías: PHP (Cake PHP) - HTML - CSS (Bootstrap) - JavaScript (JQuery) - Mysql.",
+        "highlights": ["Inicio del proyecto"]
+      },
+      {
+        "name": "CENS Grupo EPM",
+        "position": "Desarrollador Fullstack",
+        "url": "www.google.com",
+        "startDate": "2023-07-01",
+        "endDate": "2023-10-01",
+        "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno. | Tecnologías: Backend - C# (Rest API ASP net , NET 7), SQL Server (Entity Framework Core) -- Frontend HTML, CSS (bootstrap), javascript (Angular 16) y despliegue en intranet.",
+        "highlights": ["Inicio del proyecto"]
+      },
+      {
+        "name": "Preconcretos",
+        "position": "Ingeniero de software",
+        "url": "www.google.com",
+        "startDate": "2022-07-01",
+        "endDate": "2023-05-01",
+        "summary": "Solución web para el control y registro de producción, control de trabajadores, horas trabajadas, con integración al programa contable. | Tecnologías: Backend - PHP (Rest API CakePHP y JWT),MariaDB y FireBird, GO (Gin) -- Frontend HTML, CSS. javascript (Angular 15, Angular Material 15).",
+        "highlights": ["Inicio del proyecto"]
+      },
+      {
+        "name": "Casa de Funerales Rincón",
+        "position": "Desarrollador Web",
+        "url": "www.google.com",
+        "startDate": "2022-07-01",
+        "endDate": "2022-10-01",
+        "summary": "Software para custodia de video con último deseo. | Tecnologías:  CakePHP, Bootstrap y MariaDb.",
+        "highlights": ["Inicio del proyecto"]
+      },
+      {
+        "name": "Preconcretos",
+        "position": "Ingeniero de software",
+        "url": "www.google.com",
+        "startDate": "2021-04-01",
+        "endDate": "2022-07-01",
+        "summary": "Aplicación web para el control del personal (ingresos, afiliaciones, documentación). | Tecnologías: PHP (Cake PHP) - HTML - CSS (Bootstrap) - JavaScript - MariaDB.",
+        "highlights": ["Inicio del proyecto"]
+      },
+      {
+        "name": "DTL360",
+        "position": "Desarrollador Backend",
+        "url": "www.google.com",
+        "startDate": "2022-03-01",
+        "endDate": "2022-10-01",
+        "summary": "Backend para aplicación móvil de retos. | Tecnologías: Java (Spring Boot Micro Services) - PostgreSQL (JPA) - Docker.",
+        "highlights": ["Inicio del proyecto"]
+      },
+      {
+        "name": "CENS Grupo EPM",
+        "position": "Ingeniero de proyecto",
+        "url": "www.google.com",
+        "startDate": "2020-11-01",
+        "endDate": "2021-03-01",
+        "summary": "Aplicativo para mostrar en la intranet los productos y servicios que ofrece cada dependencia de la empresa, y sus respectivos gestores. | Tecnologías: .NET C# Razor Pages - SQL Server (Entity Framework Core).",
+        "highlights": ["Inicio del proyecto"]
+      },
+      {
+        "name": "Globocar",
+        "position": "Ingeniero de proyecto",
+        "url": "www.google.com",
+        "startDate": "2018-08-01",
+        "endDate": "2020-07-01",
+        "summary": "Aplicación web para el seguimiento y programación de mantenimientos correctivos y preventivos de vehículos. | Tecnologías: PHP (Cake PHP) - HTML - CSS (Semantic UI) - JavaScript (jQuery) - Dart (Flutter).",
+        "highlights": ["Inicio del proyecto"]
+      }
+    ]
+  },
+  "volunteer": {
+    "title": "Voluntariado",
+    "items": [
+      {
+        "organization": "Organization",
+        "position": "Volunteer",
+        "url": "https://organization.com/",
+        "startDate": "2012-01-01",
+        "endDate": "2013-01-01",
+        "summary": "Description…",
+        "highlights": ["Awarded 'Volunteer of the Month'"]
+      }
+    ]
+  },
+  "education": {
+    "title": "Estudios",
+    "items":[
+    {
+      "institution": "Corporacion Universitaria Remington",
+      "url": "https://www.uniremington.edu.co/cucuta/",
+      "area": "Seguridad Informática y de Sistemas",
+      "studyType": "Diplomado",
+      "startDate": "2019-02-01",
+      "endDate": "2019-05-01",
+      "score": "4.0",
+      "courses": ["DB1101 - Basic SQL"]
+    },
+    {
+      "institution": "Corporacion Universitaria Remington",
+      "url": "https://www.uniremington.edu.co/cucuta/",
+      "area": "Ingeniero de Sistemas",
+      "studyType": "Profesional",
+      "startDate": "2014-08-01",
+      "endDate": "2019-05-01",
+      "score": "4.0",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ]},
+  "awards": {
+    "title": "Premios",
+    "items": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ]},
+  "certificates": {
+    "title": "Certificados",
+    "items": [
+      {
+        "name": "Certificate",
+        "date": "2021-11-07",
+        "issuer": "Company",
+        "url": "https://certificate.com"
+      }
+    ]
+  },
+  "publications": {
+    "title": "Publicaciones",
+    "items": [
+      {
+        "name": "Publication",
+        "publisher": "Company",
+        "releaseDate": "2014-10-01",
+        "url": "https://publication.com",
+        "summary": "Description…"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades",
+    "items": [
+      {
+        "name": "HTML",
+        "level": "Master",
+        "keywords": ["Desarrollo Web", "Frontend"]
+      },
+      {
+        "name": "CSS",
+        "level": "Master",
+        "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+      },
+      {
+        "name": "JavaScript",
+        "level": "Master",
+        "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+      },
+      {
+        "name": "Tailwind",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web",
+          "Frontend",
+          "CSS Framework",
+          "Diseño Responsive"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web",
+          "Frontend",
+          "Backend",
+          "JavaScript Superset"
+        ]
+      },
+      {
+        "name": "Node",
+        "level": "Avanzado",
+        "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
+      },
+      {
+        "name": "MySQL",
+        "level": "Avanzado",
+        "keywords": [
+          "Bases de Datos",
+          "SQL",
+          "Almacenamiento de Datos",
+          "Backend"
+        ]
+      },
+      {
+        "name": "Git",
+        "level": "Avanzado",
+        "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
+      },
+      {
+        "name": "GitHub",
+        "level": "Avanzado",
+        "keywords": [
+          "Control de Versiones",
+          "Colaboración",
+          "Código Fuente",
+          "Git"
+        ]
+      },
+      {
+        "name": "Next.js",
+        "level": "Avanzado",
+        "keywords": [
+          "Desarrollo Web",
+          "Frontend",
+          "React Framework",
+          "SSR",
+          "Static Generation"
+        ]
+      },
+      {
+        "name": "CakePHP",
+        "level": "Avanzado",
+        "keywords": ["Desarrollo Web"]
+      }
+    ]
+  },
+  "languages": {
+    "title": "Idiomas",
+    "items": [
+      {
+        "language": "Español",
+        "fluency": "Nativo"
+      },
+      {
+        "language": "Inglés",
+        "fluency": "Medio"
+      }
+    ]
+  },
+  "interests": {
+    "title": "Intereses o Hobbies",
+    "items": [
+      {
+        "name": "Música",
+        "keywords": ["Crossover"]
+      },
+      {
+        "name": "Tennis",
+        "keywords": ["Crossover"]
+      },
+      {
+        "name": "Basketball",
+        "keywords": ["Crossover"]
+      },
+      {
+        "name": "Video Juegos",
+        "keywords": ["Crossover"]
+      }
+    ]
+  },
+  "references": {
+    "title": "Referencias",
+    "items": [
+      {
+        "name": "Blanca Valero",
+        "reference": "Esposa"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "items": [
+      {
+        "name": "Saphyr",
+        "description": "Aplicación web para la administración de propiedades horizontales.",
+        "highlights": [
+          "Backend",
+          "Go (Gin ApiRest, web server)",
+          "MariaDb (Gorm)",
+          "Frontend",
+          "SSR (templ, htmx)",
+          "HTML",
+          "CSS (Pico CSS)",
+          "JavaScript (Vanilla)"
+        ],
+        "url": "#"
+      },
+      {
+        "name": "Raffles",
+        "description": "Aplicación web para crear rifas, promover y vender de manera online los puestos.",
+        "highlights": [
+          "Backend",
+          "Go (Gin ApiRest)",
+          "MariaDb (Gorm)",
+          "Frontend",
+          "HTML",
+          "CSS (Pico CSS)",
+          "JavaScript (Svelte 4)",
+          "Dart (Flutter)."
+        ],
+        "url": "#"
+      },
+      {
+        "name": "FTW 360",
+        "description": "Aplicación web para streaming de contenido de video dedicado a deportes universitarios.",
+        "highlights": [
+          "Backend",
+          "PHP (CakePHP, Laravel)",
+          "HTML",
+          "CSS (Bootstrap)",
+          "JavaScript (JQuery)",
+          "Mysql",
+          "Docker",
+          "Lambda AWS",
+          "S3 Bucket"
+        ],
+        "url": "#"
+      },
+      {
+        "name": "Catálogo de Servicios",
+        "description": "Actualización de aplicación intranet para control de servicios ofrecidos al cleinte interno.",
+        "highlights": [
+          "Backend",
+          "C# (Rest API ASP net, NET 7)",
+          "SQL Server (Entity Framework Core)",
+          "Frontend",
+          "HTML",
+          "CSS (bootstrap)",
+          "javascript (Angular 16)",
+          "Intranet"
+        ],
+        "url": "#"
+      },
+      {
+        "name": "Sag3p",
+        "description": "Solución web para el control y registro de producción, control de trabajadores, horas trabajadas, con integración al programa contable.",
+        "highlights": [
+          "Backend",
+          "PHP (Rest API CakePHP y JWT)",
+          "MariaDB",
+          "FireBird",
+          "GO (Gin)",
+          "Frontend",
+          "javascript (Angular 15, Angular Material 15)",
+          "HTML",
+          "CSS"
+        ],
+        "url": "#"
+      },
+      {
+        "name": "Custodia",
+        "description": "Software para custodia de video con último deseo.",
+        "highlights": ["PHP (CakePHP)", "CSS (Bootstrap)", "MariaDb."],
+        "url": "#"
+      },
+      {
+        "name": "H&R System",
+        "description": "Aplicación web para el control del personal (ingresos, afiliaciones, documentación).",
+        "highlights": [
+          "PHP (Cake PHP)",
+          "HTML",
+          "CSS (Bootstrap)",
+          "JavaScript",
+          "MariaDB."
+        ],
+        "url": "#"
+      },
+      {
+        "name": "Metaretos",
+        "description": "Backend para aplicación móvil de retos.",
+        "highlights": [
+          "Java (Spring Boot Micro Services) - PostgreSQL (JPA) - Docker."
+        ],
+        "url": "#"
+      },
+      {
+        "name": "Catálogo de Servicios",
+        "isActive": true,
+        "description": "Aplicativo para mostrar en la intranet los productos y servicios que ofrece cada dependencia de la empresa, y sus respectivos gestores.",
+        "highlights": [
+          "C# (.NET, Razor Pages)",
+          "SQL Server (Entity Framework Core)."
+        ],
+        "url": "#"
+      },
+      {
+        "name": "Kinansu",
+        "description": "Aplicación web para el seguimiento y programación de mantenimientos correctivos y preventivos de vehículos.",
+        "highlights": [
+          "PHP (Cake PHP)",
+          "HTML",
+          "CSS (Semantic UI)",
+          "JavaScript (jQuery)",
+          "Dart (Flutter)."
+        ],
+        "url": "#"
+      }
+    ]
+  }
+}

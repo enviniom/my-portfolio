@@ -1,13 +1,16 @@
 ---
+import type { Education } from "@/cv";
 import Section from "../Section.astro"
 
-import { education } from "@cv"
+const education = Astro.props.education as Education;
+
+
 ---
 
-<Section title="Educación">
+<Section title={education.title}>
   <ul>
     {
-      education.map(({ institution, startDate, endDate, area }) => {
+      education.items.map(({ institution, startDate, endDate, area }) => {
         const start = startDate.substring(0, 7)
         const end = endDate != null ? endDate.substring(0, 7) : "Actual"
 

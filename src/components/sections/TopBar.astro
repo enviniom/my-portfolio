@@ -1,0 +1,47 @@
+
+<div>
+  <select name="language" id="language">
+    <option value="en">English</option>
+    <option value="es">Español</option>
+  </select>
+</div>
+
+<style>
+  div {
+    max-width: 700px;
+    margin: -25px auto 10px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  select {
+    width: 100px;
+    border: 0 solid;
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+</style>
+
+<script>
+  const select = document.getElementById("language") as HTMLSelectElement;
+  let val = 'en';
+  if (window.location.pathname.includes('es')) {
+    val = 'es';
+  }
+  select.value = val;
+
+  const changeLanguage = (lang: string) => {
+    window.location.href = `/${lang}`;
+  }
+
+  select?.addEventListener("change", (event) => {
+    let lang = '';
+    if ((event?.target as HTMLSelectElement).value == "es") {
+      lang = 'es/';
+    }
+    console.log(lang);
+    changeLanguage(lang);
+  })
+</script>

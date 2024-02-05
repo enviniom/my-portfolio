@@ -1,13 +1,14 @@
 ---
+import type { Interests } from "@/cv";
 import Section from "../Section.astro";
 
-import { interests } from "@cv";
+const interests = Astro.props.interests as Interests;
 ---
 
-<Section title="Intereses y Hobbies">
+<Section title={interests.title}>
   <ul>
     {
-      interests.map(({ name }) => (
+      interests.items.map(({ name }) => (
        <li>
         <span>{name}</span>
         </li>   

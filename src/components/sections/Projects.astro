@@ -1,13 +1,14 @@
 ---
+import type { Projects } from "@/cv";
 import Section from "../Section.astro";
 
-import { projects } from "@cv";
+const projects = Astro.props.projects as Projects;
 ---
 
-<Section title="Proyectos">
+<Section title={projects.title}>
   <ul>
     {
-      projects.map(({ name, url, description, highlights }) => {
+      projects.items.map(({ name, url, description, highlights }) => {
         return (
           <li>
             <article>

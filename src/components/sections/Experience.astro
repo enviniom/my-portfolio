@@ -1,14 +1,15 @@
 ---
+import type { Work } from "@/cv";
 import Section from "../Section.astro";
 
-import { work } from "@cv";
+const work = Astro.props.work as Work;
 ---
 
-<Section title="Experiencia">
+<Section title={work.title}>
   <ul>
     {
-      work.map(
-        ({ name, position, startDate, endDate, summary, highlights }) => {
+      work.items.map(
+        ({ name, position, startDate, endDate, summary }) => {
           const start = startDate.substring(0, 7);
           const end = endDate != null ? endDate.substring(0, 7) : "Actual";
           const resume = summary.split("|");
