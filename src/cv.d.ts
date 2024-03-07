@@ -48,6 +48,14 @@ interface Work {
     startDate: DateStr;
     endDate: DateStr | null;
     summary: string;
+    responsabilities: {
+      name: string;
+      items: Array<string>;
+    };
+    technologies: {
+      name: string;
+      items: Array<string>;
+    };
     highlights: Highlight;
   }[];
 }

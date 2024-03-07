@@ -9,10 +9,17 @@ const work = Astro.props.work as Work;
   <ul>
     {
       work.items.map(
-        ({ name, position, startDate, endDate, summary }) => {
+        ({
+          name,
+          position,
+          startDate,
+          endDate,
+          summary,
+          responsabilities,
+          technologies,
+        }) => {
           const start = startDate.substring(0, 7);
           const end = endDate != null ? endDate.substring(0, 7) : "Actual";
-          const resume = summary.split("|");
           return (
             <li>
               <article>
@@ -25,9 +32,20 @@ const work = Astro.props.work as Work;
                     {start} - {end}
                   </time>
                 </header>
+                <p>
+                  <strong>App:</strong>
+                  {summary}
+                </p>
+                <p>
+                  <strong>{responsabilities.name}: </strong>{" "}
+                  {responsabilities.items.join(", ")}
+                </p>
                 <footer>
-                  <p>{resume[0]}</p>
-                  <p>{resume[1]}</p>
+                  <p>
+                    <strong>{technologies.name}: </strong>{" "}
+                    {technologies.items.join(", ")}
+                  </p>
+                  <hr />
                 </footer>
               </article>
             </li>
@@ -55,12 +73,18 @@ const work = Astro.props.work as Work;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
   time {
     color: #555;
     font-size: 0.9rem;
     min-width: 102px;
+  }
+  hr {
+    opacity: 0.5;
+  }
+  p {
+    margin-bottom: 8px;
   }
 
   @media (width <= 768px) {

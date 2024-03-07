@@ -38,7 +38,15 @@
         "url": "www.google.com",
         "startDate": "2023-11-01",
         "endDate": "2024-02-01",
-        "summary": "Web application for streaming video content dedicated to college sports. | Technologies: PHP (Cake PHP) - HTML - CSS (Bootstrap) - JavaScript (JQuery) - Mysql.",
+        "summary": "Web application for streaming video content dedicated to college sports.",
+        "responsabilities": {
+          "name": "Responsibilities",
+          "items": ["Developing new features", "Debugging code", "Performing database migrations", "Tweaking lambda functions", "Updating internal documentation", "Maintaining the dashboard administrative"]
+        },
+        "technologies": {
+          "name": "Tecnologies",
+          "items": ["PHP (Cake PHP)", "HTML", "CSS (Bootstrap)", "JavaScript (JQuery)", "Mysql"]
+        },
         "highlights": ["Project start"]
       },
       {
@@ -47,7 +55,15 @@
         "url": "www.google.com",
         "startDate": "2023-07-01",
         "endDate": "2023-10-01",
-        "summary": "Update intranet application to control services offered to internal clients with intranet deployment. | Technologies: Backend - C# (Rest API ASP net , NET 7), SQL Server (Entity Framework Core) -- Frontend HTML, CSS (bootstrap), javascript (Angular 16).",
+        "summary": "Update intranet application to control services offered to internal clients with intranet deployment.",
+        "responsabilities": {
+          "name": "Responsabilities",
+          "items": ["Define the new architecture of the application", "Define the technologies to be used", "Define and normalize the database", "Lead the development of the backend and frontend application as required", "Deploy application on intranet in the test and production environments on a Windows server", "Perform migrations to the database"]
+        },
+        "technologies": {
+          "name": "Tecnologies",
+          "items": ["Backend - C# (Rest API ASP net , NET 7), SQL Server (Entity Framework Core) -- Frontend HTML, CSS (bootstrap), javascript (Angular 17) y despliegue en intranet."]
+        },
         "highlights": ["Project start"]
       },
       {
@@ -56,7 +72,15 @@
         "url": "www.google.com",
         "startDate": "2022-07-01",
         "endDate": "2023-05-01",
-        "summary": "Web solution for production control and registration, worker control, hours worked, with integration to the accounting program. | Technologies: Backend - PHP (Rest API CakePHP y JWT),MariaDB y FireBird, GO (Gin) -- Frontend HTML, CSS. javascript (Angular 15, Angular Material 15).",
+        "summary": "Web solution for production control and registration, worker control, hours worked, with integration to the accounting program.",
+        "responsabilities": {
+          "name": "Responsabilities",
+          "items": ["Define the architecture of the application", "Define the technologies to be used", "Define and normalize the database", "Lead the development of the backend as required", "Lead the development of the application frontend", "Development of API rest in go for communication with the accounting program", "Perform migrations to the database", "Deployment of the application on the intranet in test and production environments on a Linux server"]
+        },
+        "technologies": {
+          "name": "Tecnologies",
+          "items": ["Backend - PHP (Rest API CakePHP y JWT),MariaDB y FireBird, GO (Gin) -- Frontend HTML, CSS. javascript (Angular 15, Angular Material 15)."]
+        },
         "highlights": ["Project start"]
       },
       {
@@ -65,7 +89,15 @@
         "url": "www.google.com",
         "startDate": "2022-07-01",
         "endDate": "2022-10-01",
-        "summary": "Software for video custody with last wish. | Technologies:  CakePHP, Bootstrap y MariaDb.",
+        "summary": "Software for video custody with last wish.",
+        "responsabilities": {
+          "name": "Responsabilities",
+          "items": ["Define the architecture of the application", "Define the technologies to be used", "Define and normalize the database", "Perform migrations to the database", "Develop the application as required ", "Deploying the application on AWS"]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": ["PHP (Cake PHP)", "HTML", "CSS (Bootstrap)", "JavaScript", "MariaDB"]
+        },
         "highlights": ["Project start"]
       },
       {
@@ -74,7 +106,15 @@
         "url": "www.google.com",
         "startDate": "2021-04-01",
         "endDate": "2022-07-01",
-        "summary": "Web application for personnel control (income, affiliations, documentation). | Technologies: PHP (Cake PHP) - HTML - CSS (Bootstrap) - JavaScript - MariaDB.",
+        "summary": "Web application for personnel control (income, affiliations, documentation).",
+        "responsabilities": {
+          "name": "Responsabilities",
+          "items": ["Define the application architecture", "Define the technologies to be used", "Define and normalize the database", "Lead the development of the application as required", "Perform migrations to the database data", "Deployment of the application on the intranet in test and production environments on a Linux server"]
+        },
+        "technologies": {
+          "name": "Tecnologies",
+          "items": ["PHP (Cake PHP)", "HTML", "CSS (Bootstrap)", "JavaScript", "MariaDB"]
+        },
         "highlights": ["Project start"]
       },
       {
@@ -83,7 +123,15 @@
         "url": "www.google.com",
         "startDate": "2022-03-01",
         "endDate": "2022-10-01",
-        "summary": "Backend for mobile challenge application. | Technologies: Java (Spring Boot Micro Services) - PostgreSQL (JPA) - Docker.",
+        "summary": "Backend for mobile challenge application.",
+        "responsabilities": {
+          "name": "Responsabilities",
+          "items": ["Development of the backend according to the defined architecture, by microservices", "Implement RabitMQ", "Implement Docker", "Support the frontend team (Flutter and Angular)", "Perform migrations to the database", "Deployment of the application on the intranet in test environments in AWS"]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": ["Java (Spring Boot Micro Services)", "PostgreSQL (JPA)", "Docker", "RabbitMQ"]
+        },
         "highlights": ["Project start"]
       },
       {
@@ -92,7 +140,15 @@
         "url": "www.google.com",
         "startDate": "2020-11-01",
         "endDate": "2021-03-01",
-        "summary": "Application to show on the intranet the products and services offered by each department of the company, and their respective managers. | Technologies:.NET C# Razor Pages - SQL Server (Entity Framework Core).",
+        "summary": "Application to show on the intranet the products and services offered by each department of the company, and their respective managers.",
+        "responsabilities": {
+          "name": "Responsabilities",
+          "items": ["Define and normalize the database", "Develop the application as required", "Deploy the application on the intranet in test and production environments on a Windows server", "Perform migrations to the database"]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": ["C# (.NET, Razor Pages)", "SQL Server (Entity Framework Core)."]
+        },
         "highlights": ["Project start"]
       },
       {
@@ -101,7 +157,15 @@
         "url": "www.google.com",
         "startDate": "2018-08-01",
         "endDate": "2020-07-01",
-        "summary": "Web application for monitoring and scheduling corrective and preventive vehicle maintenance. | Technologies: PHP (Cake PHP) - HTML - CSS (Semantic UI) - JavaScript (jQuery) - Dart (Flutter).",
+        "summary": "Web application for monitoring and scheduling corrective and preventive vehicle maintenance.",
+        "responsabilities": {
+          "name": "Responsabilities",
+          "items": ["Define the architecture of the application", "Define the technologies to be used", "Define and normalize the database", "Perform migrations to the database", "Lead the development of the application according to what is required", "Deployment of the application on AWS"]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": ["PHP (Cake PHP)", "HTML", "CSS (Semantic UI)", "JavaScript (jQuery)", "Dart (Flutter)"]
+        },
         "highlights": ["Project start"]
       }
     ]
