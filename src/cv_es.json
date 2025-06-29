@@ -3,12 +3,12 @@
   "basics": {
     "title": "Sobre mí",
     "name": "Jhon Colmenares",
-    "label": "Desarrollador Fullstack con mas 8 años de experiencia en el desarrollo de aplicaciones web",
+    "label": "Desarrollador Fullstack con más de 10 años de experiencia en aplicaciones web, móviles y de escritorio",
     "image": "/my-portfolio/cv1.jpg",
     "email": "jhonccr@gmail.com",
     "phone": "+57 318 657 24 67",
     "url": "https://playkru.com",
-    "summary": "Cuento con +8 años de experiencia como Desarrollador Web. Desarrollo en diferentes lenguajes de programación para la creación de APIs y Aplicaciones Web y Móviles. He trabajado en diferentes entornos: desde inicio de proyectos hasta modificación de proyectos en producción para mejora de lo existente y crear nuevas funcionalidades.",
+    "summary": "Soy un desarrollador Fullstack con más de 10 años de experiencia en el diseño, desarrollo e implementación de soluciones web, móviles y de escritorio. He participado en todas las etapas del ciclo de vida del software, desde la concepción y arquitectura hasta el despliegue en producción. Mi enfoque está en la creación de aplicaciones robustas, eficientes y escalables, utilizando tecnologías modernas como PHP (CakePHP, Laravel), JavaScript (Angular, Svelte, AlpineJS), Go, y C# (.NET). Me destaco por liderar proyectos, mejorar sistemas existentes y entregar soluciones alineadas a los objetivos del negocio.",
     "location": {
       "address": "",
       "postalCode": "54001",
@@ -33,21 +33,175 @@
     "title": "Experiencia laboral",
     "items": [
       {
+        "name": "Jemaproject S.A.S.",
+        "position": "Desarrollador Fullstack",
+        "url": "https://www.jemapack.com/",
+        "startDate": "2025-03-03",
+        "endDate": "2025-07-05",
+        "summary": "Sistema integral para control de producción, trazabilidad de consumos de materia prima y mantenimiento de maquinaria, desplegado en entorno Linux.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Definir la arquitectura general del sistema",
+            "Seleccionar el stack tecnológico más adecuado",
+            "Diseñar y normalizar la base de datos",
+            "Liderar el desarrollo del backend (API Rest en CakePHP)",
+            "Desarrollar el frontend con Svelte 5 y TailwindCSS",
+            "Crear aplicación de escritorio en Go (Wails)",
+            "Implementar servicio de impresión de etiquetas",
+            "Gestionar migraciones de base de datos",
+            "Desplegar en ambientes de prueba y producción"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "PHP (CakePHP)",
+            "HTML",
+            "CSS",
+            "JavaScript (AlpineJS, svelte 5)",
+            "Mysql",
+            "Go (wails con Svelte 5)",
+            "Docker (ddev)",
+            "AlpineJS",
+            "Svelte 5",
+            "TailwindCSS",
+            "DaisyUI",
+            "Trae AI",
+            "Windsurf"
+          ]
+        },
+        "highlights": [
+          "Inicio del proyecto",
+          "Despliegue del Proyecto en producción"
+        ]
+      },
+      {
+        "name": "CENS Grupo EPM",
+        "position": "Desarrollador Fullstack",
+        "url": "www.cens.com.co",
+        "startDate": "2025-04-07",
+        "endDate": "2025-05-30",
+        "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Actualización la nuevas versiones de la tecnología",
+            "Desarrollo de nuevas funcionalidades",
+            "Liderar el desarrollo de la aplicación backend y frontend según lo requerido",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor windows",
+            "Realizar migraciones a la base de datos"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "Backend - C# (Rest API ASP net , NET 9), SQL Server (Entity Framework Core) -- Frontend HTML, CSS (bootstrap), Javascript (Angular 19) y despliegue en intranet."
+          ]
+        },
+        "highlights": [
+          "Inicio del proyecto"
+        ]
+      },
+      {
+        "name": "Arivo",
+        "position": "Desarrollador Backend",
+        "url": "https://www.ftwin360.com/",
+        "startDate": "2024-06-10",
+        "endDate": "2025-02-28",
+        "summary": "Aplicación (web y móvil) para reproducción de video bajo demanda dedicado a deportes universitarios.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Desarrollo de nuevas funcionalidades",
+            "Depuración de errores en el código",
+            "Realizar migraciones a la base de datos",
+            "Ajuste de funciones lambda",
+            "Actualización de la documentación interna",
+            "Mantenimiento del panel administrativo",
+            "Migrar funcionalidades de CakePHP a Laravel"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "PHP (CakePHP y Laravel)",
+            "HTML",
+            "CSS (Bootstrap)",
+            "JavaScript (JQuery)",
+            "Mysql",
+            "Lamda AWS",
+            "Amazon S3"
+          ]
+        },
+        "highlights": [
+          "Migración del proyecto",
+          "Despliegue del Proyecto"
+        ]
+      },
+      {
+        "name": "DTL 360",
+        "position": "Desarrollador Frontend",
+        "url": "https://proveedores.direccionsustitucion.gov.co/",
+        "startDate": "2024-08-05",
+        "endDate": "2024-11-16",
+        "summary": "Solución Web que permite conectar campesinos con proveedores para la adquisición de productos que permitan la sustitución de cultivos ilícitos en zonas de conflicto.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Desarrollo del aplicativo Web",
+            "Desarrolo del panel administrativo",
+            "Consumir servicios del API Rest",
+            "Implementar el diseño de marca",
+            "Aportar ideas para la mejora del proyecto",
+            "Despliegue en entorno de pruebas",
+            "Diseño responsive"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "HTML",
+            "CSS",
+            "JavaScript (Angular 18, Angular Material)",
+            "Recaptcha"
+          ]
+        },
+        "highlights": [
+          "Inicio del proyecto"
+        ]
+      },
+      {
         "name": "Brinks",
         "position": "Desarrollador Backend",
         "url": "www.google.com",
         "startDate": "2023-11-01",
         "endDate": "2024-02-01",
         "summary": "Aplicación web para streaming de contenido de video dedicado a deportes universitarios.",
-        "responsabilities": {
+        "responsibilities": {
           "name": "Responsabilidades",
-          "items": ["Desarrollo de nuevas funcionalidades", "Depuración de errores en el código", "Realizar migraciones a la base de datos", "Ajuste de funciones lambda", "Actualización de la documentación interna", "Mantenimiento del panel administrativo"]
+          "items": [
+            "Desarrollo de nuevas funcionalidades",
+            "Depuración de errores en el código",
+            "Realizar migraciones a la base de datos",
+            "Ajuste de funciones lambda",
+            "Actualización de la documentación interna",
+            "Mantenimiento del panel administrativo"
+          ]
         },
         "technologies": {
           "name": "Tecnologías",
-          "items": ["PHP (Cake PHP)", "HTML", "CSS (Bootstrap)", "JavaScript (JQuery)", "Mysql"]
+          "items": [
+            "PHP (CakePHP)",
+            "HTML",
+            "CSS (Bootstrap)",
+            "JavaScript (JQuery)",
+            "Mysql"
+          ]
         },
-        "highlights": ["Inicio del proyecto"]
+        "highlights": [
+          "Inicio del proyecto"
+        ]
       },
       {
         "name": "CENS Grupo EPM",
@@ -56,15 +210,26 @@
         "startDate": "2023-07-01",
         "endDate": "2023-10-01",
         "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
-        "responsabilities": {
+        "responsibilities": {
           "name": "Responsabilidades",
-          "items": ["Definir la nueva arquitectura de la aplicación", "Definir las tecnologías a utilizar", "Definir y normalizar la base de datos", "Liderar el desarrollo de la aplicación backend y frontend según lo requerido", "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor windows", "Realizar migraciones a la base de datos"]
+          "items": [
+            "Definir la nueva arquitectura de la aplicación",
+            "Definir las tecnologías a utilizar",
+            "Definir y normalizar la base de datos",
+            "Liderar el desarrollo de la aplicación backend y frontend según lo requerido",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor windows",
+            "Realizar migraciones a la base de datos"
+          ]
         },
         "technologies": {
           "name": "Tecnologías",
-          "items": ["Backend - C# (Rest API ASP net , NET 7), SQL Server (Entity Framework Core) -- Frontend HTML, CSS (bootstrap), javascript (Angular 17) y despliegue en intranet."]
+          "items": [
+            "Backend - C# (Rest API ASP net , .NET 7), SQL Server (Entity Framework Core) -- Frontend HTML, CSS (bootstrap), javascript (Angular 17) y despliegue en intranet."
+          ]
         },
-        "highlights": ["Inicio del proyecto"]
+        "highlights": [
+          "Inicio del proyecto"
+        ]
       },
       {
         "name": "Preconcretos",
@@ -73,15 +238,28 @@
         "startDate": "2022-07-01",
         "endDate": "2023-05-01",
         "summary": "Solución web para el control y registro de producción, control de trabajadores, horas trabajadas, con integración al programa contable.",
-        "responsabilities": {
+        "responsibilities": {
           "name": "Responsabilidades",
-          "items": ["Definir la arquitectura de la aplicación", "Definir las tecnologías a utilizar", "Definir y normalizar la base de datos", "Liderar el desarrollo del backend según lo requerido", "Liderar el desarrollo de la aplicación frontend", "Desarrollo de API rest en go para comunicación con el programa contable", "Realizar migraciones a la base de datos", "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor linux"]
+          "items": [
+            "Definir la arquitectura de la aplicación",
+            "Definir las tecnologías a utilizar",
+            "Definir y normalizar la base de datos",
+            "Liderar el desarrollo del backend según lo requerido",
+            "Liderar el desarrollo de la aplicación frontend",
+            "Desarrollo de API rest en go para comunicación con el programa contable",
+            "Realizar migraciones a la base de datos",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor linux"
+          ]
         },
         "technologies": {
           "name": "Tecnologías",
-          "items": ["Backend - PHP (Rest API CakePHP y JWT),MariaDB y FireBird, GO (Gin) -- Frontend HTML, CSS. javascript (Angular 15, Angular Material 15)."]
+          "items": [
+            "Backend - PHP (Rest API CakePHP y JWT),MariaDB y FireBird, GO (Gin) -- Frontend HTML, CSS. javascript (Angular 15, Angular Material 15)."
+          ]
         },
-        "highlights": ["Inicio del proyecto"]
+        "highlights": [
+          "Inicio del proyecto"
+        ]
       },
       {
         "name": "Casa de Funerales Rincón",
@@ -90,15 +268,30 @@
         "startDate": "2022-07-01",
         "endDate": "2022-10-01",
         "summary": "Software para custodia de video con último deseo.",
-        "responsabilities": {
+        "responsibilities": {
           "name": "Responsabilidades",
-          "items": ["Definir la arquitectura de la aplicación", "Definir las tecnologías a utilizar", "Definir y normalizar la base de datos", "Realizar migraciones a la base de datos", "Desarrollo de la aplicación según lo requerido", "Despliegue de la aplicación en AWS"]
+          "items": [
+            "Definir la arquitectura de la aplicación",
+            "Definir las tecnologías a utilizar",
+            "Definir y normalizar la base de datos",
+            "Realizar migraciones a la base de datos",
+            "Desarrollo de la aplicación según lo requerido",
+            "Despliegue de la aplicación en AWS"
+          ]
         },
         "technologies": {
           "name": "Tecnologías",
-          "items": ["PHP (Cake PHP)", "HTML", "CSS (Bootstrap)", "JavaScript", "MariaDB"]
+          "items": [
+            "PHP (Cake PHP)",
+            "HTML",
+            "CSS (Bootstrap)",
+            "JavaScript",
+            "MariaDB"
+          ]
         },
-        "highlights": ["Inicio del proyecto"]
+        "highlights": [
+          "Inicio del proyecto"
+        ]
       },
       {
         "name": "Preconcretos",
@@ -107,15 +300,30 @@
         "startDate": "2021-04-01",
         "endDate": "2022-07-01",
         "summary": "Aplicación web para el control del personal (ingresos, afiliaciones, documentación).",
-        "responsabilities": {
+        "responsibilities": {
           "name": "Responsabilidades",
-          "items": ["Definir la arquitectura de la aplicación", "Definir las tecnologías a utilizar", "Definir y normalizar la base de datos", "Liderar el desarrollo de la aplicación según lo requerido", "Realizar migraciones a la base de datos", "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor linux"]
+          "items": [
+            "Definir la arquitectura de la aplicación",
+            "Definir las tecnologías a utilizar",
+            "Definir y normalizar la base de datos",
+            "Liderar el desarrollo de la aplicación según lo requerido",
+            "Realizar migraciones a la base de datos",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor linux"
+          ]
         },
         "technologies": {
           "name": "Tecnologías",
-          "items": ["PHP (Cake PHP)", "HTML", "CSS (Bootstrap)", "JavaScript", "MariaDB"]
+          "items": [
+            "PHP (Cake PHP)",
+            "HTML",
+            "CSS (Bootstrap)",
+            "JavaScript",
+            "MariaDB"
+          ]
         },
-        "highlights": ["Inicio del proyecto"]
+        "highlights": [
+          "Inicio del proyecto"
+        ]
       },
       {
         "name": "DTL360",
@@ -124,15 +332,29 @@
         "startDate": "2022-03-01",
         "endDate": "2022-10-01",
         "summary": "Backend API Rest microservicios para aplicación móvil de retos.",
-        "responsabilities": {
+        "responsibilities": {
           "name": "Responsabilidades",
-          "items": ["Desarrollo del backend según la arquitectura definida, por microservicios", "Implementar RabitMQ", "Implementar Docker", "Soporte al equipo frontend (Flutter y Angular)", "Realizar migraciones a la base de datos", "Despliegue de la aplicación en la intranet en los ambientes de pruebas en AWS"]
+          "items": [
+            "Desarrollo del backend según la arquitectura definida, por microservicios",
+            "Implementar RabitMQ",
+            "Implementar Docker",
+            "Soporte al equipo frontend (Flutter y Angular)",
+            "Realizar migraciones a la base de datos",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas en AWS"
+          ]
         },
         "technologies": {
           "name": "Tecnologías",
-          "items": ["Java (Spring Boot Micro Services)", "PostgreSQL (JPA)", "Docker", "RabbitMQ"]
+          "items": [
+            "Java (Spring Boot Micro Services)",
+            "PostgreSQL (JPA)",
+            "Docker",
+            "RabbitMQ"
+          ]
         },
-        "highlights": ["Inicio del proyecto"]
+        "highlights": [
+          "Inicio del proyecto"
+        ]
       },
       {
         "name": "CENS Grupo EPM",
@@ -141,15 +363,25 @@
         "startDate": "2020-11-01",
         "endDate": "2021-03-01",
         "summary": "Aplicativo para mostrar en la intranet los productos y servicios que ofrece cada dependencia de la empresa, y sus respectivos gestores.",
-        "responsabilities": {
+        "responsibilities": {
           "name": "Responsabilidades",
-          "items": ["Definir y normalizar la base de datos", "Desarrollo de la aplicación según lo requerido", "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor windows", "Realizar migraciones a la base de datos"]
+          "items": [
+            "Definir y normalizar la base de datos",
+            "Desarrollo de la aplicación según lo requerido",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor windows",
+            "Realizar migraciones a la base de datos"
+          ]
         },
         "technologies": {
           "name": "Tecnologías",
-          "items": ["C# (.NET, Razor Pages)", "SQL Server (Entity Framework Core)."]
+          "items": [
+            "C# (.NET, Razor Pages)",
+            "SQL Server (Entity Framework Core)."
+          ]
         },
-        "highlights": ["Inicio del proyecto"]
+        "highlights": [
+          "Inicio del proyecto"
+        ]
       },
       {
         "name": "Globocar",
@@ -158,15 +390,30 @@
         "startDate": "2018-08-01",
         "endDate": "2020-07-01",
         "summary": "Aplicación web para el seguimiento y programación de mantenimientos correctivos y preventivos de vehículos.",
-        "responsabilities": {
+        "responsibilities": {
           "name": "Responsabilidades",
-          "items": ["Definir la arquitectura de la aplicación", "Definir las tecnologías a utilizar", "Definir y normalizar la base de datos", "Realizar migraciones a la base de datos", "Liderar el desarrollo de la aplicación según lo requerido", "Despliegue de la aplicación en AWS"]
+          "items": [
+            "Definir la arquitectura de la aplicación",
+            "Definir las tecnologías a utilizar",
+            "Definir y normalizar la base de datos",
+            "Realizar migraciones a la base de datos",
+            "Liderar el desarrollo de la aplicación según lo requerido",
+            "Despliegue de la aplicación en AWS"
+          ]
         },
         "technologies": {
           "name": "Tecnologías",
-          "items": ["PHP (Cake PHP)", "HTML", "CSS (Semantic UI)", "JavaScript (jQuery)", "Dart (Flutter)"]
+          "items": [
+            "PHP (Cake PHP)",
+            "HTML",
+            "CSS (Semantic UI)",
+            "JavaScript (jQuery)",
+            "Dart (Flutter)"
+          ]
         },
-        "highlights": ["Inicio del proyecto"]
+        "highlights": [
+          "Inicio del proyecto"
+        ]
       }
     ]
   },
@@ -180,44 +427,52 @@
         "startDate": "2012-01-01",
         "endDate": "2013-01-01",
         "summary": "Description…",
-        "highlights": ["Awarded 'Volunteer of the Month'"]
+        "highlights": [
+          "Awarded 'Volunteer of the Month'"
+        ]
       }
     ]
   },
   "education": {
     "title": "Estudios",
-    "items":[
-    {
-      "institution": "Corporacion Universitaria Remington",
-      "url": "https://www.uniremington.edu.co/cucuta/",
-      "area": "Seguridad Informática y de Sistemas",
-      "studyType": "Diplomado",
-      "startDate": "2019-02-01",
-      "endDate": "2019-05-01",
-      "score": "4.0",
-      "courses": ["DB1101 - Basic SQL"]
-    },
-    {
-      "institution": "Corporacion Universitaria Remington",
-      "url": "https://www.uniremington.edu.co/cucuta/",
-      "area": "Ingeniero de Sistemas",
-      "studyType": "Profesional",
-      "startDate": "2014-08-01",
-      "endDate": "2019-05-01",
-      "score": "4.0",
-      "courses": ["DB1101 - Basic SQL"]
-    }
-  ]},
+    "items": [
+      {
+        "institution": "Corporacion Universitaria Remington",
+        "url": "https://www.uniremington.edu.co/cucuta/",
+        "area": "Seguridad Informática y de Sistemas",
+        "studyType": "Diplomado",
+        "startDate": "2019-02-01",
+        "endDate": "2019-05-01",
+        "score": "4.0",
+        "courses": [
+          "DB1101 - Basic SQL"
+        ]
+      },
+      {
+        "institution": "Corporacion Universitaria Remington",
+        "url": "https://www.uniremington.edu.co/cucuta/",
+        "area": "Ingeniero de Sistemas",
+        "studyType": "Profesional",
+        "startDate": "2014-08-01",
+        "endDate": "2019-05-01",
+        "score": "4.0",
+        "courses": [
+          "DB1101 - Basic SQL"
+        ]
+      }
+    ]
+  },
   "awards": {
     "title": "Premios",
     "items": [
-    {
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "There is no spoon."
-    }
-  ]},
+      {
+        "title": "Award",
+        "date": "2014-11-01",
+        "awarder": "Company",
+        "summary": "There is no spoon."
+      }
+    ]
+  },
   "certificates": {
     "title": "Certificados",
     "items": [
@@ -247,17 +502,29 @@
       {
         "name": "HTML",
         "level": "Master",
-        "keywords": ["Desarrollo Web", "Frontend"]
+        "keywords": [
+          "Desarrollo Web",
+          "Frontend"
+        ]
       },
       {
         "name": "CSS",
         "level": "Master",
-        "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+        "keywords": [
+          "Desarrollo Web",
+          "Frontend",
+          "Diseño Responsive"
+        ]
       },
       {
         "name": "JavaScript",
         "level": "Master",
-        "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+        "keywords": [
+          "Desarrollo Web",
+          "Frontend",
+          "Backend",
+          "Fullstack"
+        ]
       },
       {
         "name": "Tailwind",
@@ -282,7 +549,12 @@
       {
         "name": "Node",
         "level": "Avanzado",
-        "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
+        "keywords": [
+          "Desarrollo Web",
+          "Backend",
+          "JavaScript",
+          "Servidor"
+        ]
       },
       {
         "name": "MySQL",
@@ -297,7 +569,11 @@
       {
         "name": "Git",
         "level": "Avanzado",
-        "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
+        "keywords": [
+          "Control de Versiones",
+          "Colaboración",
+          "Código Fuente"
+        ]
       },
       {
         "name": "GitHub",
@@ -310,20 +586,11 @@
         ]
       },
       {
-        "name": "Next.js",
-        "level": "Avanzado",
-        "keywords": [
-          "Desarrollo Web",
-          "Frontend",
-          "React Framework",
-          "SSR",
-          "Static Generation"
-        ]
-      },
-      {
         "name": "CakePHP",
         "level": "Avanzado",
-        "keywords": ["Desarrollo Web"]
+        "keywords": [
+          "Desarrollo Web"
+        ]
       }
     ]
   },
@@ -345,19 +612,27 @@
     "items": [
       {
         "name": "Música",
-        "keywords": ["Crossover"]
+        "keywords": [
+          "Crossover"
+        ]
       },
       {
         "name": "Tennis",
-        "keywords": ["Crossover"]
+        "keywords": [
+          "Crossover"
+        ]
       },
       {
         "name": "Basketball",
-        "keywords": ["Crossover"]
+        "keywords": [
+          "Crossover"
+        ]
       },
       {
         "name": "Video Juegos",
-        "keywords": ["Crossover"]
+        "keywords": [
+          "Crossover"
+        ]
       }
     ]
   },
@@ -373,6 +648,23 @@
   "projects": {
     "title": "Proyectos",
     "items": [
+      
+      {
+        "name": "Jemapack",
+        "description": "Solución web para el registro, control y manejo de la producción interna de una fábrica de plásticos.",
+        "highlights": [
+          "Backend",
+          "PHP (CakePHP 5)",
+          "MariaDb (Cake ORM)",
+          "Go (Wails, Api Rest, Gin Gonic)",
+          "Frontend",
+          "HTML",
+          "CSS (Tailwind CSS, Daisy UI)",
+          "javascript (Alpine JS, Svelte 5)",
+          "Intranet"
+        ],
+        "url": "#"
+      },
       {
         "name": "Saphyr",
         "description": "Aplicación web para la administración de propiedades horizontales.",
@@ -421,10 +713,10 @@
       },
       {
         "name": "Catálogo de Servicios",
-        "description": "Actualización de aplicación intranet para control de servicios ofrecidos al cleinte interno.",
+        "description": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
         "highlights": [
           "Backend",
-          "C# (Rest API ASP net, NET 7)",
+          "C# (Rest API ASP net, .NET 7)",
           "SQL Server (Entity Framework Core)",
           "Frontend",
           "HTML",
@@ -453,7 +745,11 @@
       {
         "name": "Custodia",
         "description": "Software para custodia de video con último deseo.",
-        "highlights": ["PHP (CakePHP)", "CSS (Bootstrap)", "MariaDb."],
+        "highlights": [
+          "PHP (CakePHP)",
+          "CSS (Bootstrap)",
+          "MariaDb."
+        ],
         "url": "#"
       },
       {
