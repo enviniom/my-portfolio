@@ -27,6 +27,13 @@
         "username": "jhonccr",
         "url": "https://github.com/enviniom"
       }
+    ],
+    "summaryHighlights": [
+      "Más de 10 proyectos liderados desde cero hasta producción",
+      "Experiencia en desarrollo con enfoque en arquitectura limpia",
+      "Conocimiento de despliegue en servidores Linux y Windows",
+      "Integración con servicios AWS como Lambda y S3",
+      "Uso avanzado de bases de datos relacionales y no relacionales"
     ]
   },
   "work": {
@@ -36,21 +43,21 @@
         "name": "Jemaproject S.A.S.",
         "position": "Desarrollador Fullstack",
         "url": "https://www.jemapack.com/",
-        "startDate": "2025-03-03",
-        "endDate": "2025-07-05",
-        "summary": "Sistema integral para control de producción, trazabilidad de consumos de materia prima y mantenimiento de maquinaria, desplegado en entorno Linux.",
+        "startDate": "2025-03",
+        "endDate": "2025-07",
+        "summary": "Solución web para el control y registro de producción, la trazablidad de los consumos de materia prima y mantenimiento de la maquinaria.",
         "responsibilities": {
           "name": "Responsabilidades",
           "items": [
-            "Definir la arquitectura general del sistema",
+            "Definir la arquitectura de la aplicación",
             "Seleccionar el stack tecnológico más adecuado",
             "Diseñar y normalizar la base de datos",
-            "Liderar el desarrollo del backend (API Rest en CakePHP)",
-            "Desarrollar el frontend con Svelte 5 y TailwindCSS",
-            "Crear aplicación de escritorio en Go (Wails)",
-            "Implementar servicio de impresión de etiquetas",
-            "Gestionar migraciones de base de datos",
-            "Desplegar en ambientes de prueba y producción"
+            "Liderar el desarrollo del backend según lo requerido",
+            "Liderar el desarrollo de la aplicación frontend",
+            "Desarrollo de aplicación de escritorio que registra producción",
+            "Api Rest para servicio de impresión de etiquetas",
+            "Realizar migraciones a la base de datos",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor linux"
           ]
         },
         "technologies": {
@@ -80,8 +87,8 @@
         "name": "CENS Grupo EPM",
         "position": "Desarrollador Fullstack",
         "url": "www.cens.com.co",
-        "startDate": "2025-04-07",
-        "endDate": "2025-05-30",
+        "startDate": "2025-04",
+        "endDate": "2025-05",
         "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -107,8 +114,8 @@
         "name": "Arivo",
         "position": "Desarrollador Backend",
         "url": "https://www.ftwin360.com/",
-        "startDate": "2024-06-10",
-        "endDate": "2025-02-28",
+        "startDate": "2024-06",
+        "endDate": "2025-02",
         "summary": "Aplicación (web y móvil) para reproducción de video bajo demanda dedicado a deportes universitarios.",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -143,8 +150,8 @@
         "name": "DTL 360",
         "position": "Desarrollador Frontend",
         "url": "https://proveedores.direccionsustitucion.gov.co/",
-        "startDate": "2024-08-05",
-        "endDate": "2024-11-16",
+        "startDate": "2024-08",
+        "endDate": "2024-11",
         "summary": "Solución Web que permite conectar campesinos con proveedores para la adquisición de productos que permitan la sustitución de cultivos ilícitos en zonas de conflicto.",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -175,8 +182,8 @@
         "name": "Brinks",
         "position": "Desarrollador Backend",
         "url": "www.google.com",
-        "startDate": "2023-11-01",
-        "endDate": "2024-02-01",
+        "startDate": "2023-11",
+        "endDate": "2024-02",
         "summary": "Aplicación web para streaming de contenido de video dedicado a deportes universitarios.",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -207,8 +214,8 @@
         "name": "CENS Grupo EPM",
         "position": "Desarrollador Fullstack",
         "url": "www.google.com",
-        "startDate": "2023-07-01",
-        "endDate": "2023-10-01",
+        "startDate": "2023-07",
+        "endDate": "2023-10",
         "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -235,8 +242,8 @@
         "name": "Preconcretos",
         "position": "Ingeniero de software",
         "url": "www.google.com",
-        "startDate": "2022-07-01",
-        "endDate": "2023-05-01",
+        "startDate": "2022-07",
+        "endDate": "2023-05",
         "summary": "Solución web para el control y registro de producción, control de trabajadores, horas trabajadas, con integración al programa contable.",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -265,8 +272,8 @@
         "name": "Casa de Funerales Rincón",
         "position": "Desarrollador Web",
         "url": "www.google.com",
-        "startDate": "2022-07-01",
-        "endDate": "2022-10-01",
+        "startDate": "2022-07",
+        "endDate": "2022-10",
         "summary": "Software para custodia de video con último deseo.",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -297,8 +304,8 @@
         "name": "Preconcretos",
         "position": "Ingeniero de software",
         "url": "www.google.com",
-        "startDate": "2021-04-01",
-        "endDate": "2022-07-01",
+        "startDate": "2021-04",
+        "endDate": "2022-07",
         "summary": "Aplicación web para el control del personal (ingresos, afiliaciones, documentación).",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -329,8 +336,8 @@
         "name": "DTL360",
         "position": "Desarrollador Backend",
         "url": "www.google.com",
-        "startDate": "2022-03-01",
-        "endDate": "2022-10-01",
+        "startDate": "2022-03",
+        "endDate": "2022-10",
         "summary": "Backend API Rest microservicios para aplicación móvil de retos.",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -360,8 +367,8 @@
         "name": "CENS Grupo EPM",
         "position": "Ingeniero de proyecto",
         "url": "www.google.com",
-        "startDate": "2020-11-01",
-        "endDate": "2021-03-01",
+        "startDate": "2020-11",
+        "endDate": "2021-03",
         "summary": "Aplicativo para mostrar en la intranet los productos y servicios que ofrece cada dependencia de la empresa, y sus respectivos gestores.",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -387,8 +394,8 @@
         "name": "Globocar",
         "position": "Ingeniero de proyecto",
         "url": "www.google.com",
-        "startDate": "2018-08-01",
-        "endDate": "2020-07-01",
+        "startDate": "2018-08",
+        "endDate": "2020-07",
         "summary": "Aplicación web para el seguimiento y programación de mantenimientos correctivos y preventivos de vehículos.",
         "responsibilities": {
           "name": "Responsabilidades",
