@@ -48,7 +48,7 @@ interface Work {
     startDate: DateStr;
     endDate: DateStr | null;
     summary: string;
-    responsabilities: {
+    responsibilities: {
       name: string;
       items: Array<string>;
     };

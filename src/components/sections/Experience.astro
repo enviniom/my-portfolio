@@ -15,7 +15,7 @@ const work = Astro.props.work as Work;
           startDate,
           endDate,
           summary,
-          responsabilities,
+          responsibilities,
           technologies,
         }) => {
           const start = startDate.substring(0, 7);
@@ -37,8 +37,8 @@ const work = Astro.props.work as Work;
                   {summary}
                 </p>
                 <p>
-                  <strong>{responsabilities.name}: </strong>{" "}
-                  {responsabilities.items.join(", ")}
+                  <strong>{responsibilities.name}: </strong>{" "}
+                  {responsibilities.items.join(", ")}
                 </p>
                 <footer>
                   <p>

@@ -3,12 +3,12 @@
   "basics": {
     "title": "About Me",
     "name": "Jhon Colmenares",
-    "label": "Fullstack Developer with over 10 years of experience in web, mobile, and desktop applications",
+    "label": "Fullstack Developer with over 10 years of experience in web, mobile, and desktop applications.",
     "image": "/my-portfolio/cv1.jpg",
     "email": "jhonccr@gmail.com",
     "phone": "+57 318 657 24 67",
     "url": "https://playkru.com",
-    "summary": "I'm a Fullstack Developer with over 10 years of experience in designing, developing, and implementing web, mobile, and desktop solutions. I've participated in all stages of the software development lifecycle, from conception and architecture to deployment. I focus on creating robust, efficient, and scalable applications using modern technologies like PHP (CakePHP, Laravel), JavaScript (Angular, Svelte, AlpineJS), Go, and C# (.NET). I stand out for leading projects, improving existing systems, and delivering solutions aligned with business goals.",
+    "summary": "I am a Fullstack Developer with over 10 years of experience in the design, development, and implementation of web, mobile, and desktop solutions. I have participated in all stages of the software development lifecycle, from conception and architecture to production deployment. My focus is on creating robust, efficient, and scalable applications using modern technologies such as PHP (CakePHP, Laravel), JavaScript (Angular, Svelte, AlpineJS), Go, and C# (.NET). I excel at leading projects, improving existing systems, and delivering solutions aligned with business objectives.",
     "location": {
       "address": "",
       "postalCode": "54001",
@@ -29,144 +29,143 @@
       }
     ],
     "summaryHighlights": [
-      "Led more than 10 projects from scratch to production",
-      "Experience in clean architecture-focused development",
-      "Knowledge in deploying on Linux and Windows servers",
-      "Integrated with AWS services like Lambda and S3",
+      "More than 10 projects led from scratch to production",
+      "Development experience with a clean architecture approach",
+      "Knowledge of deployment on Linux and Windows servers",
+      "Integration with AWS services like Lambda and S3",
       "Advanced use of relational and non-relational databases"
     ]
   },
   "work": {
-    "title": "Experiencia laboral",
+    "title": "Work Experience",
     "items": [
       {
         "name": "Jemaproject S.A.S.",
-        "position": "Desarrollador Fullstack",
+        "position": "Fullstack Developer",
         "url": "https://www.jemapack.com/",
         "startDate": "2025-03",
         "endDate": "2025-07",
-        "summary": "Solución web para el control y registro de producción, la trazablidad de los consumos de materia prima y mantenimiento de la maquinaria.",
+        "summary": "Web solution for production control and registration, raw material consumption traceability, and machinery maintenance.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Definir la arquitectura de la aplicación",
-            "Seleccionar el stack tecnológico más adecuado",
-            "Diseñar y normalizar la base de datos",
-            "Liderar el desarrollo del backend según lo requerido",
-            "Liderar el desarrollo de la aplicación frontend",
-            "Desarrollo de aplicación de escritorio que registra producción",
-            "Api Rest para servicio de impresión de etiquetas",
-            "Realizar migraciones a la base de datos",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor linux"
+            "Define application architecture",
+            "Select the most suitable technology stack",
+            "Design and normalize the database",
+            "Lead backend development as required",
+            "Lead frontend application development",
+            "Develop desktop application for production recording",
+            "Develop REST API for label printing service",
+            "Perform database migrations",
+            "Deploy the application on the intranet in test and production environments on Linux server"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
             "PHP (CakePHP)",
             "HTML",
-            "CSS",
-            "JavaScript (AlpineJS, svelte 5)",
-            "Mysql",
-            "Go (wails con Svelte 5)",
+            "CSS (TailwindCSS, DaisyUI)",
+            "JavaScript (AlpineJS, Svelte 5)",
+            "MySQL",
+            "Go (Wails with Svelte 5)",
             "Docker (ddev)",
-            "AlpineJS",
-            "Svelte 5",
-            "TailwindCSS",
-            "DaisyUI",
             "Trae AI",
             "Windsurf"
           ]
         },
         "highlights": [
-          "Inicio del proyecto",
-          "Despliegue del Proyecto en producción"
+          "Leadership in project initiation and production deployment",
+          "Implementation of architecture and technology stack from scratch"
         ]
       },
       {
         "name": "CENS Grupo EPM",
-        "position": "Desarrollador Fullstack",
+        "position": "Fullstack Developer",
         "url": "www.cens.com.co",
         "startDate": "2025-04",
         "endDate": "2025-05",
-        "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
+        "summary": "Intranet application update for internal client service control.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Actualización la nuevas versiones de la tecnología",
-            "Desarrollo de nuevas funcionalidades",
-            "Liderar el desarrollo de la aplicación backend y frontend según lo requerido",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor windows",
-            "Realizar migraciones a la base de datos"
+            "Update to new technology versions",
+            "Develop new functionalities",
+            "Lead backend and frontend application development as required",
+            "Deploy the application on the intranet in test and production environments on Windows server",
+            "Perform database migrations"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
-            "Backend - C# (Rest API ASP net , NET 9), SQL Server (Entity Framework Core) -- Frontend HTML, CSS (bootstrap), Javascript (Angular 19) y despliegue en intranet."
+            "Backend: C# (Rest API ASP.NET, .NET 9), SQL Server (Entity Framework Core)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 19)",
+            "Intranet Deployment"
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Successful technology upgrade and new feature development",
+          "Deployment in test and production environments on Windows server"
         ]
       },
       {
         "name": "Arivo",
-        "position": "Desarrollador Backend",
+        "position": "Backend Developer",
         "url": "https://www.ftwin360.com/",
         "startDate": "2024-06",
         "endDate": "2025-02",
-        "summary": "Aplicación (web y móvil) para reproducción de video bajo demanda dedicado a deportes universitarios.",
+        "summary": "Web and mobile application for on-demand video playback dedicated to university sports.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Desarrollo de nuevas funcionalidades",
-            "Depuración de errores en el código",
-            "Realizar migraciones a la base de datos",
-            "Ajuste de funciones lambda",
-            "Actualización de la documentación interna",
-            "Mantenimiento del panel administrativo",
-            "Migrar funcionalidades de CakePHP a Laravel"
+            "Develop new functionalities",
+            "Debug code errors",
+            "Perform database migrations",
+            "Adjust AWS Lambda functions",
+            "Update internal documentation",
+            "Maintain administrative panel",
+            "Migrate functionalities from CakePHP to Laravel"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
-            "PHP (CakePHP y Laravel)",
+            "PHP (CakePHP and Laravel)",
             "HTML",
             "CSS (Bootstrap)",
             "JavaScript (JQuery)",
-            "Mysql",
-            "Lamda AWS",
+            "MySQL",
+            "Lambda AWS",
             "Amazon S3"
           ]
         },
         "highlights": [
-          "Migración del proyecto",
-          "Despliegue del Proyecto"
+          "Key participation in project migration and deployment",
+          "Optimization of functionalities and platform maintenance"
         ]
       },
       {
         "name": "DTL 360",
-        "position": "Desarrollador Frontend",
+        "position": "Frontend Developer",
         "url": "https://proveedores.direccionsustitucion.gov.co/",
         "startDate": "2024-08",
         "endDate": "2024-11",
-        "summary": "Solución Web que permite conectar campesinos con proveedores para la adquisición de productos que permitan la sustitución de cultivos ilícitos en zonas de conflicto.",
+        "summary": "Web solution connecting farmers with suppliers for the acquisition of products to substitute illicit crops in conflict zones.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Desarrollo del aplicativo Web",
-            "Desarrolo del panel administrativo",
-            "Consumir servicios del API Rest",
-            "Implementar el diseño de marca",
-            "Aportar ideas para la mejora del proyecto",
-            "Despliegue en entorno de pruebas",
-            "Diseño responsive"
+            "Develop the Web application",
+            "Develop the administrative panel",
+            "Consume REST API services",
+            "Implement brand design",
+            "Contribute ideas for project improvement",
+            "Deploy in test environment",
+            "Implement responsive design"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
             "HTML",
             "CSS",
@@ -175,153 +174,162 @@
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Design and implementation of user interface for a socially relevant project",
+          "Development of administrative panel and API consumption"
         ]
       },
       {
         "name": "Brinks",
-        "position": "Desarrollador Backend",
+        "position": "Backend Developer",
         "url": "www.google.com",
         "startDate": "2023-11",
         "endDate": "2024-02",
-        "summary": "Aplicación web para streaming de contenido de video dedicado a deportes universitarios.",
+        "summary": "Web application for streaming video content dedicated to university sports.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Desarrollo de nuevas funcionalidades",
-            "Depuración de errores en el código",
-            "Realizar migraciones a la base de datos",
-            "Ajuste de funciones lambda",
-            "Actualización de la documentación interna",
-            "Mantenimiento del panel administrativo"
+            "Develop new functionalities",
+            "Debug code errors",
+            "Perform database migrations",
+            "Adjust Lambda functions",
+            "Update internal documentation",
+            "Maintain administrative panel"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
             "PHP (CakePHP)",
             "HTML",
             "CSS (Bootstrap)",
             "JavaScript (JQuery)",
-            "Mysql"
+            "MySQL"
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Backend functionalities development for streaming platform",
+          "Database maintenance and optimization"
         ]
       },
       {
         "name": "CENS Grupo EPM",
-        "position": "Desarrollador Fullstack",
+        "position": "Fullstack Developer",
         "url": "www.google.com",
         "startDate": "2023-07",
         "endDate": "2023-10",
-        "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
+        "summary": "Intranet application update for internal client service control.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Definir la nueva arquitectura de la aplicación",
-            "Definir las tecnologías a utilizar",
-            "Definir y normalizar la base de datos",
-            "Liderar el desarrollo de la aplicación backend y frontend según lo requerido",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor windows",
-            "Realizar migraciones a la base de datos"
+            "Define the new application architecture",
+            "Define technologies to use",
+            "Define and normalize the database",
+            "Lead backend and frontend application development as required",
+            "Deploy the application on the intranet in test and production environments on Windows server",
+            "Perform database migrations"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
-            "Backend - C# (Rest API ASP net , .NET 7), SQL Server (Entity Framework Core) -- Frontend HTML, CSS (bootstrap), javascript (Angular 17) y despliegue en intranet."
+            "Backend: C# (Rest API ASP.NET, .NET 7), SQL Server (Entity Framework Core)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 17)",
+            "Intranet Deployment"
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Leadership in redefining application architecture and technologies",
+          "Management of migrations and deployments in production environments"
         ]
       },
       {
         "name": "Preconcretos",
-        "position": "Ingeniero de software",
+        "position": "Software Engineer",
         "url": "www.google.com",
         "startDate": "2022-07",
         "endDate": "2023-05",
-        "summary": "Solución web para el control y registro de producción, control de trabajadores, horas trabajadas, con integración al programa contable.",
+        "summary": "Web solution for production control and registration, worker control, hours worked, with integration to accounting software.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Definir la arquitectura de la aplicación",
-            "Definir las tecnologías a utilizar",
-            "Definir y normalizar la base de datos",
-            "Liderar el desarrollo del backend según lo requerido",
-            "Liderar el desarrollo de la aplicación frontend",
-            "Desarrollo de API rest en go para comunicación con el programa contable",
-            "Realizar migraciones a la base de datos",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor linux"
+            "Define application architecture",
+            "Define technologies to use",
+            "Define and normalize the database",
+            "Lead backend development as required",
+            "Lead frontend application development",
+            "Develop REST API in Go for communication with accounting software",
+            "Perform database migrations",
+            "Deploy the application on the intranet in test and production environments on Linux server"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
-            "Backend - PHP (Rest API CakePHP y JWT),MariaDB y FireBird, GO (Gin) -- Frontend HTML, CSS. javascript (Angular 15, Angular Material 15)."
+            "Backend: PHP (Rest API CakePHP and JWT), MariaDB and FireBird, GO (Gin)",
+            "Frontend: HTML, CSS, JavaScript (Angular 15, Angular Material 15)"
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Leadership in the full development cycle of a production control solution",
+          "Successful integration with accounting software via Go REST API"
         ]
       },
       {
         "name": "Casa de Funerales Rincón",
-        "position": "Desarrollador Web",
+        "position": "Web Developer",
         "url": "www.google.com",
         "startDate": "2022-07",
         "endDate": "2022-10",
-        "summary": "Software para custodia de video con último deseo.",
+        "summary": "Video custody software with last will.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Definir la arquitectura de la aplicación",
-            "Definir las tecnologías a utilizar",
-            "Definir y normalizar la base de datos",
-            "Realizar migraciones a la base de datos",
-            "Desarrollo de la aplicación según lo requerido",
-            "Despliegue de la aplicación en AWS"
+            "Define application architecture",
+            "Define technologies to use",
+            "Define and normalize the database",
+            "Perform database migrations",
+            "Develop the application as required",
+            "Deploy the application on AWS"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
-            "PHP (Cake PHP)",
+            "PHP (CakePHP)",
             "HTML",
             "CSS (Bootstrap)",
             "JavaScript",
-            "MariaDB"
+            "MariaDB",
+            "AWS"
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Development and deployment on AWS of an innovative video custody application",
+          "Full definition of project architecture and database"
         ]
       },
       {
         "name": "Preconcretos",
-        "position": "Ingeniero de software",
+        "position": "Software Engineer",
         "url": "www.google.com",
         "startDate": "2021-04",
         "endDate": "2022-07",
-        "summary": "Aplicación web para el control del personal (ingresos, afiliaciones, documentación).",
+        "summary": "Web application for personnel control (admissions, affiliations, documentation).",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Definir la arquitectura de la aplicación",
-            "Definir las tecnologías a utilizar",
-            "Definir y normalizar la base de datos",
-            "Liderar el desarrollo de la aplicación según lo requerido",
-            "Realizar migraciones a la base de datos",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor linux"
+            "Define application architecture",
+            "Define technologies to use",
+            "Define and normalize the database",
+            "Lead application development as required",
+            "Perform database migrations",
+            "Deploy the application on the intranet in test and production environments on Linux server"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
-            "PHP (Cake PHP)",
+            "PHP (CakePHP)",
             "HTML",
             "CSS (Bootstrap)",
             "JavaScript",
@@ -329,103 +337,109 @@
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Leadership in the development of a web application for comprehensive personnel management",
+          "Management of database deployments and migrations"
         ]
       },
       {
         "name": "DTL360",
-        "position": "Desarrollador Backend",
+        "position": "Backend Developer",
         "url": "www.google.com",
         "startDate": "2022-03",
         "endDate": "2022-10",
-        "summary": "Backend API Rest microservicios para aplicación móvil de retos.",
+        "summary": "Backend REST API microservices for mobile challenge application.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Desarrollo del backend según la arquitectura definida, por microservicios",
-            "Implementar RabitMQ",
-            "Implementar Docker",
-            "Soporte al equipo frontend (Flutter y Angular)",
-            "Realizar migraciones a la base de datos",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas en AWS"
+            "Develop backend according to defined microservices architecture",
+            "Implement RabbitMQ",
+            "Implement Docker",
+            "Support frontend team (Flutter and Angular)",
+            "Perform database migrations",
+            "Deploy the application on the intranet in test environments on AWS"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
-            "Java (Spring Boot Micro Services)",
+            "Java (Spring Boot Microservices)",
             "PostgreSQL (JPA)",
             "Docker",
-            "RabbitMQ"
+            "RabbitMQ",
+            "AWS"
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Implementation of microservices architecture with Spring Boot and Docker",
+          "Integration with RabbitMQ and support for frontend teams"
         ]
       },
       {
         "name": "CENS Grupo EPM",
-        "position": "Ingeniero de proyecto",
+        "position": "Project Engineer",
         "url": "www.google.com",
         "startDate": "2020-11",
         "endDate": "2021-03",
-        "summary": "Aplicativo para mostrar en la intranet los productos y servicios que ofrece cada dependencia de la empresa, y sus respectivos gestores.",
+        "summary": "Application to display products and services offered by each company department on the intranet, along with their respective managers.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Definir y normalizar la base de datos",
-            "Desarrollo de la aplicación según lo requerido",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor windows",
-            "Realizar migraciones a la base de datos"
+            "Define and normalize the database",
+            "Develop the application as required",
+            "Deploy the application on the intranet in test and production environments on Windows server",
+            "Perform database migrations"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
             "C# (.NET, Razor Pages)",
-            "SQL Server (Entity Framework Core)."
+            "SQL Server (Entity Framework Core)"
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Development and deployment of intranet application for service visualization",
+          "Database and migration management"
         ]
       },
       {
         "name": "Globocar",
-        "position": "Ingeniero de proyecto",
+        "position": "Project Engineer",
         "url": "www.google.com",
         "startDate": "2018-08",
         "endDate": "2020-07",
-        "summary": "Aplicación web para el seguimiento y programación de mantenimientos correctivos y preventivos de vehículos.",
+        "summary": "Web application for tracking and scheduling corrective and preventive vehicle maintenance.",
         "responsibilities": {
-          "name": "Responsabilidades",
+          "name": "Responsibilities",
           "items": [
-            "Definir la arquitectura de la aplicación",
-            "Definir las tecnologías a utilizar",
-            "Definir y normalizar la base de datos",
-            "Realizar migraciones a la base de datos",
-            "Liderar el desarrollo de la aplicación según lo requerido",
-            "Despliegue de la aplicación en AWS"
+            "Define application architecture",
+            "Define technologies to use",
+            "Define and normalize the database",
+            "Perform database migrations",
+            "Lead application development as required",
+            "Deploy the application on AWS"
           ]
         },
         "technologies": {
-          "name": "Tecnologías",
+          "name": "Technologies",
           "items": [
-            "PHP (Cake PHP)",
+            "PHP (CakePHP)",
             "HTML",
             "CSS (Semantic UI)",
             "JavaScript (jQuery)",
-            "Dart (Flutter)"
+            "Dart (Flutter)",
+            "AWS"
           ]
         },
         "highlights": [
-          "Inicio del proyecto"
+          "Leadership in the development of a web solution for vehicle maintenance management",
+          "Definition of technology architecture and deployment on AWS"
         ]
       }
     ]
   },
   "volunteer": {
-    "title": "Voluntariado",
+    "title": "Volunteer Experience",
     "items": [
       {
         "organization": "Organization",
@@ -441,13 +455,13 @@
     ]
   },
   "education": {
-    "title": "Estudios",
+    "title": "Education",
     "items": [
       {
         "institution": "Corporacion Universitaria Remington",
         "url": "https://www.uniremington.edu.co/cucuta/",
-        "area": "Seguridad Informática y de Sistemas",
-        "studyType": "Diplomado",
+        "area": "Information and Systems Security",
+        "studyType": "Diploma",
         "startDate": "2019-02-01",
         "endDate": "2019-05-01",
         "score": "4.0",
@@ -458,8 +472,8 @@
       {
         "institution": "Corporacion Universitaria Remington",
         "url": "https://www.uniremington.edu.co/cucuta/",
-        "area": "Ingeniero de Sistemas",
-        "studyType": "Profesional",
+        "area": "Systems Engineer",
+        "studyType": "Professional Degree",
         "startDate": "2014-08-01",
         "endDate": "2019-05-01",
         "score": "4.0",
@@ -470,7 +484,7 @@
     ]
   },
   "awards": {
-    "title": "Premios",
+    "title": "Awards",
     "items": [
       {
         "title": "Award",
@@ -481,7 +495,7 @@
     ]
   },
   "certificates": {
-    "title": "Certificados",
+    "title": "Certificates",
     "items": [
       {
         "name": "Certificate",
@@ -492,7 +506,7 @@
     ]
   },
   "publications": {
-    "title": "Publicaciones",
+    "title": "Publications",
     "items": [
       {
         "name": "Publication",
@@ -504,121 +518,240 @@
     ]
   },
   "skills": {
-    "title": "Habilidades",
+    "title": "Skills",
     "items": [
       {
         "name": "HTML",
         "level": "Master",
         "keywords": [
-          "Desarrollo Web",
+          "Web Development",
           "Frontend"
         ]
       },
       {
         "name": "CSS",
-        "level": "Master",
+        "level": "Advanced",
         "keywords": [
-          "Desarrollo Web",
+          "Web Development",
           "Frontend",
-          "Diseño Responsive"
+          "Responsive Design"
         ]
       },
       {
         "name": "JavaScript",
-        "level": "Master",
+        "level": "Advanced",
         "keywords": [
-          "Desarrollo Web",
+          "Web Development",
           "Frontend",
           "Backend",
           "Fullstack"
         ]
       },
       {
-        "name": "Tailwind",
-        "level": "Avanzado",
+        "name": "TailwindCSS",
+        "level": "Advanced",
         "keywords": [
-          "Desarrollo Web",
+          "Web Development",
           "Frontend",
           "CSS Framework",
-          "Diseño Responsive"
+          "Responsive Design"
         ]
       },
       {
         "name": "TypeScript",
-        "level": "Avanzado",
+        "level": "Advanced",
         "keywords": [
-          "Desarrollo Web",
+          "Web Development",
           "Frontend",
           "Backend",
           "JavaScript Superset"
         ]
       },
       {
-        "name": "Node",
-        "level": "Avanzado",
+        "name": "Node.js",
+        "level": "Advanced",
         "keywords": [
-          "Desarrollo Web",
+          "Web Development",
           "Backend",
           "JavaScript",
-          "Servidor"
+          "Server"
         ]
       },
       {
         "name": "MySQL",
-        "level": "Avanzado",
+        "level": "Advanced",
         "keywords": [
-          "Bases de Datos",
+          "Databases",
           "SQL",
-          "Almacenamiento de Datos",
+          "Data Storage",
           "Backend"
         ]
       },
       {
         "name": "Git",
-        "level": "Avanzado",
+        "level": "Advanced",
         "keywords": [
-          "Control de Versiones",
-          "Colaboración",
-          "Código Fuente"
+          "Version Control",
+          "Collaboration",
+          "Source Code"
         ]
       },
       {
         "name": "GitHub",
-        "level": "Avanzado",
+        "level": "Advanced",
         "keywords": [
-          "Control de Versiones",
-          "Colaboración",
-          "Código Fuente",
+          "Version Control",
+          "Collaboration",
+          "Source Code",
           "Git"
         ]
       },
       {
         "name": "CakePHP",
-        "level": "Avanzado",
+        "level": "Advanced",
         "keywords": [
-          "Desarrollo Web"
+          "PHP Framework",
+          "Web Development",
+          "Backend"
+        ]
+      },
+      {
+        "name": "Laravel",
+        "level": "Intermediate",
+        "keywords": [
+          "PHP Framework",
+          "Web Development",
+          "Backend"
+        ]
+      },
+      {
+        "name": "Angular",
+        "level": "Advanced",
+        "keywords": [
+          "JavaScript Framework",
+          "Frontend",
+          "Web Development"
+        ]
+      },
+      {
+        "name": "Svelte",
+        "level": "Advanced",
+        "keywords": [
+          "JavaScript Framework",
+          "Frontend",
+          "Web Development"
+        ]
+      },
+      {
+        "name": "Alpine.js",
+        "level": "Intermediate",
+        "keywords": [
+          "JavaScript Framework",
+          "Frontend",
+          "Web Development"
+        ]
+      },
+      {
+        "name": "Go",
+        "level": "Advanced",
+        "keywords": [
+          "Programming Language",
+          "Backend",
+          "APIs"
+        ]
+      },
+      {
+        "name": "C#",
+        "level": "Advanced",
+        "keywords": [
+          "Programming Language",
+          "Backend",
+          ".NET",
+          "Windows Development"
+        ]
+      },
+      {
+        "name": ".NET",
+        "level": "Intermediate",
+        "keywords": [
+          "Microsoft Framework",
+          "Backend",
+          "C#",
+          "Windows Development"
+        ]
+      },
+      {
+        "name": "SQL Server",
+        "level": "Intermediate",
+        "keywords": [
+          "Database",
+          "SQL",
+          "Microsoft"
+        ]
+      },
+      {
+        "name": "MariaDB",
+        "level": "Advanced",
+        "keywords": [
+          "Database",
+          "SQL",
+          "Open Source"
+        ]
+      },
+      {
+        "name": "PostgreSQL",
+        "level": "Intermediate",
+        "keywords": [
+          "Database",
+          "SQL",
+          "Open Source"
+        ]
+      },
+      {
+        "name": "Docker",
+        "level": "Intermediate",
+        "keywords": [
+          "Containers",
+          "DevOps"
+        ]
+      },
+      {
+        "name": "AWS Lambda",
+        "level": "Intermediate",
+        "keywords": [
+          "Cloud Computing",
+          "Serverless",
+          "AWS"
+        ]
+      },
+      {
+        "name": "Amazon S3",
+        "level": "Intermediate",
+        "keywords": [
+          "Cloud Storage",
+          "AWS"
         ]
       }
     ]
   },
   "languages": {
-    "title": "Idiomas",
+    "title": "Languages",
     "items": [
       {
-        "language": "Español",
-        "fluency": "Nativo"
+        "language": "Spanish",
+        "fluency": "Native"
       },
       {
-        "language": "Inglés",
-        "fluency": "Medio"
+        "language": "English",
+        "fluency": "Intermediate"
       }
     ]
   },
   "interests": {
-    "title": "Intereses o Hobbies",
+    "title": "Interests or Hobbies",
     "items": [
       {
-        "name": "Música",
+        "name": "Music",
         "keywords": [
           "Crossover"
         ]
@@ -636,7 +769,7 @@
         ]
       },
       {
-        "name": "Video Juegos",
+        "name": "Video Games",
         "keywords": [
           "Crossover"
         ]
@@ -644,159 +777,120 @@
     ]
   },
   "references": {
-    "title": "Referencias",
+    "title": "References",
     "items": [
       {
         "name": "Blanca Valero",
-        "reference": "Esposa"
+        "reference": "Wife"
       }
     ]
   },
   "projects": {
-    "title": "Proyectos",
+    "title": "Projects",
     "items": [
       {
         "name": "Jemapack",
-        "description": "Solución web para el registro, control y manejo de la producción interna de una fábrica de plásticos.",
+        "description": "Web solution for internal production registration, control, and management for a plastics factory.",
         "highlights": [
-          "Backend",
-          "PHP (CakePHP 5)",
-          "MariaDb (Cake ORM)",
-          "Go (Wails, Api Rest, Gin Gonic)",
-          "Frontend",
-          "HTML",
-          "CSS (Tailwind CSS, Daisy UI)",
-          "javascript (Alpine JS, Svelte 5)",
-          "Intranet"
+          "Backend: PHP (CakePHP 5), MariaDB (Cake ORM), Go (Wails, API Rest, Gin Gonic)",
+          "Frontend: HTML, CSS (Tailwind CSS, Daisy UI), JavaScript (Alpine JS, Svelte 5)",
+          "Intranet implementation, production control, traceability, and maintenance"
         ],
         "url": "#"
       },
       {
         "name": "Saphyr",
-        "description": "Aplicación web para la administración de propiedades horizontales.",
+        "description": "Web application for property management.",
         "highlights": [
-          "Backend",
-          "Go (Gin ApiRest, web server)",
-          "MariaDb (Gorm)",
-          "Frontend",
-          "SSR (templ, htmx)",
-          "HTML",
-          "CSS (Pico CSS)",
-          "JavaScript (Vanilla)"
+          "Backend: Go (Gin API Rest, web server), MariaDB (Gorm)",
+          "Frontend: SSR (Templ, HTMX), HTML, CSS (Pico CSS), JavaScript (Vanilla)",
+          "Development of a robust platform for property administration"
         ],
         "url": "#"
       },
       {
         "name": "Raffles",
-        "description": "Aplicación web para crear rifas, promover y vender de manera online los puestos.",
+        "description": "Web application to create raffles, promote, and sell spots online.",
         "highlights": [
-          "Backend",
-          "Go (Gin ApiRest)",
-          "MariaDb (Gorm)",
-          "Frontend",
-          "HTML",
-          "CSS (Pico CSS)",
-          "JavaScript (Svelte 4)",
-          "Dart (Flutter)."
+          "Backend: Go (Gin API Rest), MariaDB (Gorm)",
+          "Frontend: HTML, CSS (Pico CSS), JavaScript (Svelte 4), Dart (Flutter)",
+          "Complete platform for online raffle management and sales"
         ],
         "url": "#"
       },
       {
         "name": "FTW 360",
-        "description": "Aplicación web para streaming de contenido de video dedicado a deportes universitarios.",
+        "description": "Web application for streaming video content dedicated to university sports.",
         "highlights": [
-          "Backend",
-          "PHP (CakePHP, Laravel)",
-          "HTML",
-          "CSS (Bootstrap)",
-          "JavaScript (JQuery)",
-          "Mysql",
-          "Docker",
-          "Lambda AWS",
-          "S3 Bucket"
+          "Backend: PHP (CakePHP, Laravel), MySQL, Docker, Lambda AWS, S3 Bucket",
+          "Frontend: HTML, CSS (Bootstrap), JavaScript (JQuery)",
+          "Streaming platform with cloud resource optimization"
         ],
         "url": "#"
       },
       {
-        "name": "Catálogo de Servicios",
-        "description": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
+        "name": "Service Catalog (2023)",
+        "description": "Intranet application update for internal client service control.",
         "highlights": [
-          "Backend",
-          "C# (Rest API ASP net, .NET 7)",
-          "SQL Server (Entity Framework Core)",
-          "Frontend",
-          "HTML",
-          "CSS (bootstrap)",
-          "javascript (Angular 16)",
-          "Intranet"
+          "Backend: C# (Rest API ASP.NET, .NET 7), SQL Server (Entity Framework Core)",
+          "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 16)",
+          "Modernization of internal platform with new functionalities"
         ],
         "url": "#"
       },
       {
         "name": "Sag3p",
-        "description": "Solución web para el control y registro de producción, control de trabajadores, horas trabajadas, con integración al programa contable.",
+        "description": "Web solution for production control and registration, worker control, hours worked, with integration to accounting software.",
         "highlights": [
-          "Backend",
-          "PHP (Rest API CakePHP y JWT)",
-          "MariaDB",
-          "FireBird",
-          "GO (Gin)",
-          "Frontend",
-          "javascript (Angular 15, Angular Material 15)",
-          "HTML",
-          "CSS"
+          "Backend: PHP (Rest API CakePHP and JWT), MariaDB, FireBird, GO (Gin)",
+          "Frontend: JavaScript (Angular 15, Angular Material 15), HTML, CSS",
+          "Comprehensive development of production management system with accounting integration"
         ],
         "url": "#"
       },
       {
-        "name": "Custodia",
-        "description": "Software para custodia de video con último deseo.",
+        "name": "Custody",
+        "description": "Video custody software with last will.",
         "highlights": [
-          "PHP (CakePHP)",
-          "CSS (Bootstrap)",
-          "MariaDb."
+          "Technologies: PHP (CakePHP), CSS (Bootstrap), MariaDB",
+          "Deployment on AWS for high availability and security"
         ],
         "url": "#"
       },
       {
         "name": "H&R System",
-        "description": "Aplicación web para el control del personal (ingresos, afiliaciones, documentación).",
+        "description": "Web application for personnel control (admissions, affiliations, documentation).",
         "highlights": [
-          "PHP (Cake PHP)",
-          "HTML",
-          "CSS (Bootstrap)",
-          "JavaScript",
-          "MariaDB."
+          "Technologies: PHP (CakePHP), HTML, CSS (Bootstrap), JavaScript, MariaDB",
+          "Human resources management system for personnel and documentation control"
         ],
         "url": "#"
       },
       {
         "name": "Metaretos",
-        "description": "Backend para aplicación móvil de retos.",
+        "description": "Backend for mobile challenge application.",
         "highlights": [
-          "Java (Spring Boot Micro Services) - PostgreSQL (JPA) - Docker."
+          "Technologies: Java (Spring Boot Microservices), PostgreSQL (JPA), Docker",
+          "Implementation of scalable microservices architecture"
         ],
         "url": "#"
       },
       {
-        "name": "Catálogo de Servicios",
+        "name": "Service Catalog (2020)",
         "isActive": true,
-        "description": "Aplicativo para mostrar en la intranet los productos y servicios que ofrece cada dependencia de la empresa, y sus respectivos gestores.",
+        "description": "Application to display products and services offered by each company department on the intranet, along with their respective managers.",
         "highlights": [
-          "C# (.NET, Razor Pages)",
-          "SQL Server (Entity Framework Core)."
+          "Technologies: C# (.NET, Razor Pages), SQL Server (Entity Framework Core)",
+          "Creation of internal catalog for optimization of corporate services"
         ],
         "url": "#"
       },
       {
         "name": "Kinansu",
-        "description": "Aplicación web para el seguimiento y programación de mantenimientos correctivos y preventivos de vehículos.",
+        "description": "Web application for tracking and scheduling corrective and preventive vehicle maintenance.",
         "highlights": [
-          "PHP (Cake PHP)",
-          "HTML",
-          "CSS (Semantic UI)",
-          "JavaScript (jQuery)",
-          "Dart (Flutter)."
+          "Technologies: PHP (CakePHP), HTML, CSS (Semantic UI), JavaScript (jQuery), Dart (Flutter)",
+          "Vehicle maintenance management platform with mobile integration"
         ],
         "url": "#"
       }
