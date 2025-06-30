@@ -829,11 +829,11 @@
         "url": "#"
       },
       {
-        "name": "Catálogo de Servicios (2023)",
+        "name": "Catálogo de Servicios (2023 - 2025)",
         "description": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
         "highlights": [
-          "Backend: C# (Rest API ASP.NET, .NET 7), SQL Server (Entity Framework Core)",
-          "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 16)",
+          "Backend: C# (Rest API ASP.NET, .NET 7, .NET 9), SQL Server (Entity Framework Core)",
+          "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 16, Angular 19)",
           "Modernización de plataforma interna con nuevas funcionalidades"
         ],
         "url": "#"

@@ -829,11 +829,11 @@
         "url": "#"
       },
       {
-        "name": "Service Catalog (2023)",
+        "name": "Service Catalog (2023 - 2025)",
         "description": "Intranet application update for internal client service control.",
         "highlights": [
-          "Backend: C# (Rest API ASP.NET, .NET 7), SQL Server (Entity Framework Core)",
-          "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 16)",
+          "Backend: C# (Rest API ASP.NET, .NET 7, .NET 9), SQL Server (Entity Framework Core)",
+          "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 16, Angular 19)",
           "Modernization of internal platform with new functionalities"
         ],
         "url": "#"
