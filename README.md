@@ -5,6 +5,7 @@
 - [**Astro**](https://astro.build/) - El framework web de la nueva época.
 - [**Typescript**](https://www.typescriptlang.org/) - JavaScript con sintaxis de tipado.
 - [**Ninja Keys**](https://github.com/ssleptsov/ninja-keys) - Menu desplegable con atajos de teclado hecho en puro Javascript.
+- [**Midudev**](https://github.com/midudev) - Gracias al crack de Midudev por esta ayuda que personalicé a mi gusto.
 
 
 ## 🚀 Empezar
@@ -20,11 +21,14 @@ corepack enable
 corepack prepare pnpm@latest --activate
 
 # Inicializa el proyecto
+pnpm install
+
+# Ó crea un nuevo proyecto con el template de midudev
 pnpm create astro@latest -- --template midudev/minimalist-portfolio-json
 ```
 
 ### 2. Añade tu contenido:
-Edita el archivo `cv.json` para crear tu propio Portafolio/CV imprimible.
+Edita el archivo `cv_es.json` para crear tu propio Portafolio/CV imprimible.
 ### 3. Lanza el servidor de desarrollo:
 
 ```bash
