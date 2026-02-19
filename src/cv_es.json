@@ -916,10 +916,10 @@
       },
       {
         "name": "Beer Fresh",
-        "description": "Aplicación web para la asministración de la preparación de cerveza.",
+        "description": "Aplicación web para la administración de la preparación de cerveza.",
         "highlights": [
           "Tecnologías: Javascript (Node, Angular, Sequalize), HTML, CSS (Bootstrap), MongoDB",
-          "Aplicaicón web para administrar los insumos y el almacenamiento de barriles de cerveza en fermento."
+          "Aplicación web para administrar los insumos y el almacenamiento de barriles de cerveza en fermento."
         ],
         "url": "#"
       },
