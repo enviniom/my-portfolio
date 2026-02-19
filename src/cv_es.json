@@ -8,7 +8,7 @@
     "email": "jhonccr@gmail.com",
     "phone": "+57 318 657 24 67",
     "url": "https://playkru.com",
-    "summary": "Soy un desarrollador Fullstack con más de 10 años de experiencia en el diseño, desarrollo e implementación de soluciones web, móviles y de escritorio. He participado en todas las etapas del ciclo de vida del software, desde la concepción y arquitectura hasta el despliegue en producción. Mi enfoque está en la creación de aplicaciones robustas, eficientes y escalables, utilizando tecnologías modernas como PHP (CakePHP, Laravel), JavaScript (Angular, Svelte, AlpineJS), Go, y C# (.NET). Me destaco por liderar proyectos, mejorar sistemas existentes y entregar soluciones alineadas a los objetivos del negocio.",
+    "summary": "Soy un desarrollador Fullstack con más de 10 años de experiencia en el diseño, desarrollo e implementación de soluciones web, móviles y de escritorio. He participado en todas las etapas del ciclo de vida del software, desde la concepción y arquitectura hasta el despliegue en producción. Mi enfoque está en la creación de aplicaciones robustas, eficientes y escalables, utilizando tecnologías modernas como PHP (CakePHP, Laravel), JavaScript (Node, Angular, Svelte, AlpineJS), Go, y C# (.NET). Me destaco por liderar proyectos, mejorar sistemas existentes y entregar soluciones alineadas a los objetivos del negocio.",
     "location": {
       "address": "",
       "postalCode": "54001",
@@ -67,6 +67,7 @@
             "HTML",
             "CSS (TailwindCSS, DaisyUI)",
             "JavaScript (AlpineJS, Svelte 5)",
+            "Node",
             "MySQL",
             "Go (Wails con Svelte 5)",
             "Docker (ddev)",
@@ -399,6 +400,34 @@
         },
         "highlights": [
           "Desarrollo y despliegue de aplicativo intranet para visualización de servicios",
+          "Gestión de base de datos y migraciones"
+        ]
+      },
+      {
+        "name": "Beers And More",
+        "position": "Ingeniero de proyecto",
+        "url": "www.google.com",
+        "startDate": "2020-08",
+        "endDate": "2020-10",
+        "summary": "Aplicación web para control de barriles de cerveza en fermento e inventario de insumos.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Definir y normalizar la base de datos",
+            "Desarrollo de la aplicación según lo requerido",
+            "Despliegue de la aplicación en servidor en sitio"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "Javascript (Node, Angular)",
+            "Css (Bootstrap)",
+            "MariaDB (Sequalize)"
+          ]
+        },
+        "highlights": [
+          "Desarrollo y despliegue de aplicativo en servidor local del negocio",
           "Gestión de base de datos y migraciones"
         ]
       },
@@ -882,6 +911,15 @@
         "highlights": [
           "Tecnologías: C# (.NET, Razor Pages), SQL Server (Entity Framework Core)",
           "Creación de catálogo interno para optimización de servicios empresariales"
+        ],
+        "url": "#"
+      },
+      {
+        "name": "Beer Fresh",
+        "description": "Aplicación web para la asministración de la preparación de cerveza.",
+        "highlights": [
+          "Tecnologías: Javascript (Node, Angular, Sequalize), HTML, CSS (Bootstrap), MongoDB",
+          "Aplicaicón web para administrar los insumos y el almacenamiento de barriles de cerveza en fermento."
         ],
         "url": "#"
       },
