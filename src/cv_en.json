@@ -856,7 +856,7 @@
     "title": "Projects",
     "items": [
       {
-        "name": "Aeon Flux",
+        "name": "NeoFluxAI",
         "description": "CRM application for serving potential customers using AI agents.",
         "highlights": [
           "Backend: GO (Gin, Websocket), PostgreSQL (Gorm)",
