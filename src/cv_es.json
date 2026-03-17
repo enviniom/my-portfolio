@@ -856,7 +856,7 @@
     "title": "Proyectos",
     "items": [
       {
-        "name": "NeonFluxAI",
+        "name": "NeoFluxAI",
         "description": "Aplicación CRM para atención de potenciales clientes utilizando agentes IA.",
         "highlights": [
           "Backend: GO (Gin, Websocket), PostgreSQL (Gorm)",
