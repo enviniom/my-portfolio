@@ -40,11 +40,49 @@
     "title": "Work Experience",
     "items": [
       {
+        "name": "Dream Makers.",
+        "position": "Fullstack Developer",
+        "url": "https://www.dreammakers.com.co/",
+        "startDate": "2026-01",
+        "endDate": "2026-03",
+        "summary": "CRM application for serving potential customers using AI agents.",
+        "responsibilities": {
+          "name": "Responsibilities",
+          "items": [
+            "Define application architecture",
+            "Select the most suitable technology stack",
+            "Design and normalize the database",
+            "Lead backend development as required",
+            "Lead frontend application development",
+            "Choosing the best AI provider option",
+            "Perform database migrations",
+            "Deploy the application on the internet in test and production environments on Linux server"
+          ]
+        },
+        "technologies": {
+          "name": "Technologies",
+          "items": [
+            "GO (Gin)",
+            "HTML",
+            "CSS (TailwindCSS, DaisyUI)",
+            "JavaScript (AlpineJS, Svelte 5)",
+            "Node",
+            "PostgreSQL",
+            "Docker (ddev)",
+            "Copilot"
+          ]
+        },
+        "highlights": [
+          "Leadership in project initiation and production deployment",
+          "Implementation of architecture and technology stack from scratch"
+        ]
+      },
+      {
         "name": "Jemaproject S.A.S.",
         "position": "Fullstack Developer",
         "url": "https://www.jemapack.com/",
         "startDate": "2025-03",
-        "endDate": "2025-07",
+        "endDate": "2025-12",
         "summary": "Web solution for production control and registration, raw material consumption traceability, and machinery maintenance.",
         "responsibilities": {
           "name": "Responsibilities",
@@ -817,6 +855,16 @@
   "projects": {
     "title": "Projects",
     "items": [
+      {
+        "name": "Aeon Flux",
+        "description": "CRM application for serving potential customers using AI agents.",
+        "highlights": [
+          "Backend: GO (Gin, Websocket), PostgreSQL (Gorm)",
+          "Frontend: HTML, CSS (Tailwind CSS, Daisy UI), JavaScript (Svelte 5)",
+          "Agent IA configuration with multiple AI Providers"
+        ],
+        "url": "#"
+      },
       {
         "name": "Jemapack",
         "description": "Web solution for internal production registration, control, and management for a plastics factory.",
