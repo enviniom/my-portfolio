@@ -40,6 +40,40 @@
     "title": "Work Experience",
     "items": [
       {
+        "name": "CENS Grupo EPM.",
+        "position": "Fullstack Developer",
+        "url": "https://www.dreammakers.com.co/",
+        "startDate": "2026-03",
+        "endDate": "2026-05",
+        "summary": "Web application to manage the flow of recruitment processes, with an emphasis on dates and tasks.",
+        "responsibilities": {
+          "name": "Responsibilities",
+          "items": [
+            "Define application architecture",
+            "Select the most suitable technology stack",
+            "Design and normalize the database",
+            "Lead backend development as required",
+            "Lead frontend application development",
+            "Perform database migrations",
+            "Deploy the application on the internet in test and production environments on Windows server"
+          ]
+        },
+        "technologies": {
+          "name": "Technologies",
+          "items": [
+            "Backend: C# (REST API ASP.NET, .NET 10), SQL Server (Entity Framework Core, Dapper)",
+            "Frontend: HTML, CSS (Tailwind), JavaScript (Angular 21)",
+            "Intranet Deployment",
+            "IIS"
+          ]
+        },
+        "highlights": [
+          "Leadership in project initiation and production deployment",
+          "Implementation of architecture and technology stack from scratch",
+          "SSD for development through AI support"
+        ]
+      },
+      {
         "name": "Dream Makers.",
         "position": "Fullstack Developer",
         "url": "https://www.dreammakers.com.co/",
