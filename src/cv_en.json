@@ -61,10 +61,11 @@
         "technologies": {
           "name": "Technologies",
           "items": [
-            "Backend: C# (REST API ASP.NET, .NET 10), SQL Server (Entity Framework Core, Dapper)",
+            "Backend: C# (ASP NET 10), PostgreSQL (EntityFramework, Dapper)",
+            "IIS",
+            "SSO with internal Active Directory",
             "Frontend: HTML, CSS (Tailwind), JavaScript (Angular 21)",
-            "Intranet Deployment",
-            "IIS"
+            "Intranet Deployment"
           ]
         },
         "highlights": [
