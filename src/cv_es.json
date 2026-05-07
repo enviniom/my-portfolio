@@ -40,6 +40,40 @@
     "title": "Experiencia laboral",
     "items": [
       {
+        "name": "CENS Grupo EPM",
+        "position": "Desarrollador Fullstack",
+        "url": "https://www.dreammakers.com.co",
+        "startDate": "2026-03",
+        "endDate": "2026-01",
+        "summary": "Aplicación WEB para controlar el flujo de los procesos de contratación, con énfasis en las fechas y tareas",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Definir la arquitectura de la aplicación",
+            "Seleccionar el stack tecnológico más adecuado",
+            "Diseñar y normalizar la base de datos",
+            "Liderar el desarrollo del backend según lo requerido",
+            "Liderar el desarrollo de la aplicación frontend",
+            "Realizar migraciones a la base de datos",
+            "Despliegue de la aplicación en la internet en los ambientes de pruebas y producción en servidor Linux"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+           "Backend: C# (ASP NET 10), PostgreSQL (EntityFramework, Dapper)",
+            "IIS",
+            "SSO con directorio activo interno",
+            "Frontend: HTML, CSS (Tailwind), JavaScript (Angular 21)",
+            "Despliegue en intranet"
+          ]
+        },
+        "highlights": [
+          "Liderazgo en el inicio y despliegue del proyecto en producción",
+          "Implementación de arquitectura y stack tecnológico desde cero"
+        ]
+      },
+      {
         "name": "DreamMakers",
         "position": "Desarrollador Fullstack",
         "url": "https://www.dreammakers.com.co",
@@ -855,6 +889,18 @@
   "projects": {
     "title": "Proyectos",
     "items": [
+      {
+        "name": "SICont",
+        "description": "Aplicación WEB para controlar el flujo de los procesos de contratación, con énfasis en las fechas y tareas",
+        "highlights": [
+          "Backend: C# (ASP NET 10), PostgreSQL (EntityFramework, Dapper), IIS",
+          "Frontend: HTML, CSS (Tailwind), JavaScript (Angular 21)",
+          "Despliegue en intranes",
+          "Notificaciones por correo",
+          "SSO con directorio activo interno"
+        ],
+        "url": "#"
+      },
       {
         "name": "NeoFluxAI",
         "description": "Aplicación CRM para atención de potenciales clientes utilizando agentes IA.",
