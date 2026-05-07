@@ -891,11 +891,21 @@
     "title": "Projects",
     "items": [
       {
-        "name": "NeoFluxAI",
-        "description": "CRM application for serving potential customers using AI agents.",
+        "name": "SICont",
+        "description": "Web application to manage the flow of recruitment processes, with an emphasis on dates and tasks.",
         "highlights": [
           "Backend: GO (Gin, Websocket), PostgreSQL (Gorm)",
           "Frontend: HTML, CSS (Tailwind CSS, Daisy UI), JavaScript (Svelte 5)",
+          "Agent IA configuration with multiple AI Providers"
+        ],
+        "url": "#"
+      },
+      {
+        "name": "NeoFluxAI",
+        "description": "CRM application for serving potential customers using AI agents.",
+        "highlights": [
+          "Backend: C# (ASP.NET 10), PostgreSQL (Entity Framework, Dapper), IIS",
+          "Frontend: HTML, CSS (Tailwind), JavaScript (Angular 21)",
           "Agent IA configuration with multiple AI Providers"
         ],
         "url": "#"
@@ -906,6 +916,9 @@
         "highlights": [
           "Backend: PHP (CakePHP 5), MariaDB (Cake ORM), Go (Wails, API Rest, Gin Gonic)",
           "Frontend: HTML, CSS (Tailwind CSS, Daisy UI), JavaScript (Alpine JS, Svelte 5)",
+          "Intranet deployment",
+          "Email notifications",
+          "SSO with internal Active Directory",
           "Intranet implementation, production control, traceability, and maintenance"
         ],
         "url": "#"
