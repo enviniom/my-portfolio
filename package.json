@@ -2,6 +2,11 @@
   "name": "my-portfolio",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@11.0.9",
+  "engines": {
+    "node": "22.22.0",
+    "pnpm": "11.0.9"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,9 +15,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "astro": "^4.3.0",
-    "ninja-keys": "^1.2.2",
-    "typescript": "^5.3.3"
+    "@astrojs/check": "0.9.9",
+    "astro": "6.3.0",
+    "ninja-keys": "1.2.2",
+    "typescript": "5.3.3"
   }
 }
