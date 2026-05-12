@@ -3,12 +3,12 @@
   "basics": {
     "title": "About Me",
     "name": "Jhon Colmenares",
-    "label": "Fullstack Developer with over 10 years of experience in web, mobile, and desktop applications.",
+    "label": "Senior .NET Fullstack Developer with 10+ years of experience building web, mobile, and desktop applications.",
     "image": "/my-portfolio/cv1.jpg",
     "email": "jhonccr@gmail.com",
     "phone": "+57 318 657 24 67",
     "url": "https://playkru.com",
-    "summary": "I am a Fullstack Developer with over 10 years of experience in the design, development, and implementation of web, mobile, and desktop solutions. I have participated in all stages of the software development lifecycle, from conception and architecture to production deployment. My focus is on creating robust, efficient, and scalable applications using modern technologies such as PHP (CakePHP, Laravel), JavaScript (Node, Angular, Svelte, AlpineJS), Go, and C# (.NET). I excel at leading projects, improving existing systems, and delivering solutions aligned with business objectives.",
+    "summary": "Senior Fullstack Developer with 10+ years of experience designing, building, and deploying enterprise software. Strong background in C# and .NET for backend development, including REST Web APIs, architecture design, SQL modeling, and performance optimization. I have worked across the full software lifecycle, from requirements and system design to production support, code reviews, and continuous delivery practices. I focus on building reliable and scalable systems aligned with business goals.",
     "location": {
       "address": "",
       "postalCode": "54001",
@@ -29,11 +29,11 @@
       }
     ],
     "summaryHighlights": [
-      "More than 10 projects led from scratch to production",
-      "Development experience with a clean architecture approach",
-      "Knowledge of deployment on Linux and Windows servers",
-      "Integration with AWS services like Lambda and S3",
-      "Advanced use of relational and non-relational databases"
+      "10+ years in software development with senior ownership of architecture and delivery",
+      "Hands-on C#/.NET backend development with REST APIs and SQL data modeling",
+      "Experience with Git workflows, code reviews, and CI/CD-oriented delivery",
+      "Production deployments and support on Linux and Windows environments",
+      "AWS integration experience with Lambda and S3"
     ]
   },
   "work": {
@@ -61,17 +61,17 @@
         "technologies": {
           "name": "Technologies",
           "items": [
-            "Backend: C# (ASP NET 10), PostgreSQL (EntityFramework, Dapper)",
+            "Backend: C# (ASP.NET 10, Web API, MVC), PostgreSQL (Entity Framework, Dapper)",
             "IIS",
             "SSO with internal Active Directory",
             "Frontend: HTML, CSS (Tailwind), JavaScript (Angular 21)",
-            "Intranet Deployment"
+            "Git workflows and CI/CD-oriented releases"
           ]
         },
         "highlights": [
           "Leadership in project initiation and production deployment",
           "Implementation of architecture and technology stack from scratch",
-          "SSD for development through AI support"
+          "Backend design with ASP.NET Web API and SQL-focused data access patterns"
         ]
       },
       {
@@ -173,14 +173,15 @@
         "technologies": {
           "name": "Technologies",
           "items": [
-            "Backend: C# (Rest API ASP.NET, .NET 9), SQL Server (Entity Framework Core)",
+            "Backend: C# (ASP.NET Web API, .NET 9), SQL Server (Entity Framework Core)",
             "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 19)",
-            "Intranet Deployment"
+            "Git workflows and collaborative code reviews"
           ]
         },
         "highlights": [
           "Successful technology upgrade and new feature development",
-          "Deployment in test and production environments on Windows server"
+          "Deployment in test and production environments on Windows server",
+          "Maintenance and evolution of REST services integrated with SQL Server"
         ]
       },
       {
@@ -695,7 +696,9 @@
         "keywords": [
           "Version Control",
           "Collaboration",
-          "Source Code"
+          "Source Code",
+          "Bitbucket",
+          "Pull Requests"
         ]
       },
       {
@@ -779,7 +782,11 @@
           "Microsoft Framework",
           "Backend",
           "C#",
-          "Windows Development"
+          "Windows Development",
+          "ASP.NET Web API",
+          "ASP.NET MVC",
+          "REST",
+          "JSON"
         ]
       },
       {
@@ -788,7 +795,18 @@
         "keywords": [
           "Database",
           "SQL",
-          "Microsoft"
+          "Microsoft",
+          "Database Design",
+          "Query Optimization"
+        ]
+      },
+      {
+        "name": "CI/CD",
+        "level": "Intermediate",
+        "keywords": [
+          "Continuous Integration",
+          "Continuous Delivery",
+          "Automation"
         ]
       },
       {

@@ -3,12 +3,12 @@
   "basics": {
     "title": "Sobre mí",
     "name": "Jhon Colmenares",
-    "label": "Desarrollador Fullstack con más de 10 años de experiencia en aplicaciones web, móviles y de escritorio.",
+    "label": "Desarrollador Senior Fullstack .NET con más de 10 años de experiencia en aplicaciones web, móviles y de escritorio.",
     "image": "/my-portfolio/cv1.jpg",
     "email": "jhonccr@gmail.com",
     "phone": "+57 318 657 24 67",
     "url": "https://playkru.com",
-    "summary": "Soy un desarrollador Fullstack con más de 10 años de experiencia en el diseño, desarrollo e implementación de soluciones web, móviles y de escritorio. He participado en todas las etapas del ciclo de vida del software, desde la concepción y arquitectura hasta el despliegue en producción. Mi enfoque está en la creación de aplicaciones robustas, eficientes y escalables, utilizando tecnologías modernas como PHP (CakePHP, Laravel), JavaScript (Node, Angular, Svelte, AlpineJS), Go, y C# (.NET). Me destaco por liderar proyectos, mejorar sistemas existentes y entregar soluciones alineadas a los objetivos del negocio.",
+    "summary": "Soy un desarrollador Senior Fullstack con más de 10 años de experiencia en diseño, construcción y despliegue de software empresarial. Tengo una base sólida en C# y .NET para desarrollo backend, incluyendo APIs REST, diseño de arquitectura, modelado SQL y optimización de rendimiento. He trabajado en todo el ciclo de vida del software, desde levantamiento de requerimientos y diseño técnico hasta soporte en producción, code reviews y prácticas de entrega continua. Mi enfoque es construir soluciones confiables y escalables alineadas con los objetivos del negocio.",
     "location": {
       "address": "",
       "postalCode": "54001",
@@ -29,11 +29,11 @@
       }
     ],
     "summaryHighlights": [
-      "Más de 10 proyectos liderados desde cero hasta producción",
-      "Experiencia en desarrollo con enfoque en arquitectura limpia",
-      "Conocimiento de despliegue en servidores Linux y Windows",
-      "Integración con servicios AWS como Lambda y S3",
-      "Uso avanzado de bases de datos relacionales y no relacionales"
+      "Más de 10 años de experiencia con liderazgo técnico en arquitectura y entrega",
+      "Desarrollo backend con C#/.NET, APIs REST y modelado de datos SQL",
+      "Experiencia con flujos Git, revisión de código y entregas orientadas a CI/CD",
+      "Despliegues y soporte en producción sobre servidores Linux y Windows",
+      "Experiencia de integración con AWS (Lambda y S3)"
     ]
   },
   "work": {
@@ -44,7 +44,7 @@
         "position": "Desarrollador Fullstack",
         "url": "https://www.dreammakers.com.co",
         "startDate": "2026-03",
-        "endDate": "2026-01",
+        "endDate": "2026-05",
         "summary": "Aplicación WEB para controlar el flujo de los procesos de contratación, con énfasis en las fechas y tareas",
         "responsibilities": {
           "name": "Responsabilidades",
@@ -61,16 +61,17 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-           "Backend: C# (ASP NET 10), PostgreSQL (EntityFramework, Dapper)",
+           "Backend: C# (ASP.NET 10, Web API, MVC), PostgreSQL (Entity Framework, Dapper)",
             "IIS",
             "SSO con directorio activo interno",
             "Frontend: HTML, CSS (Tailwind), JavaScript (Angular 21)",
-            "Despliegue en intranet"
+            "Flujos Git y entregas orientadas a CI/CD"
           ]
         },
         "highlights": [
           "Liderazgo en el inicio y despliegue del proyecto en producción",
-          "Implementación de arquitectura y stack tecnológico desde cero"
+          "Implementación de arquitectura y stack tecnológico desde cero",
+          "Diseño backend con ASP.NET Web API y patrones de acceso a datos SQL"
         ]
       },
       {
@@ -172,14 +173,15 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "Backend: C# (Rest API ASP.NET, .NET 9), SQL Server (Entity Framework Core)",
+            "Backend: C# (ASP.NET Web API, .NET 9), SQL Server (Entity Framework Core)",
             "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 19)",
-            "Despliegue en intranet"
+            "Flujos Git y revisión colaborativa de código"
           ]
         },
         "highlights": [
           "Actualización exitosa de tecnologías y desarrollo de nuevas funcionalidades",
-          "Despliegue en entornos de pruebas y producción en servidor Windows"
+          "Despliegue en entornos de pruebas y producción en servidor Windows",
+          "Mantenimiento y evolución de servicios REST integrados con SQL Server"
         ]
       },
       {
@@ -694,7 +696,9 @@
         "keywords": [
           "Control de Versiones",
           "Colaboración",
-          "Código Fuente"
+          "Código Fuente",
+          "Bitbucket",
+          "Pull Requests"
         ]
       },
       {
@@ -778,7 +782,11 @@
           "Framework Microsoft",
           "Backend",
           "C#",
-          "Windows Development"
+          "Windows Development",
+          "ASP.NET Web API",
+          "ASP.NET MVC",
+          "REST",
+          "JSON"
         ]
       },
       {
@@ -787,7 +795,18 @@
         "keywords": [
           "Base de Datos",
           "SQL",
-          "Microsoft"
+          "Microsoft",
+          "Diseno de Base de Datos",
+          "Optimizacion de Consultas"
+        ]
+      },
+      {
+        "name": "CI/CD",
+        "level": "Intermedio",
+        "keywords": [
+          "Integracion Continua",
+          "Entrega Continua",
+          "Automatizacion"
         ]
       },
       {
