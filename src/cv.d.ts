@@ -120,7 +120,7 @@ interface Education {
   items: {
     institution: string;
     url: string;
-    area: sring;
+    area: string;
     studyType: string;
     startDate: DateStr;
     endDate: DateStr;
@@ -171,7 +171,7 @@ interface Interests {
   title: string;
   items: {
     name: string;
-    keywords: Array<stirng>;
+    keywords: Array<string>;
   }[];
 }
 

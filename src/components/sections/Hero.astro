@@ -9,7 +9,7 @@ import WorldMap from "../icons/WorldMap.astro";
 import type { Basics } from "@/cv";
 
 const { basics } = Astro.props;
-const { name, label, summary, image, location, profiles, phone, email } =
+const { name, label, image, location, profiles, phone, email } =
   basics as Basics;
 const { city, region } = location;
 const SOCIAL_ICONS: Record<string, any> = {
