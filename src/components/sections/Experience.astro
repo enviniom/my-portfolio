@@ -3,6 +3,12 @@ import type { Work } from "@/cv";
 import Section from "../Section.astro";
 
 const work = Astro.props.work as Work;
+const isSpanish = work.title.toLowerCase().includes("experiencia");
+const labels = {
+  app: isSpanish ? "Aplicación" : "App",
+  highlights: isSpanish ? "Logros" : "Highlights",
+  present: isSpanish ? "Actual" : "Present",
+};
 ---
 
 <Section title={work.title}>
@@ -17,9 +23,10 @@ const work = Astro.props.work as Work;
           summary,
           responsibilities,
           technologies,
+          highlights,
         }) => {
           const start = startDate.substring(0, 7);
-          const end = endDate != null ? endDate.substring(0, 7) : "Actual";
+          const end = endDate != null ? endDate.substring(0, 7) : labels.present;
           return (
             <li>
               <article>
@@ -33,18 +40,34 @@ const work = Astro.props.work as Work;
                   </time>
                 </header>
                 <p>
-                  <strong>App:</strong>
+                  <strong>{labels.app}:</strong>
                   {summary}
                 </p>
                 <p>
-                  <strong>{responsibilities.name}: </strong>{" "}
-                  {responsibilities.items.join(", ")}
+                  <strong>{responsibilities.name}:</strong>
                 </p>
+                <ul class="detail-list">
+                  {responsibilities.items.slice(0, 5).map((item) => <li>{item}</li>)}
+                </ul>
                 <footer>
                   <p>
-                    <strong>{technologies.name}: </strong>{" "}
-                    {technologies.items.join(", ")}
+                    <strong>{technologies.name}:</strong>
                   </p>
+                  <ul class="tech-list">
+                    {technologies.items.map((item) => <li>{item}</li>)}
+                  </ul>
+                  {
+                    highlights.length > 0 && (
+                      <>
+                        <p>
+                          <strong>{labels.highlights}:</strong>
+                        </p>
+                        <ul class="detail-list">
+                          {highlights.map((item) => <li>{item}</li>)}
+                        </ul>
+                      </>
+                    )
+                  }
                   <hr />
                 </footer>
               </article>
@@ -84,7 +107,38 @@ const work = Astro.props.work as Work;
     opacity: 0.5;
   }
   p {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+  }
+
+  .detail-list {
+    list-style: disc;
+    padding-left: 1.15rem;
+    margin: 0 0 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .detail-list li {
+    color: #444;
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 0.75rem;
+  }
+
+  .tech-list li {
+    border-radius: 6px;
+    background-color: #eee;
+    color: #444;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
   }
 
   @media (width <= 768px) {

@@ -1,18 +1,18 @@
 ---
-import type { Skills } from "@/cv";
+import type { Languages } from "@/cv";
 import Section from "../Section.astro";
 
-const  skills = Astro.props as Skills;
+const languages = Astro.props.languages as Languages;
 ---
 
-<Section title={skills.title}>
+<Section title={languages.title}>
   <ul>
     {
-      skills.items.map(({ name, level }) => (
-       <li>
-        <span>{name}</span>
-        <small>{level}</small>
-        </li>   
+      languages.items.map(({ language, fluency }) => (
+        <li>
+          <span>{language}</span>
+          <small>{fluency}</small>
+        </li>
       ))
     }
   </ul>
@@ -24,6 +24,7 @@ const  skills = Astro.props as Skills;
     gap: 8px;
     flex-wrap: wrap;
   }
+
   li {
     border-radius: 6px;
     background-color: #eee;
@@ -38,7 +39,7 @@ const  skills = Astro.props as Skills;
 
   small {
     color: #555;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     font-weight: 600;
   }
 </style>

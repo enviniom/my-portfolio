@@ -4,11 +4,22 @@ import Education from "@/components/sections/Education.astro";
 import Experience from "@/components/sections/Experience.astro";
 import Hero from "@/components/sections/Hero.astro";
 import InterestsHobbies from "@/components/sections/InterestsHobbies.astro";
+import Languages from "@/components/sections/Languages.astro";
 import Layout from "@/layouts/Layout.astro";
 import Projects from "@/components/sections/Projects.astro";
+import Skills from "@/components/sections/Skills.astro";
 import TopBar from "@/components/sections/TopBar.astro";
 
-import { basics, title, work, projects, education, interests } from "@cv_en";
+import {
+  basics,
+  title,
+  work,
+  projects,
+  education,
+  interests,
+  skills,
+  languages,
+} from "@cv_en";
 const { name, summary } = basics;
 
 ---
@@ -17,10 +28,16 @@ const { name, summary } = basics;
   <main>
     <TopBar />
     <Hero basics={basics} />
-    <About title={basics.title} summary={summary} />
+    <About
+      title={basics.title}
+      summary={summary}
+      highlights={basics.summaryHighlights}
+    />
     <Experience work={work} />
+    <Skills {...skills} />
     <Projects projects={projects} />
     <Education education={education} />
+    <Languages languages={languages} />
     <InterestsHobbies interests={interests} />
   </main>
 </Layout>

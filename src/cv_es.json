@@ -75,6 +75,133 @@
         ]
       },
       {
+        "name": "CENS Grupo EPM",
+        "position": "Desarrollador Fullstack",
+        "url": "www.cens.com.co",
+        "startDate": "2025-04",
+        "endDate": "2025-05",
+        "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Actualización a nuevas versiones de la tecnología",
+            "Desarrollo de nuevas funcionalidades",
+            "Liderar el desarrollo de la aplicación backend y frontend según lo requerido",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor Windows",
+            "Realizar migraciones a la base de datos"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "Backend: C# (ASP.NET Web API, .NET 9), SQL Server (Entity Framework Core)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 19)",
+            "Flujos Git y revisión colaborativa de código"
+          ]
+        },
+        "highlights": [
+          "Actualización exitosa de tecnologías y desarrollo de nuevas funcionalidades",
+          "Despliegue en entornos de pruebas y producción en servidor Windows",
+          "Mantenimiento y evolución de servicios REST integrados con SQL Server"
+        ]
+      },
+      {
+        "name": "DTL360",
+        "position": "Desarrollador Backend",
+        "url": "www.google.com",
+        "startDate": "2022-03",
+        "endDate": "2022-10",
+        "summary": "Backend API Rest microservicios para aplicación móvil de retos.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Desarrollo del backend según la arquitectura definida, por microservicios",
+            "Implementar RabbitMQ",
+            "Implementar Docker",
+            "Soporte al equipo frontend (Flutter y Angular)",
+            "Realizar migraciones a la base de datos",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas en AWS"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "Java (Spring Boot Microservices)",
+            "PostgreSQL (JPA)",
+            "Docker",
+            "RabbitMQ",
+            "AWS"
+          ]
+        },
+        "highlights": [
+          "Implementación de arquitectura de microservicios con Spring Boot y Docker",
+          "Integración con RabbitMQ y soporte a equipos frontend"
+        ]
+      },
+      {
+        "name": "CENS Grupo EPM",
+        "position": "Desarrollador Fullstack",
+        "url": "www.google.com",
+        "startDate": "2023-07",
+        "endDate": "2023-10",
+        "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Definir la nueva arquitectura de la aplicación",
+            "Definir las tecnologías a utilizar",
+            "Definir y normalizar la base de datos",
+            "Liderar el desarrollo de la aplicación backend y frontend según lo requerido",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor Windows",
+            "Realizar migraciones a la base de datos"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "Backend: C# (Rest API ASP.NET, .NET 7), SQL Server (Entity Framework Core)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 17)",
+            "Despliegue en intranet"
+          ]
+        },
+        "highlights": [
+          "Liderazgo en la redefinición de arquitectura y tecnologías para la aplicación",
+          "Gestión de migraciones y despliegues en entornos de producción"
+        ]
+      },
+      {
+        "name": "Preconcretos",
+        "position": "Ingeniero de software",
+        "url": "www.google.com",
+        "startDate": "2022-07",
+        "endDate": "2023-05",
+        "summary": "Solución web para el control y registro de producción, control de trabajadores, horas trabajadas, con integración al programa contable.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Definir la arquitectura de la aplicación",
+            "Definir las tecnologías a utilizar",
+            "Definir y normalizar la base de datos",
+            "Liderar el desarrollo del backend según lo requerido",
+            "Liderar el desarrollo de la aplicación frontend",
+            "Desarrollo de API Rest en Go para comunicación con el programa contable",
+            "Realizar migraciones a la base de datos",
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor Linux"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "Backend: PHP (Rest API CakePHP y JWT), MariaDB y FireBird, GO (Gin)",
+            "Frontend: HTML, CSS, JavaScript (Angular 15, Angular Material 15)"
+          ]
+        },
+        "highlights": [
+          "Liderazgo en el ciclo completo de desarrollo de una solución de control de producción",
+          "Integración exitosa con programa contable mediante API Rest en Go"
+        ]
+      },
+      {
         "name": "DreamMakers",
         "position": "Desarrollador Fullstack",
         "url": "https://www.dreammakers.com.co",
@@ -155,17 +282,16 @@
       },
       {
         "name": "CENS Grupo EPM",
-        "position": "Desarrollador Fullstack",
-        "url": "www.cens.com.co",
-        "startDate": "2025-04",
-        "endDate": "2025-05",
-        "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
+        "position": "Ingeniero de proyecto",
+        "url": "www.google.com",
+        "startDate": "2020-11",
+        "endDate": "2021-03",
+        "summary": "Aplicativo para mostrar en la intranet los productos y servicios que ofrece cada dependencia de la empresa, y sus respectivos gestores.",
         "responsibilities": {
           "name": "Responsabilidades",
           "items": [
-            "Actualización a nuevas versiones de la tecnología",
-            "Desarrollo de nuevas funcionalidades",
-            "Liderar el desarrollo de la aplicación backend y frontend según lo requerido",
+            "Definir y normalizar la base de datos",
+            "Desarrollo de la aplicación según lo requerido",
             "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor Windows",
             "Realizar migraciones a la base de datos"
           ]
@@ -173,15 +299,13 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "Backend: C# (ASP.NET Web API, .NET 9), SQL Server (Entity Framework Core)",
-            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 19)",
-            "Flujos Git y revisión colaborativa de código"
+            "C# (.NET, Razor Pages)",
+            "SQL Server (Entity Framework Core)"
           ]
         },
         "highlights": [
-          "Actualización exitosa de tecnologías y desarrollo de nuevas funcionalidades",
-          "Despliegue en entornos de pruebas y producción en servidor Windows",
-          "Mantenimiento y evolución de servicios REST integrados con SQL Server"
+          "Desarrollo y despliegue de aplicativo intranet para visualización de servicios",
+          "Gestión de base de datos y migraciones"
         ]
       },
       {
@@ -221,54 +345,21 @@
         ]
       },
       {
-        "name": "DTL 360",
-        "position": "Desarrollador Frontend",
-        "url": "https://proveedores.direccionsustitucion.gov.co/",
-        "startDate": "2024-08",
-        "endDate": "2024-11",
-        "summary": "Solución Web que permite conectar campesinos con proveedores para la adquisición de productos que permitan la sustitución de cultivos ilícitos en zonas de conflicto.",
-        "responsibilities": {
-          "name": "Responsabilidades",
-          "items": [
-            "Desarrollo del aplicativo Web",
-            "Desarrollo del panel administrativo",
-            "Consumir servicios del API Rest",
-            "Implementar el diseño de marca",
-            "Aportar ideas para la mejora del proyecto",
-            "Despliegue en entorno de pruebas",
-            "Diseño responsive"
-          ]
-        },
-        "technologies": {
-          "name": "Tecnologías",
-          "items": [
-            "HTML",
-            "CSS",
-            "JavaScript (Angular 18, Angular Material)",
-            "Recaptcha"
-          ]
-        },
-        "highlights": [
-          "Diseño e implementación de interfaz de usuario para un proyecto socialmente relevante",
-          "Desarrollo de panel administrativo y consumo de APIs"
-        ]
-      },
-      {
-        "name": "Brinks",
-        "position": "Desarrollador Backend",
+        "name": "Preconcretos",
+        "position": "Ingeniero de software",
         "url": "www.google.com",
-        "startDate": "2023-11",
-        "endDate": "2024-02",
-        "summary": "Aplicación web para streaming de contenido de video dedicado a deportes universitarios.",
+        "startDate": "2021-04",
+        "endDate": "2022-07",
+        "summary": "Aplicación web para el control del personal (ingresos, afiliaciones, documentación).",
         "responsibilities": {
           "name": "Responsabilidades",
           "items": [
-            "Desarrollo de nuevas funcionalidades",
-            "Depuración de errores en el código",
+            "Definir la arquitectura de la aplicación",
+            "Definir las tecnologías a utilizar",
+            "Definir y normalizar la base de datos",
+            "Liderar el desarrollo de la aplicación según lo requerido",
             "Realizar migraciones a la base de datos",
-            "Ajuste de funciones Lambda",
-            "Actualización de la documentación interna",
-            "Mantenimiento del panel administrativo"
+            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor Linux"
           ]
         },
         "technologies": {
@@ -277,76 +368,13 @@
             "PHP (CakePHP)",
             "HTML",
             "CSS (Bootstrap)",
-            "JavaScript (JQuery)",
-            "MySQL"
+            "JavaScript",
+            "MariaDB"
           ]
         },
         "highlights": [
-          "Desarrollo de funcionalidades backend para plataforma de streaming",
-          "Mantenimiento y optimización de base de datos"
-        ]
-      },
-      {
-        "name": "CENS Grupo EPM",
-        "position": "Desarrollador Fullstack",
-        "url": "www.google.com",
-        "startDate": "2023-07",
-        "endDate": "2023-10",
-        "summary": "Actualización de aplicación intranet para control de servicios ofrecidos al cliente interno.",
-        "responsibilities": {
-          "name": "Responsabilidades",
-          "items": [
-            "Definir la nueva arquitectura de la aplicación",
-            "Definir las tecnologías a utilizar",
-            "Definir y normalizar la base de datos",
-            "Liderar el desarrollo de la aplicación backend y frontend según lo requerido",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor Windows",
-            "Realizar migraciones a la base de datos"
-          ]
-        },
-        "technologies": {
-          "name": "Tecnologías",
-          "items": [
-            "Backend: C# (Rest API ASP.NET, .NET 7), SQL Server (Entity Framework Core)",
-            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 17)",
-            "Despliegue en intranet"
-          ]
-        },
-        "highlights": [
-          "Liderazgo en la redefinición de arquitectura y tecnologías para la aplicación",
-          "Gestión de migraciones y despliegues en entornos de producción"
-        ]
-      },
-      {
-        "name": "Preconcretos",
-        "position": "Ingeniero de software",
-        "url": "www.google.com",
-        "startDate": "2022-07",
-        "endDate": "2023-05",
-        "summary": "Solución web para el control y registro de producción, control de trabajadores, horas trabajadas, con integración al programa contable.",
-        "responsibilities": {
-          "name": "Responsabilidades",
-          "items": [
-            "Definir la arquitectura de la aplicación",
-            "Definir las tecnologías a utilizar",
-            "Definir y normalizar la base de datos",
-            "Liderar el desarrollo del backend según lo requerido",
-            "Liderar el desarrollo de la aplicación frontend",
-            "Desarrollo de API Rest en Go para comunicación con el programa contable",
-            "Realizar migraciones a la base de datos",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor Linux"
-          ]
-        },
-        "technologies": {
-          "name": "Tecnologías",
-          "items": [
-            "Backend: PHP (Rest API CakePHP y JWT), MariaDB y FireBird, GO (Gin)",
-            "Frontend: HTML, CSS, JavaScript (Angular 15, Angular Material 15)"
-          ]
-        },
-        "highlights": [
-          "Liderazgo en el ciclo completo de desarrollo de una solución de control de producción",
-          "Integración exitosa con programa contable mediante API Rest en Go"
+          "Liderazgo en el desarrollo de una aplicación web para la gestión integral de personal",
+          "Gestión de despliegues y migraciones de bases de datos"
         ]
       },
       {
@@ -384,100 +412,6 @@
         ]
       },
       {
-        "name": "Preconcretos",
-        "position": "Ingeniero de software",
-        "url": "www.google.com",
-        "startDate": "2021-04",
-        "endDate": "2022-07",
-        "summary": "Aplicación web para el control del personal (ingresos, afiliaciones, documentación).",
-        "responsibilities": {
-          "name": "Responsabilidades",
-          "items": [
-            "Definir la arquitectura de la aplicación",
-            "Definir las tecnologías a utilizar",
-            "Definir y normalizar la base de datos",
-            "Liderar el desarrollo de la aplicación según lo requerido",
-            "Realizar migraciones a la base de datos",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor Linux"
-          ]
-        },
-        "technologies": {
-          "name": "Tecnologías",
-          "items": [
-            "PHP (CakePHP)",
-            "HTML",
-            "CSS (Bootstrap)",
-            "JavaScript",
-            "MariaDB"
-          ]
-        },
-        "highlights": [
-          "Liderazgo en el desarrollo de una aplicación web para la gestión integral de personal",
-          "Gestión de despliegues y migraciones de bases de datos"
-        ]
-      },
-      {
-        "name": "DTL360",
-        "position": "Desarrollador Backend",
-        "url": "www.google.com",
-        "startDate": "2022-03",
-        "endDate": "2022-10",
-        "summary": "Backend API Rest microservicios para aplicación móvil de retos.",
-        "responsibilities": {
-          "name": "Responsabilidades",
-          "items": [
-            "Desarrollo del backend según la arquitectura definida, por microservicios",
-            "Implementar RabbitMQ",
-            "Implementar Docker",
-            "Soporte al equipo frontend (Flutter y Angular)",
-            "Realizar migraciones a la base de datos",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas en AWS"
-          ]
-        },
-        "technologies": {
-          "name": "Tecnologías",
-          "items": [
-            "Java (Spring Boot Microservices)",
-            "PostgreSQL (JPA)",
-            "Docker",
-            "RabbitMQ",
-            "AWS"
-          ]
-        },
-        "highlights": [
-          "Implementación de arquitectura de microservicios con Spring Boot y Docker",
-          "Integración con RabbitMQ y soporte a equipos frontend"
-        ]
-      },
-      {
-        "name": "CENS Grupo EPM",
-        "position": "Ingeniero de proyecto",
-        "url": "www.google.com",
-        "startDate": "2020-11",
-        "endDate": "2021-03",
-        "summary": "Aplicativo para mostrar en la intranet los productos y servicios que ofrece cada dependencia de la empresa, y sus respectivos gestores.",
-        "responsibilities": {
-          "name": "Responsabilidades",
-          "items": [
-            "Definir y normalizar la base de datos",
-            "Desarrollo de la aplicación según lo requerido",
-            "Despliegue de la aplicación en la intranet en los ambientes de pruebas y producción en servidor Windows",
-            "Realizar migraciones a la base de datos"
-          ]
-        },
-        "technologies": {
-          "name": "Tecnologías",
-          "items": [
-            "C# (.NET, Razor Pages)",
-            "SQL Server (Entity Framework Core)"
-          ]
-        },
-        "highlights": [
-          "Desarrollo y despliegue de aplicativo intranet para visualización de servicios",
-          "Gestión de base de datos y migraciones"
-        ]
-      },
-      {
         "name": "Beers And More",
         "position": "Ingeniero de proyecto",
         "url": "www.google.com",
@@ -503,6 +437,72 @@
         "highlights": [
           "Desarrollo y despliegue de aplicativo en servidor local del negocio",
           "Gestión de base de datos y migraciones"
+        ]
+      },
+      {
+        "name": "Brinks",
+        "position": "Desarrollador Backend",
+        "url": "www.google.com",
+        "startDate": "2023-11",
+        "endDate": "2024-02",
+        "summary": "Aplicación web para streaming de contenido de video dedicado a deportes universitarios.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Desarrollo de nuevas funcionalidades",
+            "Depuración de errores en el código",
+            "Realizar migraciones a la base de datos",
+            "Ajuste de funciones Lambda",
+            "Actualización de la documentación interna",
+            "Mantenimiento del panel administrativo"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "PHP (CakePHP)",
+            "HTML",
+            "CSS (Bootstrap)",
+            "JavaScript (JQuery)",
+            "MySQL"
+          ]
+        },
+        "highlights": [
+          "Desarrollo de funcionalidades backend para plataforma de streaming",
+          "Mantenimiento y optimización de base de datos"
+        ]
+      },
+      {
+        "name": "DTL 360",
+        "position": "Desarrollador Frontend",
+        "url": "https://proveedores.direccionsustitucion.gov.co/",
+        "startDate": "2024-08",
+        "endDate": "2024-11",
+        "summary": "Solución Web que permite conectar campesinos con proveedores para la adquisición de productos que permitan la sustitución de cultivos ilícitos en zonas de conflicto.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Desarrollo del aplicativo Web",
+            "Desarrollo del panel administrativo",
+            "Consumir servicios del API Rest",
+            "Implementar el diseño de marca",
+            "Aportar ideas para la mejora del proyecto",
+            "Despliegue en entorno de pruebas",
+            "Diseño responsive"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "HTML",
+            "CSS",
+            "JavaScript (Angular 18, Angular Material)",
+            "Recaptcha"
+          ]
+        },
+        "highlights": [
+          "Diseño e implementación de interfaz de usuario para un proyecto socialmente relevante",
+          "Desarrollo de panel administrativo y consumo de APIs"
         ]
       },
       {
@@ -588,37 +588,15 @@
   },
   "awards": {
     "title": "Premios",
-    "items": [
-      {
-        "title": "Award",
-        "date": "2014-11-01",
-        "awarder": "Company",
-        "summary": "There is no spoon."
-      }
-    ]
+    "items": []
   },
   "certificates": {
     "title": "Certificados",
-    "items": [
-      {
-        "name": "Certificate",
-        "date": "2021-11-07",
-        "issuer": "Company",
-        "url": "https://certificate.com"
-      }
-    ]
+    "items": []
   },
   "publications": {
     "title": "Publicaciones",
-    "items": [
-      {
-        "name": "Publication",
-        "publisher": "Company",
-        "releaseDate": "2014-10-01",
-        "url": "https://publication.com",
-        "summary": "Description…"
-      }
-    ]
+    "items": []
   },
   "skills": {
     "title": "Habilidades",
@@ -900,8 +878,8 @@
     "title": "Referencias",
     "items": [
       {
-        "name": "Blanca Valero",
-        "reference": "Esposa"
+        "name": "Referencias profesionales",
+        "reference": "Disponibles bajo solicitud"
       }
     ]
   },
