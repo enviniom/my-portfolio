@@ -42,7 +42,7 @@
       {
         "name": "CENS Grupo EPM.",
         "position": "Fullstack Developer",
-        "url": "https://www.dreammakers.com.co/",
+        "url": "www.cens.com.co",
         "startDate": "2026-03",
         "endDate": "2026-05",
         "summary": "Web application to manage the flow of recruitment processes, with an emphasis on dates and tasks.",
@@ -75,136 +75,9 @@
         ]
       },
       {
-        "name": "CENS Grupo EPM",
-        "position": "Fullstack Developer",
-        "url": "www.cens.com.co",
-        "startDate": "2025-04",
-        "endDate": "2025-05",
-        "summary": "Intranet application update for internal client service control.",
-        "responsibilities": {
-          "name": "Responsibilities",
-          "items": [
-            "Update to new technology versions",
-            "Develop new functionalities",
-            "Lead backend and frontend application development as required",
-            "Deploy the application on the intranet in test and production environments on Windows server",
-            "Perform database migrations"
-          ]
-        },
-        "technologies": {
-          "name": "Technologies",
-          "items": [
-            "Backend: C# (ASP.NET Web API, .NET 9), SQL Server (Entity Framework Core)",
-            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 19)",
-            "Git workflows and collaborative code reviews"
-          ]
-        },
-        "highlights": [
-          "Successful technology upgrade and new feature development",
-          "Deployment in test and production environments on Windows server",
-          "Maintenance and evolution of REST services integrated with SQL Server"
-        ]
-      },
-      {
-        "name": "DTL360",
-        "position": "Backend Developer",
-        "url": "www.google.com",
-        "startDate": "2022-03",
-        "endDate": "2022-10",
-        "summary": "Backend REST API microservices for mobile challenge application.",
-        "responsibilities": {
-          "name": "Responsibilities",
-          "items": [
-            "Develop backend according to defined microservices architecture",
-            "Implement RabbitMQ",
-            "Implement Docker",
-            "Support frontend team (Flutter and Angular)",
-            "Perform database migrations",
-            "Deploy the application on the intranet in test environments on AWS"
-          ]
-        },
-        "technologies": {
-          "name": "Technologies",
-          "items": [
-            "Java (Spring Boot Microservices)",
-            "PostgreSQL (JPA)",
-            "Docker",
-            "RabbitMQ",
-            "AWS"
-          ]
-        },
-        "highlights": [
-          "Implementation of microservices architecture with Spring Boot and Docker",
-          "Integration with RabbitMQ and support for frontend teams"
-        ]
-      },
-      {
-        "name": "CENS Grupo EPM",
-        "position": "Fullstack Developer",
-        "url": "www.google.com",
-        "startDate": "2023-07",
-        "endDate": "2023-10",
-        "summary": "Intranet application update for internal client service control.",
-        "responsibilities": {
-          "name": "Responsibilities",
-          "items": [
-            "Define the new application architecture",
-            "Define technologies to use",
-            "Define and normalize the database",
-            "Lead backend and frontend application development as required",
-            "Deploy the application on the intranet in test and production environments on Windows server",
-            "Perform database migrations"
-          ]
-        },
-        "technologies": {
-          "name": "Technologies",
-          "items": [
-            "Backend: C# (Rest API ASP.NET, .NET 7), SQL Server (Entity Framework Core)",
-            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 17)",
-            "Intranet Deployment"
-          ]
-        },
-        "highlights": [
-          "Leadership in redefining application architecture and technologies",
-          "Management of migrations and deployments in production environments"
-        ]
-      },
-      {
-        "name": "Preconcretos",
-        "position": "Software Engineer",
-        "url": "www.google.com",
-        "startDate": "2022-07",
-        "endDate": "2023-05",
-        "summary": "Web solution for production control and registration, worker control, hours worked, with integration to accounting software.",
-        "responsibilities": {
-          "name": "Responsibilities",
-          "items": [
-            "Define application architecture",
-            "Define technologies to use",
-            "Define and normalize the database",
-            "Lead backend development as required",
-            "Lead frontend application development",
-            "Develop REST API in Go for communication with accounting software",
-            "Perform database migrations",
-            "Deploy the application on the intranet in test and production environments on Linux server"
-          ]
-        },
-        "technologies": {
-          "name": "Technologies",
-          "items": [
-            "Backend: PHP (Rest API CakePHP and JWT), MariaDB and FireBird, GO (Gin)",
-            "Frontend: HTML, CSS, JavaScript (Angular 15, Angular Material 15)"
-          ]
-        },
-        "highlights": [
-          "Leadership in the full development cycle of a production control solution",
-          "Successful integration with accounting software via Go REST API"
-        ]
-      },
-      {
         "name": "Dream Makers.",
         "position": "Fullstack Developer",
-        "url": "https://www.dreammakers.com.co/",
+        "url": "www.dreammakers.com.co",
         "startDate": "2026-01",
         "endDate": "2026-03",
         "summary": "CRM application for serving potential customers using AI agents.",
@@ -240,9 +113,42 @@
         ]
       },
       {
+        "name": "DTL 360",
+        "position": "Frontend Developer",
+        "url": "proveedores.direccionsustitucion.gov.co",
+        "startDate": "2024-07",
+        "endDate": "2026-02",
+        "summary": "Web solution connecting farmers with suppliers for the acquisition of products to substitute illicit crops in conflict zones.",
+        "responsibilities": {
+          "name": "Responsibilities",
+          "items": [
+            "Develop the Web application",
+            "Develop the administrative panel",
+            "Consume REST API services",
+            "Implement brand design",
+            "Contribute ideas for project improvement",
+            "Deploy in test environment",
+            "Implement responsive design"
+          ]
+        },
+        "technologies": {
+          "name": "Technologies",
+          "items": [
+            "HTML",
+            "CSS",
+            "JavaScript (Angular 18, Angular Material)",
+            "Recaptcha"
+          ]
+        },
+        "highlights": [
+          "Design and implementation of user interface for a socially relevant project",
+          "Development of administrative panel and API consumption"
+        ]
+      },
+      {
         "name": "Jemaproject S.A.S.",
         "position": "Fullstack Developer",
-        "url": "https://www.jemapack.com/",
+        "url": "www.jemapack.com",
         "startDate": "2025-03",
         "endDate": "2026-01",
         "summary": "Web solution for production control and registration, raw material consumption traceability, and machinery maintenance.",
@@ -282,16 +188,17 @@
       },
       {
         "name": "CENS Grupo EPM",
-        "position": "Project Engineer",
-        "url": "www.google.com",
-        "startDate": "2020-11",
-        "endDate": "2021-03",
-        "summary": "Application to display products and services offered by each company department on the intranet, along with their respective managers.",
+        "position": "Fullstack Developer",
+        "url": "www.cens.com.co",
+        "startDate": "2025-04",
+        "endDate": "2025-05",
+        "summary": "Intranet application update for internal client service control.",
         "responsibilities": {
           "name": "Responsibilities",
           "items": [
-            "Define and normalize the database",
-            "Develop the application as required",
+            "Update to new technology versions",
+            "Develop new functionalities",
+            "Lead backend and frontend application development as required",
             "Deploy the application on the intranet in test and production environments on Windows server",
             "Perform database migrations"
           ]
@@ -299,19 +206,21 @@
         "technologies": {
           "name": "Technologies",
           "items": [
-            "C# (.NET, Razor Pages)",
-            "SQL Server (Entity Framework Core)"
+            "Backend: C# (ASP.NET Web API, .NET 9), SQL Server (Entity Framework Core)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 19)",
+            "Git workflows and collaborative code reviews"
           ]
         },
         "highlights": [
-          "Development and deployment of intranet application for service visualization",
-          "Database and migration management"
+          "Successful technology upgrade and new feature development",
+          "Deployment in test and production environments on Windows server",
+          "Maintenance and evolution of REST services integrated with SQL Server"
         ]
       },
       {
         "name": "Arivo",
         "position": "Backend Developer",
-        "url": "https://www.ftwin360.com/",
+        "url": "www.ftwin360.com",
         "startDate": "2024-06",
         "endDate": "2025-02",
         "summary": "Web and mobile application for on-demand video playback dedicated to university sports.",
@@ -345,21 +254,21 @@
         ]
       },
       {
-        "name": "Preconcretos",
-        "position": "Software Engineer",
-        "url": "www.google.com",
-        "startDate": "2021-04",
-        "endDate": "2022-07",
-        "summary": "Web application for personnel control (admissions, affiliations, documentation).",
+        "name": "Brinks",
+        "position": "Backend Developer",
+        "url": "#",
+        "startDate": "2023-11",
+        "endDate": "2024-02",
+        "summary": "Web application for streaming video content dedicated to university sports.",
         "responsibilities": {
           "name": "Responsibilities",
           "items": [
-            "Define application architecture",
-            "Define technologies to use",
-            "Define and normalize the database",
-            "Lead application development as required",
+            "Develop new functionalities",
+            "Debug code errors",
             "Perform database migrations",
-            "Deploy the application on the intranet in test and production environments on Linux server"
+            "Adjust Lambda functions",
+            "Update internal documentation",
+            "Maintain administrative panel"
           ]
         },
         "technologies": {
@@ -368,19 +277,115 @@
             "PHP (CakePHP)",
             "HTML",
             "CSS (Bootstrap)",
-            "JavaScript",
-            "MariaDB"
+            "JavaScript (JQuery)",
+            "MySQL"
           ]
         },
         "highlights": [
-          "Leadership in the development of a web application for comprehensive personnel management",
-          "Management of database deployments and migrations"
+          "Backend functionalities development for streaming platform",
+          "Database maintenance and optimization"
+        ]
+      },
+      {
+        "name": "CENS Grupo EPM",
+        "position": "Fullstack Developer",
+        "url": "www.cens.com.co",
+        "startDate": "2023-07",
+        "endDate": "2023-10",
+        "summary": "Intranet application update for internal client service control.",
+        "responsibilities": {
+          "name": "Responsibilities",
+          "items": [
+            "Define the new application architecture",
+            "Define technologies to use",
+            "Define and normalize the database",
+            "Lead backend and frontend application development as required",
+            "Deploy the application on the intranet in test and production environments on Windows server",
+            "Perform database migrations"
+          ]
+        },
+        "technologies": {
+          "name": "Technologies",
+          "items": [
+            "Backend: C# (Rest API ASP.NET, .NET 7), SQL Server (Entity Framework Core)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 17)",
+            "Intranet Deployment"
+          ]
+        },
+        "highlights": [
+          "Leadership in redefining application architecture and technologies",
+          "Management of migrations and deployments in production environments"
+        ]
+      },
+      {
+        "name": "Preconcretos",
+        "position": "Software Engineer",
+        "url": "#",
+        "startDate": "2022-07",
+        "endDate": "2023-05",
+        "summary": "Web solution for production control and registration, worker control, hours worked, with integration to accounting software.",
+        "responsibilities": {
+          "name": "Responsibilities",
+          "items": [
+            "Define application architecture",
+            "Define technologies to use",
+            "Define and normalize the database",
+            "Lead backend development as required",
+            "Lead frontend application development",
+            "Develop REST API in Go for communication with accounting software",
+            "Perform database migrations",
+            "Deploy the application on the intranet in test and production environments on Linux server"
+          ]
+        },
+        "technologies": {
+          "name": "Technologies",
+          "items": [
+            "Backend: PHP (Rest API CakePHP and JWT), MariaDB and FireBird, GO (Gin)",
+            "Frontend: HTML, CSS, JavaScript (Angular 15, Angular Material 15)"
+          ]
+        },
+        "highlights": [
+          "Leadership in the full development cycle of a production control solution",
+          "Successful integration with accounting software via Go REST API"
+        ]
+      },
+      {
+        "name": "DTL360",
+        "position": "Backend Developer",
+        "url": "dtl360.com/home",
+        "startDate": "2022-03",
+        "endDate": "2022-10",
+        "summary": "Backend REST API microservices for mobile challenge application.",
+        "responsibilities": {
+          "name": "Responsibilities",
+          "items": [
+            "Develop backend according to defined microservices architecture",
+            "Implement RabbitMQ",
+            "Implement Docker",
+            "Support frontend team (Flutter and Angular)",
+            "Perform database migrations",
+            "Deploy the application on the intranet in test environments on AWS"
+          ]
+        },
+        "technologies": {
+          "name": "Technologies",
+          "items": [
+            "Java (Spring Boot Microservices)",
+            "PostgreSQL (JPA)",
+            "Docker",
+            "RabbitMQ",
+            "AWS"
+          ]
+        },
+        "highlights": [
+          "Implementation of microservices architecture with Spring Boot and Docker",
+          "Integration with RabbitMQ and support for frontend teams"
         ]
       },
       {
         "name": "Casa de Funerales Rincón",
         "position": "Web Developer",
-        "url": "www.google.com",
+        "url": "#",
         "startDate": "2022-07",
         "endDate": "2022-10",
         "summary": "Video custody software with last will.",
@@ -412,9 +417,70 @@
         ]
       },
       {
+        "name": "Preconcretos",
+        "position": "Software Engineer",
+        "url": "#",
+        "startDate": "2021-04",
+        "endDate": "2022-07",
+        "summary": "Web application for personnel control (admissions, affiliations, documentation).",
+        "responsibilities": {
+          "name": "Responsibilities",
+          "items": [
+            "Define application architecture",
+            "Define technologies to use",
+            "Define and normalize the database",
+            "Lead application development as required",
+            "Perform database migrations",
+            "Deploy the application on the intranet in test and production environments on Linux server"
+          ]
+        },
+        "technologies": {
+          "name": "Technologies",
+          "items": [
+            "PHP (CakePHP)",
+            "HTML",
+            "CSS (Bootstrap)",
+            "JavaScript",
+            "MariaDB"
+          ]
+        },
+        "highlights": [
+          "Leadership in the development of a web application for comprehensive personnel management",
+          "Management of database deployments and migrations"
+        ]
+      },
+      {
+        "name": "CENS Grupo EPM",
+        "position": "Project Engineer",
+        "url": "www.cens.com.co",
+        "startDate": "2020-11",
+        "endDate": "2021-03",
+        "summary": "Application to display products and services offered by each company department on the intranet, along with their respective managers.",
+        "responsibilities": {
+          "name": "Responsibilities",
+          "items": [
+            "Define and normalize the database",
+            "Develop the application as required",
+            "Deploy the application on the intranet in test and production environments on Windows server",
+            "Perform database migrations"
+          ]
+        },
+        "technologies": {
+          "name": "Technologies",
+          "items": [
+            "C# (.NET, Razor Pages)",
+            "SQL Server (Entity Framework Core)"
+          ]
+        },
+        "highlights": [
+          "Development and deployment of intranet application for service visualization",
+          "Database and migration management"
+        ]
+      },
+      {
         "name": "Beers And More",
         "position": "Project Engineer",
-        "url": "www.google.com",
+        "url": "#",
         "startDate": "2020-08",
         "endDate": "2020-10",
         "summary": "Web application for controlling beer barrels in fermentation and inventory of supplies.",
@@ -440,75 +506,9 @@
         ]
       },
       {
-        "name": "Brinks",
-        "position": "Backend Developer",
-        "url": "www.google.com",
-        "startDate": "2023-11",
-        "endDate": "2024-02",
-        "summary": "Web application for streaming video content dedicated to university sports.",
-        "responsibilities": {
-          "name": "Responsibilities",
-          "items": [
-            "Develop new functionalities",
-            "Debug code errors",
-            "Perform database migrations",
-            "Adjust Lambda functions",
-            "Update internal documentation",
-            "Maintain administrative panel"
-          ]
-        },
-        "technologies": {
-          "name": "Technologies",
-          "items": [
-            "PHP (CakePHP)",
-            "HTML",
-            "CSS (Bootstrap)",
-            "JavaScript (JQuery)",
-            "MySQL"
-          ]
-        },
-        "highlights": [
-          "Backend functionalities development for streaming platform",
-          "Database maintenance and optimization"
-        ]
-      },
-      {
-        "name": "DTL 360",
-        "position": "Frontend Developer",
-        "url": "https://proveedores.direccionsustitucion.gov.co/",
-        "startDate": "2024-08",
-        "endDate": "2024-11",
-        "summary": "Web solution connecting farmers with suppliers for the acquisition of products to substitute illicit crops in conflict zones.",
-        "responsibilities": {
-          "name": "Responsibilities",
-          "items": [
-            "Develop the Web application",
-            "Develop the administrative panel",
-            "Consume REST API services",
-            "Implement brand design",
-            "Contribute ideas for project improvement",
-            "Deploy in test environment",
-            "Implement responsive design"
-          ]
-        },
-        "technologies": {
-          "name": "Technologies",
-          "items": [
-            "HTML",
-            "CSS",
-            "JavaScript (Angular 18, Angular Material)",
-            "Recaptcha"
-          ]
-        },
-        "highlights": [
-          "Design and implementation of user interface for a socially relevant project",
-          "Development of administrative panel and API consumption"
-        ]
-      },
-      {
         "name": "Globocar",
         "position": "Project Engineer",
-        "url": "www.google.com",
+        "url": "#",
         "startDate": "2018-08",
         "endDate": "2020-07",
         "summary": "Web application for tracking and scheduling corrective and preventive vehicle maintenance.",
