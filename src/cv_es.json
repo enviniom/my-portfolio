@@ -60,15 +60,9 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "Java 25",
-            "Spring Boot 3.5",
-            "Netty (TCP/UDP)",
-            "PostgreSQL",
-            "Flyway",
-            "Docker",
-            "Testcontainers",
-            "WebSockets",
-            "JWT"
+            "Backend: Java 25 (Spring Boot 3.5), Netty (TCP/UDP), WebSockets, JWT",
+            "Base de Datos: PostgreSQL, Flyway",
+            "DevOps / Pruebas: Docker, Testcontainers"
           ]
         },
         "highlights": [
@@ -99,11 +93,10 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-           "Backend: C# (ASP.NET 10, Web API, MVC), PostgreSQL (Entity Framework, Dapper)",
-            "IIS",
-            "SSO con directorio activo interno",
+            "Backend: C# (ASP.NET 10, Web API, MVC), IIS, SSO con Directorio Activo",
             "Frontend: HTML, CSS (Tailwind), JavaScript (Angular 21)",
-            "Flujos Git y entregas orientadas a CI/CD"
+            "Base de Datos: PostgreSQL (Entity Framework, Dapper)",
+            "DevOps / Metodología: Flujos Git, CI/CD"
           ]
         },
         "highlights": [
@@ -135,14 +128,10 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-           "GO (Gin)",
-            "HTML",
-            "CSS (TailwindCSS, DaisyUI)",
-            "JavaScript (AlpineJS, Svelte 5)",
-            "Node",
-            "PostgreSQL",
-            "Docker (ddev)",
-            "Copilot"
+            "Backend: Go (Gin), Node.js, Agentes IA (Copilot, LLMs)",
+            "Frontend: HTML, CSS (TailwindCSS, DaisyUI), JavaScript (AlpineJS, Svelte 5)",
+            "Base de Datos: PostgreSQL",
+            "DevOps: Docker (ddev)"
           ]
         },
         "highlights": [
@@ -172,10 +161,8 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "HTML",
-            "CSS",
-            "JavaScript (Angular 18, Angular Material)",
-            "Recaptcha"
+            "Frontend: HTML, CSS, JavaScript (Angular 18, Angular Material)",
+            "Seguridad / Integración: ReCaptcha"
           ]
         },
         "highlights": [
@@ -207,16 +194,10 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "PHP (CakePHP)",
-            "HTML",
-            "CSS (TailwindCSS, DaisyUI)",
-            "JavaScript (AlpineJS, Svelte 5)",
-            "Node",
-            "MySQL",
-            "Go (Wails con Svelte 5)",
-            "Docker (ddev)",
-            "Trae AI",
-            "Windsurf"
+            "Backend / Desktop: Go (Wails con Svelte 5), PHP (CakePHP), Node.js",
+            "Frontend: HTML, CSS (TailwindCSS, DaisyUI), JavaScript (AlpineJS, Svelte 5)",
+            "Base de Datos: MySQL",
+            "DevOps / Herramientas: Docker (ddev), Trae AI, Windsurf"
           ]
         },
         "highlights": [
@@ -244,9 +225,10 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "Backend: C# (ASP.NET Web API, .NET 9), SQL Server (Entity Framework Core)",
+            "Backend: C# (ASP.NET Web API, .NET 9)",
             "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 19)",
-            "Flujos Git y revisión colaborativa de código"
+            "Base de Datos: SQL Server (Entity Framework Core)",
+            "DevOps: Flujos Git, revisión colaborativa de código"
           ]
         },
         "highlights": [
@@ -277,13 +259,10 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "PHP (CakePHP y Laravel)",
-            "HTML",
-            "CSS (Bootstrap)",
-            "JavaScript (JQuery)",
-            "MySQL",
-            "Lambda AWS",
-            "Amazon S3"
+            "Backend: PHP (CakePHP, Laravel)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript (jQuery)",
+            "Base de Datos: MySQL",
+            "Cloud: AWS (Lambda, Amazon S3)"
           ]
         },
         "highlights": [
@@ -312,11 +291,9 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "PHP (CakePHP)",
-            "HTML",
-            "CSS (Bootstrap)",
-            "JavaScript (JQuery)",
-            "MySQL"
+            "Backend: PHP (CakePHP)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript (jQuery)",
+            "Base de Datos: MySQL"
           ]
         },
         "highlights": [
@@ -345,9 +322,9 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "Backend: C# (Rest API ASP.NET, .NET 7), SQL Server (Entity Framework Core)",
+            "Backend: C# (REST API ASP.NET, .NET 7), despliegue en intranet",
             "Frontend: HTML, CSS (Bootstrap), JavaScript (Angular 17)",
-            "Despliegue en intranet"
+            "Base de Datos: SQL Server (Entity Framework Core)"
           ]
         },
         "highlights": [
@@ -378,8 +355,9 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "Backend: PHP (Rest API CakePHP y JWT), MariaDB y FireBird, GO (Gin)",
-            "Frontend: HTML, CSS, JavaScript (Angular 15, Angular Material 15)"
+            "Backend: Go (Gin), PHP (REST API CakePHP, JWT)",
+            "Frontend: HTML, CSS, JavaScript (Angular 15, Angular Material 15)",
+            "Base de Datos: MariaDB, FireBird"
           ]
         },
         "highlights": [
@@ -408,11 +386,9 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "Java (Spring Boot Microservices)",
-            "PostgreSQL (JPA)",
-            "Docker",
-            "RabbitMQ",
-            "AWS"
+            "Backend: Java (Spring Boot Microservicios), RabbitMQ",
+            "Base de Datos: PostgreSQL (JPA)",
+            "DevOps / Cloud: Docker, AWS"
           ]
         },
         "highlights": [
@@ -441,12 +417,10 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "PHP (CakePHP)",
-            "HTML",
-            "CSS (Bootstrap)",
-            "JavaScript",
-            "MariaDB",
-            "AWS"
+            "Backend: PHP (CakePHP)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript",
+            "Base de Datos: MariaDB",
+            "Cloud: AWS"
           ]
         },
         "highlights": [
@@ -475,11 +449,9 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "PHP (CakePHP)",
-            "HTML",
-            "CSS (Bootstrap)",
-            "JavaScript",
-            "MariaDB"
+            "Backend: PHP (CakePHP)",
+            "Frontend: HTML, CSS (Bootstrap), JavaScript",
+            "Base de Datos: MariaDB"
           ]
         },
         "highlights": [
@@ -506,8 +478,8 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "C# (.NET, Razor Pages)",
-            "SQL Server (Entity Framework Core)"
+            "Backend: C# (.NET, Razor Pages)",
+            "Base de Datos: SQL Server (Entity Framework Core)"
           ]
         },
         "highlights": [
@@ -533,9 +505,9 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "Javascript (Node, Angular)",
-            "Css (Bootstrap)",
-            "MariaDB (Sequalize)"
+            "Backend: JavaScript (Node.js)",
+            "Frontend: CSS (Bootstrap), JavaScript (Angular)",
+            "Base de Datos: MariaDB (Sequelize)"
           ]
         },
         "highlights": [
@@ -564,12 +536,9 @@
         "technologies": {
           "name": "Tecnologías",
           "items": [
-            "PHP (CakePHP)",
-            "HTML",
-            "CSS (Semantic UI)",
-            "JavaScript (jQuery)",
-            "Dart (Flutter)",
-            "AWS"
+            "Backend: PHP (CakePHP)",
+            "Frontend / Móvil: Dart (Flutter), HTML, CSS (Semantic UI), JavaScript (jQuery)",
+            "Cloud: AWS"
           ]
         },
         "highlights": [
@@ -698,7 +667,7 @@
       },
       {
         "name": "MySQL",
-        "level": "Avanzado",
+        "level": "Intermedio",
         "keywords": [
           "Bases de Datos",
           "SQL",
@@ -797,7 +766,7 @@
       },
       {
         "name": "Netty",
-        "level": "Avanzado",
+        "level": "Intermedio",
         "keywords": [
           "Servidores de Red",
           "TCP/UDP",
@@ -870,7 +839,7 @@
       },
       {
         "name": "MariaDB",
-        "level": "Avanzado",
+        "level": "Intermedio",
         "keywords": [
           "Base de Datos",
           "SQL",
