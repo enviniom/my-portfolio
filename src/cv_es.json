@@ -943,7 +943,7 @@
           "Backend: Java 25, Spring Boot 3.5, Netty (TCP/UDP), PostgreSQL, Flyway, Docker",
           "Decodificación binaria multimarca: Concox JVL03, Jimi IoT AL600, Eview y OsmAnd",
           "Motor geoespacial de geocercas en tiempo real y despacho de comandos remotos",
-          "Sistema de partners multi-tenant y auditoría de tramas sin pérdida",
+          "Sistema de partners multi-tenant y auditoría de tramas crudas para trazabilidad y diagnóstico",
           "Integración con app móvil y WebSockets para actualización en vivo"
         ],
         "url": "#"

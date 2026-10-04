@@ -943,7 +943,7 @@
           "Backend: Java 25, Spring Boot 3.5, Netty (TCP/UDP), PostgreSQL, Flyway, Docker",
           "Multi-vendor binary decoding: Concox JVL03, Jimi IoT AL600, Eview, and OsmAnd HTTP",
           "Real-time geospatial geofencing engine and remote command dispatching",
-          "Multi-tenant partner isolation and zero-loss raw telemetry audit pipeline",
+          "Multi-tenant partner isolation and raw frame audit for traceability and diagnostics",
           "Mobile client and WebSocket integration for live streaming"
         ],
         "url": "#"
