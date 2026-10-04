@@ -3,12 +3,12 @@
   "basics": {
     "title": "Sobre mí",
     "name": "Jhon Colmenares",
-    "label": "Desarrollador Senior Fullstack .NET con más de 10 años de experiencia en aplicaciones web, móviles y de escritorio.",
+    "label": "Desarrollador Senior Backend / Fullstack (Java | Go | .NET) con más de 8 años de experiencia en sistemas distribuidos, APIs y arquitectura de software.",
     "image": "/my-portfolio/cv1.jpg",
     "email": "jhonccr@gmail.com",
     "phone": "+57 318 657 24 67",
     "url": "https://playkru.com",
-    "summary": "Soy un desarrollador Senior Fullstack con más de 10 años de experiencia en diseño, construcción y despliegue de software empresarial. Tengo una base sólida en C# y .NET para desarrollo backend, incluyendo APIs REST, diseño de arquitectura, modelado SQL y optimización de rendimiento. He trabajado en todo el ciclo de vida del software, desde levantamiento de requerimientos y diseño técnico hasta soporte en producción, code reviews y prácticas de entrega continua. Mi enfoque es construir soluciones confiables y escalables alineadas con los objetivos del negocio.",
+    "summary": "Soy un Desarrollador Senior con más de 8 años de experiencia en diseño, construcción y despliegue de software empresarial y sistemas distribuidos. Cuento con una base técnica sólida en Java (Spring Boot, Netty), Go y C#/.NET para desarrollo backend de alto rendimiento, procesamiento de telemetría y tramas en tiempo real, APIs REST y modelado de datos SQL. He trabajado en todo el ciclo de vida del software, desde levantamiento de requerimientos y diseño de arquitectura limpia hasta soporte en producción, code reviews y prácticas de entrega continua. Mi enfoque es construir soluciones confiables, escalables y orientadas a los objetivos del negocio.",
     "location": {
       "address": "",
       "postalCode": "54001",
@@ -29,16 +29,54 @@
       }
     ],
     "summaryHighlights": [
-      "Más de 10 años de experiencia con liderazgo técnico en arquitectura y entrega",
-      "Desarrollo backend con C#/.NET, APIs REST y modelado de datos SQL",
-      "Experiencia con flujos Git, revisión de código y entregas orientadas a CI/CD",
-      "Despliegues y soporte en producción sobre servidores Linux y Windows",
-      "Experiencia de integración con AWS (Lambda y S3)"
+      "Más de 8 años de experiencia con liderazgo técnico en arquitectura y entrega",
+      "Desarrollo backend en Java (Spring Boot, Netty), Go y C#/.NET",
+      "Sistemas de alta concurrencia, procesamiento en tiempo real (TCP/UDP, WebSockets) y modelado SQL",
+      "Experiencia con flujos Git, pruebas automatizadas y entregas orientadas a CI/CD",
+      "Despliegues y soporte en producción sobre servidores Linux, Docker y AWS"
     ]
   },
   "work": {
     "title": "Experiencia laboral",
     "items": [
+      {
+        "name": "MIIA",
+        "position": "Desarrollador Backend Senior Java",
+        "url": "https://playkru.com",
+        "startDate": "2026-05",
+        "endDate": null,
+        "summary": "Plataforma de rastreo satelital para mascotas con recepción, procesamiento y auditoría de telemetría GPS en tiempo real.",
+        "responsibilities": {
+          "name": "Responsabilidades",
+          "items": [
+            "Diseñar e implementar servidores de red de alta concurrencia con Netty (TCP/UDP) para recepción y decodificación de tramas binarias y HTTP",
+            "Integrar y decodificar protocolos de múltiples dispositivos GPS (Concox JVL03, Jimi IoT AL600, Eview y OsmAnd)",
+            "Desarrollar el motor geoespacial de geocercas para detección en tiempo real de eventos de entrada y salida",
+            "Construir el pipeline de auditoría de tramas y telemetría canónica con persistencia atómica y diagnóstico de payloads crudos",
+            "Diseñar la arquitectura multi-tenant y sistema de partners con aislamiento estricto de roles y usuarios",
+            "Implementar la integración bidireccional con el backend y app móvil de household para despacho de comandos remotos y sincronización en tiempo real"
+          ]
+        },
+        "technologies": {
+          "name": "Tecnologías",
+          "items": [
+            "Java 25",
+            "Spring Boot 3.5",
+            "Netty (TCP/UDP)",
+            "PostgreSQL",
+            "Flyway",
+            "Docker",
+            "Testcontainers",
+            "WebSockets",
+            "JWT"
+          ]
+        },
+        "highlights": [
+          "Diseño de pasarelas de red concurrentes con decodificación resiliente de protocolos binarios de múltiples fabricantes GPS",
+          "Motor de geocercas y pipeline de auditoría de tramas de alta fidelidad respaldado por más de 1000 pruebas automatizadas",
+          "Integración de despacho de comandos y sincronización en tiempo real para aplicaciones móviles"
+        ]
+      },
       {
         "name": "CENS Grupo EPM",
         "position": "Desarrollador Fullstack",
@@ -735,6 +773,49 @@
         ]
       },
       {
+        "name": "Java",
+        "level": "Avanzado",
+        "keywords": [
+          "Lenguaje de Programación",
+          "Backend",
+          "JDK 25",
+          "Concurrencia",
+          "APIs"
+        ]
+      },
+      {
+        "name": "Spring Boot",
+        "level": "Avanzado",
+        "keywords": [
+          "Framework Java",
+          "Backend",
+          "Microservicios",
+          "REST APIs",
+          "Spring Security",
+          "Spring Data JPA"
+        ]
+      },
+      {
+        "name": "Netty",
+        "level": "Avanzado",
+        "keywords": [
+          "Servidores de Red",
+          "TCP/UDP",
+          "Sockets",
+          "Alta Concurrencia",
+          "Decodificación Binaria"
+        ]
+      },
+      {
+        "name": "RabbitMQ",
+        "level": "Intermedio",
+        "keywords": [
+          "Message Broker",
+          "Mensajería Asíncrona",
+          "Event-Driven"
+        ]
+      },
+      {
         "name": "Go",
         "level": "Avanzado",
         "keywords": [
@@ -886,6 +967,18 @@
   "projects": {
     "title": "Proyectos",
     "items": [
+      {
+        "name": "MIIA - Receptor GPS",
+        "description": "Backend receptor y procesador de telemetría GPS en tiempo real para mascotas con auditoría y geocercas.",
+        "highlights": [
+          "Backend: Java 25, Spring Boot 3.5, Netty (TCP/UDP), PostgreSQL, Flyway, Docker",
+          "Decodificación binaria multimarca: Concox JVL03, Jimi IoT AL600, Eview y OsmAnd",
+          "Motor geoespacial de geocercas en tiempo real y despacho de comandos remotos",
+          "Sistema de partners multi-tenant y auditoría de tramas sin pérdida",
+          "Integración con app móvil y WebSockets para actualización en vivo"
+        ],
+        "url": "#"
+      },
       {
         "name": "SICont",
         "description": "Aplicación WEB para controlar el flujo de los procesos de contratación, con énfasis en las fechas y tareas",

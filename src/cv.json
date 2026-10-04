@@ -2,12 +2,12 @@
   "title": "Portafolio de",
   "basics": {
     "name": "Jhon Colmenares",
-    "label": "Desarrollador Fullstack con mas 8 años de experiencia en el desarrollo de aplicaciones web",
+    "label": "Desarrollador Senior Backend / Fullstack (Java | Go | .NET) con más de 8 años de experiencia en sistemas distribuidos y APIs.",
     "image": "/my-portfolio/cv1.jpg",
     "email": "jhonccr@gmail.com",
     "phone": "+57 318 657 24 67",
     "url": "https://playkru.com",
-    "summary": "Cuento con +8 años de experiencia como Desarrollador Web. Desarrollo en diferentes lenguajes de programación para la creación de APIs y Aplicaciones Web y Móviles. He trabajado en diferentes entornos: desde inicio de proyectos hasta modificación de proyectos en producción para mejora de lo existente y crear nuevas funcionalidades.",
+    "summary": "Desarrollador Senior con más de 8 años de experiencia en diseño, construcción y despliegue de software empresarial y sistemas distribuidos. Cuento con una base técnica sólida en Java (Spring Boot, Netty), Go y C#/.NET para desarrollo backend de alto rendimiento, procesamiento de telemetría y tramas en tiempo real, APIs REST y arquitectura de software.",
     "location": {
       "address": "",
       "postalCode": "54001",

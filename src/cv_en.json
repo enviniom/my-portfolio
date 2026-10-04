@@ -3,12 +3,12 @@
   "basics": {
     "title": "About Me",
     "name": "Jhon Colmenares",
-    "label": "Senior .NET Fullstack Developer with 10+ years of experience building web, mobile, and desktop applications.",
+    "label": "Senior Backend / Fullstack Developer (Java | Go | .NET) with 8+ years of experience in distributed systems, high-concurrency APIs, and software architecture.",
     "image": "/my-portfolio/cv1.jpg",
     "email": "jhonccr@gmail.com",
     "phone": "+57 318 657 24 67",
     "url": "https://playkru.com",
-    "summary": "Senior Fullstack Developer with 10+ years of experience designing, building, and deploying enterprise software. Strong background in C# and .NET for backend development, including REST Web APIs, architecture design, SQL modeling, and performance optimization. I have worked across the full software lifecycle, from requirements and system design to production support, code reviews, and continuous delivery practices. I focus on building reliable and scalable systems aligned with business goals.",
+    "summary": "Senior Developer with 8+ years of experience designing, building, and deploying enterprise software and distributed systems. Strong technical foundation in Java (Spring Boot, Netty), Go, and C#/.NET for high-performance backend development, real-time telemetry processing, REST APIs, and clean architecture design. Experienced across the full software development lifecycle, from technical design and domain modeling to production operations, automated testing, and CI/CD practices. Focused on delivering resilient, maintainable, and scalable systems aligned with business goals.",
     "location": {
       "address": "",
       "postalCode": "54001",
@@ -29,16 +29,54 @@
       }
     ],
     "summaryHighlights": [
-      "10+ years in software development with senior ownership of architecture and delivery",
-      "Hands-on C#/.NET backend development with REST APIs and SQL data modeling",
-      "Experience with Git workflows, code reviews, and CI/CD-oriented delivery",
-      "Production deployments and support on Linux and Windows environments",
-      "AWS integration experience with Lambda and S3"
+      "8+ years in software engineering with technical leadership in architecture and delivery",
+      "Robust backend development in Java (Spring Boot, Netty), Go, and C#/.NET",
+      "High-concurrency systems, real-time networking (TCP/UDP, WebSockets), and SQL modeling",
+      "Git workflows, automated testing, code reviews, and CI/CD-driven delivery",
+      "Production deployments and operations across Linux, Docker containers, and AWS"
     ]
   },
   "work": {
     "title": "Work Experience",
     "items": [
+      {
+        "name": "MIIA",
+        "position": "Senior Java Backend Developer",
+        "url": "https://playkru.com",
+        "startDate": "2026-05",
+        "endDate": null,
+        "summary": "Real-time pet GPS tracking platform with high-throughput frame ingestion, processing, geospatial geofencing, and auditability.",
+        "responsibilities": {
+          "name": "Responsibilities",
+          "items": [
+            "Design and implement high-concurrency network servers with Netty (TCP/UDP) for binary frame reception and protocol decoding",
+            "Integrate and decode telemetry protocols from multi-vendor GPS devices (Concox JVL03, Jimi IoT AL600, Eview, and OsmAnd)",
+            "Build real-time geospatial geofencing engine for instant entry/exit event detection and alert dispatching",
+            "Develop canonical telemetry and raw frame audit pipelines with atomic persistence and binary-safe diagnostics",
+            "Architect multi-tenant partner isolation model with strict role and account security boundaries",
+            "Implement bidirectional integration with mobile client and household backend for remote command dispatch and WebSocket streaming"
+          ]
+        },
+        "technologies": {
+          "name": "Technologies",
+          "items": [
+            "Java 25",
+            "Spring Boot 3.5",
+            "Netty (TCP/UDP)",
+            "PostgreSQL",
+            "Flyway",
+            "Docker",
+            "Testcontainers",
+            "WebSockets",
+            "JWT"
+          ]
+        },
+        "highlights": [
+          "High-throughput resilient protocol decoding pipeline for multi-brand binary GPS streams",
+          "Real-time geofencing engine and high-fidelity frame audit suite backed by 1000+ automated tests",
+          "Bidirectional remote device command dispatch and live state streaming for mobile applications"
+        ]
+      },
       {
         "name": "CENS Grupo EPM.",
         "position": "Fullstack Developer",
@@ -735,6 +773,49 @@
         ]
       },
       {
+        "name": "Java",
+        "level": "Advanced",
+        "keywords": [
+          "Programming Language",
+          "Backend",
+          "JDK 25",
+          "Concurrency",
+          "APIs"
+        ]
+      },
+      {
+        "name": "Spring Boot",
+        "level": "Advanced",
+        "keywords": [
+          "Java Framework",
+          "Backend",
+          "Microservices",
+          "REST APIs",
+          "Spring Security",
+          "Spring Data JPA"
+        ]
+      },
+      {
+        "name": "Netty",
+        "level": "Advanced",
+        "keywords": [
+          "Network Servers",
+          "TCP/UDP",
+          "Sockets",
+          "High Concurrency",
+          "Binary Decoding"
+        ]
+      },
+      {
+        "name": "RabbitMQ",
+        "level": "Intermediate",
+        "keywords": [
+          "Message Broker",
+          "Asynchronous Messaging",
+          "Event-Driven"
+        ]
+      },
+      {
         "name": "Go",
         "level": "Advanced",
         "keywords": [
@@ -886,6 +967,18 @@
   "projects": {
     "title": "Projects",
     "items": [
+      {
+        "name": "MIIA - GPS Ingestion Gateway",
+        "description": "Real-time pet GPS telemetry ingestion and tracking backend with geofencing and auditability.",
+        "highlights": [
+          "Backend: Java 25, Spring Boot 3.5, Netty (TCP/UDP), PostgreSQL, Flyway, Docker",
+          "Multi-vendor binary decoding: Concox JVL03, Jimi IoT AL600, Eview, and OsmAnd HTTP",
+          "Real-time geospatial geofencing engine and remote command dispatching",
+          "Multi-tenant partner isolation and zero-loss raw telemetry audit pipeline",
+          "Mobile client and WebSocket integration for live streaming"
+        ],
+        "url": "#"
+      },
       {
         "name": "SICont",
         "description": "Web application to manage the flow of recruitment processes, with an emphasis on dates and tasks.",
