@@ -1,5 +1,13 @@
 
-<div>
+<div class="top-bar no-print">
+  <button id="print-cv-btn" type="button" title="Imprimir / Guardar CV en PDF (Ctrl+P)" aria-label="Imprimir o Guardar CV en PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 6 2 18 2 18 9"></polyline>
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+      <rect x="6" y="14" width="12" height="8"></rect>
+    </svg>
+    <span>PDF</span>
+  </button>
   <select name="language" id="language">
     <option value="en">English</option>
     <option value="es">Español</option>
@@ -7,21 +15,45 @@
 </div>
 
 <style>
-  div {
+  div.top-bar {
     max-width: 700px;
     margin: -25px auto 10px;
     display: flex;
     width: 100%;
     justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+  button#print-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    border: 1px solid #e5e7eb;
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  button#print-cv-btn:hover {
+    background-color: #e5e7eb;
+    border-color: #d1d5db;
+    color: #111827;
   }
   select {
     width: 100px;
-    border: 0 solid;
+    border: 1px solid #e5e7eb;
+    background-color: #f3f4f6;
+    color: #1f2937;
     padding: 0.3rem 0.5rem;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
   }
-
 </style>
 
 <script>
@@ -41,7 +73,11 @@
     if ((event?.target as HTMLSelectElement).value == "es") {
       lang = 'es/';
     }
-    console.log(lang);
     changeLanguage(lang);
-  })
+  });
+
+  const printBtn = document.getElementById("print-cv-btn");
+  printBtn?.addEventListener("click", () => {
+    window.print();
+  });
 </script>

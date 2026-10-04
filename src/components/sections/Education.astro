@@ -3,8 +3,8 @@ import type { Education } from "@/cv";
 import Section from "../Section.astro"
 
 const education = Astro.props.education as Education;
-
-
+const isSpanish = education.title.toLowerCase().includes("educación");
+const presentLabel = isSpanish ? "Actual" : "Present";
 ---
 
 <Section title={education.title}>
@@ -12,7 +12,7 @@ const education = Astro.props.education as Education;
     {
       education.items.map(({ institution, startDate, endDate, area }) => {
         const start = startDate.substring(0, 7)
-        const end = endDate != null ? endDate.substring(0, 7) : "Actual"
+        const end = endDate != null ? endDate.substring(0, 7) : presentLabel
 
         return (
           <li>
@@ -64,6 +64,32 @@ const education = Astro.props.education as Education;
   @media (width <= 700px) {
     time {
       text-align: right;
+    }
+  }
+
+  @media print {
+    ul {
+      gap: 10px;
+    }
+    article {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    header {
+      margin-bottom: 2px;
+    }
+    article h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #000;
+    }
+    time {
+      font-size: 0.78rem;
+      color: #555;
+    }
+    p {
+      font-size: 0.78rem;
+      color: #333;
     }
   }
 </style>

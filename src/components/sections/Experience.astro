@@ -15,20 +15,24 @@ const labels = {
   <ul>
     {
       work.items.map(
-        ({
-          name,
-          position,
-          startDate,
-          endDate,
-          summary,
-          responsibilities,
-          technologies,
-          highlights,
-        }) => {
+        (
+          {
+            name,
+            position,
+            startDate,
+            endDate,
+            summary,
+            responsibilities,
+            technologies,
+            highlights,
+          },
+          index
+        ) => {
           const start = startDate.substring(0, 7);
           const end = endDate != null ? endDate.substring(0, 7) : labels.present;
+          const isPrintHidden = index >= 5;
           return (
-            <li>
+            <li class={isPrintHidden ? "no-print" : ""}>
               <article>
                 <header>
                   <div>
@@ -68,7 +72,7 @@ const labels = {
                       </>
                     )
                   }
-                  <hr />
+                  <hr class="no-print" />
                 </footer>
               </article>
             </li>
@@ -77,6 +81,9 @@ const labels = {
       )
     }
   </ul>
+  <p class="print-history-note print">
+    <strong>{isSpanish ? "Nota:" : "Note:"}</strong> {isSpanish ? "Para consultar la trayectoria completa y proyectos anteriores a 2024, visite el portafolio en vivo:" : "To review the complete career trajectory and projects prior to 2024, visit the live portfolio:"} <a href="https://playkru.com">https://playkru.com</a>
+  </p>
 </Section>
 <style>
   ul {
@@ -144,6 +151,71 @@ const labels = {
   @media (width <= 768px) {
     time {
       text-align: right;
+    }
+  }
+
+  @media print {
+    ul {
+      gap: 14px;
+    }
+    article {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    header {
+      margin-bottom: 2px;
+    }
+    article h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #000;
+    }
+    article h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #333;
+    }
+    time {
+      font-size: 0.78rem;
+      color: #555;
+    }
+    p {
+      margin-bottom: 3px;
+      font-size: 0.78rem;
+      line-height: 1.35;
+      color: #222;
+    }
+    .detail-list {
+      margin: 0 0 4px;
+      padding-left: 1rem;
+      gap: 2px;
+    }
+    .detail-list li {
+      font-size: 0.76rem;
+      line-height: 1.3;
+      color: #222;
+    }
+    .tech-list {
+      margin: 0 0 4px;
+      gap: 4px;
+    }
+    .tech-list li {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.35rem;
+      background-color: #f7f7f7;
+      border: 1px solid #e0e0e0;
+      color: #111;
+    }
+    .print-history-note {
+      margin-top: 12px;
+      padding-top: 6px;
+      border-top: 1px dashed #ccc;
+      font-size: 0.75rem;
+      color: #555;
+    }
+    .print-history-note a {
+      color: #111;
+      text-decoration: underline;
     }
   }
 </style>

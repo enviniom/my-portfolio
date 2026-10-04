@@ -78,7 +78,7 @@ const { image, summary } = basics;
       sans-serif;
   }
   p {
-    color: #665;
+    color: #444;
     font-size: 0.9rem;
     line-height: 1.5;
     margin: 0;
@@ -86,15 +86,37 @@ const { image, summary } = basics;
   }
 
   .print {
-    display: none;
+    display: none !important;
+  }
+
+  @page {
+    size: letter;
+    margin: 10mm 14mm;
   }
 
   @media print {
-    .print {
-      display: block;
+    html {
+      font-size: 13px;
+      background: #fff;
+      color: #111;
     }
+
+    body {
+      color: #111;
+      background: #fff;
+    }
+
+    p {
+      color: #222;
+      line-height: 1.38;
+    }
+
+    .print {
+      display: block !important;
+    }
+
     .no-print {
-      display: none;
+      display: none !important;
     }
 
     astro-dev-toolbar {
@@ -103,6 +125,17 @@ const { image, summary } = basics;
 
     article {
       break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    section {
+      break-inside: auto;
+    }
+
+    h1, h2, h3, h4 {
+      break-after: avoid;
+      page-break-after: avoid;
+      color: #000;
     }
   }
 </style>

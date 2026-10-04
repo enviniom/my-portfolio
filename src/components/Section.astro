@@ -25,4 +25,19 @@ const { title } = Astro.props;
       margin-bottom: 38px;
     }
   }
+
+  @media print {
+    section {
+      margin-bottom: 22px;
+      max-width: 100%;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #ddd;
+      letter-spacing: -0.01rem;
+    }
+  }
 </style>

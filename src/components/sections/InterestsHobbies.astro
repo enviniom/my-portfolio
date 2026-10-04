@@ -5,17 +5,19 @@ import Section from "../Section.astro";
 const interests = Astro.props.interests as Interests;
 ---
 
-<Section title={interests.title}>
-  <ul>
-    {
-      interests.items.map(({ name }) => (
-       <li>
-        <span>{name}</span>
-        </li>   
-      ))
-    }
-  </ul>
-</Section>
+<div class="no-print">
+  <Section title={interests.title}>
+    <ul>
+      {
+        interests.items.map(({ name }) => (
+         <li>
+          <span>{name}</span>
+          </li>   
+        ))
+      }
+    </ul>
+  </Section>
+</div>
 
 <style>
   ul {

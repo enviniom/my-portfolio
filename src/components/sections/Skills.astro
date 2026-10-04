@@ -2,43 +2,140 @@
 import type { Skills } from "@/cv";
 import Section from "../Section.astro";
 
-const  skills = Astro.props as Skills;
+const skills = Astro.props as Skills;
+const isSpanish = skills.title.toLowerCase().includes("habilidades");
+
+const CATEGORIES = [
+  {
+    title: isSpanish ? "Backend y Arquitectura" : "Backend & Architecture",
+    names: ["Java", "Spring Boot", "Netty", "Go", "C#", ".NET", "RabbitMQ", "Node.js", "Laravel", "CakePHP"],
+  },
+  {
+    title: isSpanish ? "Bases de Datos" : "Databases & Storage",
+    names: ["PostgreSQL", "SQL Server", "MySQL", "MariaDB"],
+  },
+  {
+    title: isSpanish ? "Frontend" : "Frontend & UI",
+    names: ["Angular", "TypeScript", "JavaScript", "Svelte", "TailwindCSS", "HTML", "CSS", "Alpine.js"],
+  },
+  {
+    title: isSpanish ? "Cloud, DevOps y Herramientas" : "Cloud, DevOps & Tools",
+    names: ["Docker", "CI/CD", "AWS Lambda", "Amazon S3", "Git", "GitHub"],
+  },
+];
+
+const itemsByName = new Map(skills.items.map((item) => [item.name, item]));
+const seenNames = new Set<string>();
+
+const groupedSkills = CATEGORIES.map((cat) => {
+  const items = cat.names
+    .map((name) => {
+      seenNames.add(name);
+      return itemsByName.get(name);
+    })
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
+  return { title: cat.title, items };
+}).filter((cat) => cat.items.length > 0);
+
+const remainingItems = skills.items.filter((item) => !seenNames.has(item.name));
+if (remainingItems.length > 0) {
+  groupedSkills.push({
+    title: isSpanish ? "Otras Tecnologías" : "Other Technologies",
+    items: remainingItems,
+  });
+}
 ---
 
 <Section title={skills.title}>
-  <ul>
+  <div class="skills-categories">
     {
-      skills.items.map(({ name, level }) => (
-       <li>
-        <span>{name}</span>
-        <small>{level}</small>
-        </li>   
+      groupedSkills.map(({ title, items }) => (
+        <div class="category">
+          <h3>{title}</h3>
+          <ul>
+            {items.map(({ name, level }) => (
+              <li>
+                <span>{name}</span>
+                <small>{level}</small>
+              </li>
+            ))}
+          </ul>
+        </div>
       ))
     }
-  </ul>
+  </div>
 </Section>
 
 <style>
+  .skills-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .category h3 {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    letter-spacing: -0.01rem;
+  }
+
   ul {
-    display: inline-flex;
+    display: flex;
     gap: 8px;
     flex-wrap: wrap;
   }
+
   li {
     border-radius: 6px;
     background-color: #eee;
     color: black;
     font-size: 0.8rem;
     font-weight: 500;
-    padding: 0.3rem 0.6rem;
+    padding: 0.25rem 0.55rem;
     display: inline-flex;
     align-items: center;
     gap: 6px;
   }
 
   small {
-    color: #555;
+    color: #666;
     font-size: 0.7rem;
     font-weight: 600;
+  }
+
+  @media print {
+    .skills-categories {
+      gap: 8px;
+    }
+
+    .category {
+      break-inside: avoid;
+    }
+
+    .category h3 {
+      font-size: 0.8rem;
+      margin-bottom: 4px;
+      color: #111;
+      font-weight: 700;
+    }
+
+    ul {
+      gap: 5px;
+    }
+
+    li {
+      background-color: #f7f7f7;
+      border: 1px solid #e0e0e0;
+      color: #111;
+      font-size: 0.72rem;
+      padding: 0.15rem 0.4rem;
+    }
+
+    small {
+      color: #555;
+      font-size: 0.65rem;
+    }
   }
 </style>

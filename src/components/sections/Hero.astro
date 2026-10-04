@@ -20,7 +20,18 @@ const SOCIAL_ICONS: Record<string, any> = {
 const linkeInUrl = profiles.find(
   (profile) => profile.network === "LinkedIn"
 )?.url;
-const printInfo = [email, phone, linkeInUrl].filter(Boolean).join(" • ");
+const gitHubUrl = profiles.find(
+  (profile) => profile.network === "GitHub"
+)?.url;
+const printLocation = [city, region].filter(Boolean).join(", ");
+const printItems = [
+  email,
+  phone,
+  printLocation,
+  linkeInUrl ? "linkedin.com/in/enviniom" : null,
+  gitHubUrl ? "github.com/enviniom" : null,
+  basics.url ? "playkru.com" : null,
+].filter(Boolean);
 ---
 
 <Section>
@@ -28,14 +39,19 @@ const printInfo = [email, phone, linkeInUrl].filter(Boolean).join(" • ");
     <div class="info">
       <h1>{name}</h1>
       <h2>{label}</h2>
-      <span>
+      <span class="location no-print">
         <WorldMap />
         {city}, {region}
       </span>
       <footer>
-        <p class="print">
-          {printInfo}
-        </p>
+        <div class="print contact-print">
+          {printItems.map((item, idx) => (
+            <span>
+              {item}
+              {idx < printItems.length - 1 && <span class="sep">•</span>}
+            </span>
+          ))}
+        </div>
         {
           email && (
             <a
@@ -83,7 +99,7 @@ const printInfo = [email, phone, linkeInUrl].filter(Boolean).join(" • ");
         }
       </footer>
     </div>
-    <figure>
+    <figure class="no-print">
       <img src={image} alt={name} />
     </figure>
   </div>
@@ -172,6 +188,38 @@ const printInfo = [email, phone, linkeInUrl].filter(Boolean).join(" • ");
 
     figure {
       margin: 0 auto;
+    }
+  }
+
+  @media print {
+    .container {
+      gap: 0;
+    }
+    .info {
+      padding-right: 0;
+      gap: 0.25rem;
+    }
+    h1 {
+      font-size: 1.6rem;
+      letter-spacing: -0.02rem;
+      color: #000;
+    }
+    h2 {
+      font-size: 0.95rem;
+      color: #222;
+      font-weight: 600;
+    }
+    .contact-print {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 4px 6px;
+      font-size: 0.78rem;
+      color: #333;
+      margin-top: 4px;
+    }
+    .contact-print .sep {
+      margin-left: 6px;
+      color: #888;
     }
   }
 </style>

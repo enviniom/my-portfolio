@@ -33,8 +33,8 @@ const { name, summary } = basics;
       summary={summary}
       highlights={basics.summaryHighlights}
     />
-    <Experience work={work} />
     <Skills {...skills} />
+    <Experience work={work} />
     <Projects projects={projects} />
     <Education education={education} />
     <Languages languages={languages} />
@@ -52,6 +52,15 @@ const { name, summary } = basics;
   @media (width <= 768px) {
     main {
       padding: 1rem;
+    }
+  }
+
+  @media print {
+    main {
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
     }
   }
 </style>

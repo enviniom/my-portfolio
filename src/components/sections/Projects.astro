@@ -8,14 +8,15 @@ const projects = Astro.props.projects as Projects;
 <Section title={projects.title}>
   <ul>
     {
-      projects.items.map(({ name, url, description, highlights }) => {
+      projects.items.map(({ name, url, description, highlights }, index) => {
         const hasPublicUrl = url && url !== "#";
         const privateLabel = projects.title.toLowerCase().includes("proyectos")
           ? "Proyecto privado empresarial"
           : "Private enterprise project";
+        const isPrintHidden = index >= 4;
 
         return (
-          <li>
+          <li class={isPrintHidden ? "no-print" : ""}>
             <article>
               <header>
                 {hasPublicUrl ? (
@@ -25,7 +26,7 @@ const projects = Astro.props.projects as Projects;
                 ) : (
                   <h3>{name}</h3>
                 )}
-                {!hasPublicUrl && <small>{privateLabel}</small>}
+                {!hasPublicUrl && <small class="no-print">{privateLabel}</small>}
                 <p>{description}</p>
               </header>
               <footer>
@@ -110,6 +111,42 @@ const projects = Astro.props.projects as Projects;
       border: none;
       box-shadow: 0 1px 1px #f2f2f2;
       padding: 0 0 16px 0;
+    }
+  }
+
+  @media print {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-inline: 0;
+    }
+    article {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      border: 1px solid #e0e0e0;
+      padding: 8px 10px;
+      gap: 4px;
+    }
+    h3 {
+      font-size: 0.88rem;
+      color: #000;
+      margin-bottom: 2px;
+    }
+    article p {
+      font-size: 0.74rem;
+      line-height: 1.25;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    footer {
+      gap: 3px;
+    }
+    footer span {
+      font-size: 0.68rem;
+      padding: 0.1rem 0.35rem;
+      background-color: #f7f7f7;
+      border: 1px solid #e5e5e5;
+      color: #222;
     }
   }
 </style>
