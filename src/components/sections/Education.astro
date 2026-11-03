@@ -1,18 +1,20 @@
 ---
-import type { Education } from "@/cv";
-import Section from "../Section.astro"
+import Section from "../Section.astro";
+import type { PortfolioData } from "@/content";
 
-const education = Astro.props.education as Education;
-const isSpanish = education.title.toLowerCase().includes("educación");
-const presentLabel = isSpanish ? "Actual" : "Present";
+interface Props {
+  education: PortfolioData["education"];
+}
+
+const { education } = Astro.props;
 ---
 
 <Section title={education.title}>
   <ul>
     {
-      education.items.map(({ institution, startDate, endDate, area }) => {
-        const start = startDate.substring(0, 7)
-        const end = endDate != null ? endDate.substring(0, 7) : presentLabel
+      education.items.map(({ institution, area, studyType, startDate, endDate, score }) => {
+        const start = startDate.substring(0, 4);
+        const end = endDate.substring(0, 4);
 
         return (
           <li>
@@ -20,17 +22,14 @@ const presentLabel = isSpanish ? "Actual" : "Present";
               <header>
                 <div>
                   <h3>{institution}</h3>
+                  <h4>{studyType} — {area}</h4>
                 </div>
-
-                <time>{start} - {end}</time>
+                <time>{start} — {end}</time>
               </header>
-
-              <footer>
-                <p>{area}</p>
-              </footer>
+              {score && <p class="score">{score}</p>}
             </article>
           </li>
-        )
+        );
       })
     }
   </ul>
@@ -40,56 +39,42 @@ const presentLabel = isSpanish ? "Actual" : "Present";
   ul {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   article h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+
+  article h4 {
+    font-size: 0.9rem;
     font-weight: 500;
-    color: #111;
+    color: #4b5563;
+    margin: 2px 0 0 0;
   }
 
   header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 4px;
   }
 
   time {
-    color: #555;
+    color: #6b7280;
     font-size: 0.85rem;
-    min-width: 102px;
+    min-width: 90px;
+    text-align: right;
   }
 
-  @media (width <= 700px) {
-    time {
-      text-align: right;
-    }
-  }
-
-  @media print {
-    ul {
-      gap: 10px;
-    }
-    article {
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-    header {
-      margin-bottom: 2px;
-    }
-    article h3 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #000;
-    }
-    time {
-      font-size: 0.78rem;
-      color: #555;
-    }
-    p {
-      font-size: 0.78rem;
-      color: #333;
-    }
+  .score {
+    font-size: 0.8rem;
+    color: #0284c7;
+    margin-top: 4px;
   }
 </style>

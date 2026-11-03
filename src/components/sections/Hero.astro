@@ -6,31 +6,33 @@ import LinkedIn from "../icons/LinkedIn.astro";
 import GitHub from "../icons/GitHub.astro";
 import X from "../icons/X.astro";
 import WorldMap from "../icons/WorldMap.astro";
-import type { Basics } from "@/cv";
+import type { PortfolioData } from "../../content";
+
+interface Props {
+  basics: PortfolioData["basics"];
+}
 
 const { basics } = Astro.props;
-const { name, label, image, location, profiles, phone, email } =
-  basics as Basics;
+const { name, label, image, location, profiles, phone, email } = basics;
 const { city, region } = location;
+
 const SOCIAL_ICONS: Record<string, any> = {
   GitHub,
   LinkedIn,
   X,
 };
-const linkeInUrl = profiles.find(
-  (profile) => profile.network === "LinkedIn"
-)?.url;
-const gitHubUrl = profiles.find(
-  (profile) => profile.network === "GitHub"
-)?.url;
+
+const linkedInProfile = profiles.find((p) => p.network === "LinkedIn");
+const gitHubProfile = profiles.find((p) => p.network === "GitHub");
+
 const printLocation = [city, region].filter(Boolean).join(", ");
 const printItems = [
   email,
   phone,
   printLocation,
-  linkeInUrl ? "linkedin.com/in/enviniom" : null,
-  gitHubUrl ? "github.com/enviniom" : null,
-  basics.url ? "playkru.com" : null,
+  linkedInProfile ? "linkedin.com/in/enviniom" : null,
+  gitHubProfile ? "github.com/enviniom" : null,
+  "enviniom.github.io/my-portfolio",
 ].filter(Boolean);
 ---
 
@@ -56,8 +58,8 @@ const printItems = [
           email && (
             <a
               href={`mailto:${email}`}
-              title={`Enviar correo electrónico a ${name} al buzón ${email}`}
-              aria-label={`Enviar correo electrónico a ${name} al buzón ${email}`}
+              title={`Email: ${email}`}
+              aria-label={`Email: ${email}`}
               rel="noopener noreferrer"
               target="_blank"
               class="no-print"
@@ -70,8 +72,8 @@ const printItems = [
           phone && (
             <a
               href={`tel:${phone}`}
-              title={`Llamar por teléfono a ${name} al número ${phone}`}
-              aria-label={`Llamar por teléfono a ${name} al número ${phone}`}
+              title={`Tel: ${phone}`}
+              aria-label={`Tel: ${phone}`}
               rel="noopener noreferrer"
               target="_blank"
               class="no-print"
@@ -83,11 +85,12 @@ const printItems = [
         {
           profiles.map(({ network, url }) => {
             const Icon = SOCIAL_ICONS[network];
+            if (!Icon) return null;
             return (
               <a
                 href={url}
-                title={`Ir al perfil de ${name} en ${network}`}
-                aria-label={`Ir al perfil de ${name} en ${network}`}
+                title={`Perfil en ${network}`}
+                aria-label={`Perfil en ${network}`}
                 rel="noopener noreferrer"
                 target="_blank"
                 class="no-print"
@@ -111,10 +114,11 @@ const printItems = [
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   h1 {
     font-size: 2rem;
+    color: #111;
   }
   h2 {
     color: #444;
@@ -127,8 +131,9 @@ const printItems = [
     object-fit: cover;
     border-radius: 10px;
     width: 150px;
+    border: 1px solid #e5e7eb;
   }
-  span {
+  span.location {
     color: #666;
     display: flex;
     align-items: center;
@@ -140,7 +145,7 @@ const printItems = [
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding-right: 32px;
+    padding-right: 16px;
   }
   footer {
     display: flex;
@@ -160,66 +165,34 @@ const printItems = [
     transition: all 0.3s ease;
   }
   footer a:hover {
-    border: 1px solid #ccc;
-    background-color: #eee;
+    background-color: #f3f4f6;
+    color: #111;
+    border-color: #ccc;
   }
 
-  @media (width <= 700px) {
+  @media (max-width: 768px) {
     .container {
       flex-direction: column-reverse;
+      align-items: flex-start;
     }
-
     .info {
-      justify-content: center;
-      align-items: center;
       padding-right: 0;
-      text-align: center;
-    }
-
-    figure {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    h2 {
-      text-wrap: balance;
-    }
-
-    figure {
-      margin: 0 auto;
     }
   }
 
   @media print {
-    .container {
-      gap: 0;
-    }
-    .info {
-      padding-right: 0;
-      gap: 0.25rem;
-    }
-    h1 {
-      font-size: 1.6rem;
-      letter-spacing: -0.02rem;
-      color: #000;
-    }
-    h2 {
-      font-size: 0.95rem;
-      color: #222;
-      font-weight: 600;
+    .no-print {
+      display: none !important;
     }
     .contact-print {
-      display: flex !important;
+      display: flex;
       flex-wrap: wrap;
-      gap: 4px 6px;
-      font-size: 0.78rem;
+      gap: 6px;
+      font-size: 0.8rem;
       color: #333;
-      margin-top: 4px;
     }
-    .contact-print .sep {
+    .sep {
       margin-left: 6px;
-      color: #888;
     }
   }
 </style>

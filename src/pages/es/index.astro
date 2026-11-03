@@ -1,42 +1,58 @@
 ---
-import About from "@/components/sections/About.astro";
-import Education from "@/components/sections/Education.astro";
-import Experience from "@/components/sections/Experience.astro";
-import Hero from "@/components/sections/Hero.astro";
-import InterestsHobbies from "@/components/sections/InterestsHobbies.astro";
-import Languages from "@/components/sections/Languages.astro";
-import Layout from "@/layouts/Layout.astro";
-import Projects from "@/components/sections/Projects.astro";
-import Skills from "@/components/sections/Skills.astro";
-import TopBar from "@/components/sections/TopBar.astro";
+import About from "../../components/sections/About.astro";
+import Education from "../../components/sections/Education.astro";
+import Experience from "../../components/sections/Experience.astro";
+import Hero from "../../components/sections/Hero.astro";
+import InterestsHobbies from "../../components/sections/InterestsHobbies.astro";
+import Languages from "../../components/sections/Languages.astro";
+import Certifications from "../../components/sections/Certifications.astro";
+import Layout from "../../layouts/Layout.astro";
+import Projects from "../../components/sections/Projects.astro";
+import Skills from "../../components/sections/Skills.astro";
+import TopBar from "../../components/sections/TopBar.astro";
 
-import {
+import { getPortfolioData } from "@/content";
+import { validateAllResumeProfiles } from "../../lib/resume/selectors";
+
+// Compile-time validations
+validateAllResumeProfiles();
+
+const data = getPortfolioData("es");
+const {
   basics,
-  title,
-  work,
+  experiences,
   projects,
-  education,
-  interests,
   skills,
+  education,
+  certifications,
   languages,
-} from "@cv_es";
-const { name, summary } = basics;
+  interests,
+  labels,
+} = data;
 
+const pageTitle = `${basics.name} — ${basics.label}`;
 ---
 
-<Layout title=`${title} ${name}`>
+<Layout
+  title={pageTitle}
+  summary={basics.summary}
+  image={basics.image}
+  lang="es"
+  canonicalUrl="https://enviniom.github.io/my-portfolio/es/"
+>
   <main>
-    <TopBar />
+    <TopBar lang="es" />
     <Hero basics={basics} />
     <About
-      title={basics.title}
-      summary={summary}
+      title={labels.about}
+      summary={basics.summary}
       highlights={basics.summaryHighlights}
     />
-    <Skills {...skills} />
-    <Experience work={work} />
-    <Projects projects={projects} />
+    <Skills skills={skills} />
+    <Experience experiences={experiences} labels={labels} lang="es" />
+    <Projects projects={projects} title={labels.projects} labels={labels} />
     <Education education={education} />
+    <Certifications certifications={certifications} labels={labels} />
     <Languages languages={languages} />
     <InterestsHobbies interests={interests} />
   </main>
@@ -47,11 +63,12 @@ const { name, summary } = basics;
     padding: 4rem;
     margin: auto;
     width: 100%;
+    max-width: 820px;
   }
 
   @media (width <= 768px) {
     main {
-      padding: 1rem;
+      padding: 1.5rem 1rem;
     }
   }
 

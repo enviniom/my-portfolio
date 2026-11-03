@@ -1,252 +1,315 @@
 ---
-import type { Work } from "@/cv";
 import Section from "../Section.astro";
+import type { EnrichedExperience, SiteLabels, Locale } from "../../content";
 
-const work = Astro.props.work as Work;
-const isSpanish = work.title.toLowerCase().includes("experiencia");
-const labels = {
-  app: isSpanish ? "Aplicación" : "App",
-  highlights: isSpanish ? "Logros" : "Highlights",
-  present: isSpanish ? "Actual" : "Present",
-};
+interface Props {
+  experiences: EnrichedExperience[];
+  labels: SiteLabels;
+  lang: Locale;
+}
+
+const { experiences, labels, lang } = Astro.props;
+
+// Group CENS experiences
+const censExperiences = experiences.filter((e) => e.clientGrouping === "cens-grupo-epm");
+
+type TimelineItem =
+  | { type: "single"; exp: EnrichedExperience }
+  | { type: "cens_group"; items: EnrichedExperience[] };
+
+const timeline: TimelineItem[] = [];
+let censInserted = false;
+
+for (const exp of experiences) {
+  if (exp.clientGrouping === "cens-grupo-epm") {
+    if (!censInserted) {
+      timeline.push({ type: "cens_group", items: censExperiences });
+      censInserted = true;
+    }
+  } else {
+    timeline.push({ type: "single", exp });
+  }
+}
+
+const censGroupTitle =
+  lang === "es"
+    ? "CENS Grupo EPM — Contratos recurrentes de ingeniería de software (2020, 2023, 2025, 2026)"
+    : "CENS Grupo EPM — Recurring Software Engineering Engagements (2020, 2023, 2025, 2026)";
+
+const censGroupNote =
+  lang === "es"
+    ? "Relación profesional recurrente para el diseño e implementación de sistemas empresariales críticos sobre .NET (C#, ASP.NET Core, SQL Server, Active Directory SSO)."
+    : "Recurring software engineering engagements for the architecture and delivery of mission-critical systems on .NET (C#, ASP.NET Core, SQL Server, Active Directory SSO).";
 ---
 
-<Section title={work.title}>
-  <ul>
-    {
-      work.items.map(
-        (
-          {
-            name,
-            position,
-            startDate,
-            endDate,
-            summary,
-            responsibilities,
-            technologies,
-            highlights,
-          },
-          index
-        ) => {
-          const start = startDate.substring(0, 7);
-          const end = endDate != null ? endDate.substring(0, 7) : labels.present;
-          const isPrintHidden = index >= 5;
+<Section title={labels.experience}>
+  <div class="experience-container">
+    <ul class="experience-list">
+      {
+        timeline.map((item) => {
+          if (item.type === "cens_group") {
+            return (
+              <li class="cens-group-wrapper">
+                <div class="cens-group-header">
+                  <div class="cens-title-row">
+                    <h3>{censGroupTitle}</h3>
+                    <span class="group-tag">{lang === "es" ? "4 Proyectos" : "4 Projects"}</span>
+                  </div>
+                  <p class="cens-group-note">{censGroupNote}</p>
+                </div>
+                <div class="cens-subcards">
+                  {item.items.map((subExp) => (
+                    <article class="cens-subcard">
+                      <header>
+                        <div>
+                          <h4>{subExp.role}</h4>
+                          <span class="subcard-org">{subExp.organization}</span>
+                        </div>
+                        <time>{subExp.startDate} — {subExp.endDate || labels.present}</time>
+                      </header>
+                      <p class="subcard-summary">{subExp.summary}</p>
+                      <ul class="detail-list">
+                        {subExp.responsibilities.map((resp) => <li>{resp}</li>)}
+                      </ul>
+                      <div class="tech-row">
+                        <strong>{lang === "es" ? "Tecnologías" : "Tech Stack"}:</strong>
+                        <span>{subExp.technologies.flatMap((t) => t.items).join(", ")}</span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </li>
+            );
+          }
+
+          const { exp } = item;
+          const end = exp.endDate != null ? exp.endDate : labels.present;
+
           return (
-            <li class={isPrintHidden ? "no-print" : ""}>
+            <li class="single-experience-card">
               <article>
                 <header>
                   <div>
-                    <h3>{name}</h3>
-                    <h4>{position}</h4>
+                    <h3>{exp.organization}</h3>
+                    <h4>{exp.role}</h4>
                   </div>
-                  <time>
-                    {start} - {end}
-                  </time>
+                  <time>{exp.startDate} — {end}</time>
                 </header>
-                <p>
-                  <strong>{labels.app}:</strong>
-                  {summary}
-                </p>
-                <p>
-                  <strong>{responsibilities.name}:</strong>
-                </p>
+                <p class="exp-summary">{exp.summary}</p>
                 <ul class="detail-list">
-                  {responsibilities.items.slice(0, 5).map((item) => <li>{item}</li>)}
+                  {exp.responsibilities.map((resp) => <li>{resp}</li>)}
                 </ul>
-                <footer>
-                  <p>
-                    <strong>{technologies.name}:</strong>
-                  </p>
-                  <ul class="tech-list">
-                    {
-                      technologies.items.map((item) => {
-                        const colonIdx = item.indexOf(":");
-                        if (colonIdx !== -1) {
-                          const cat = item.substring(0, colonIdx).trim();
-                          const val = item.substring(colonIdx + 1).trim();
-                          return (
-                            <li>
-                              <strong class="tech-cat">{cat}:</strong>
-                              <span class="tech-val">{val}</span>
-                            </li>
-                          );
-                        }
-                        return <li>{item}</li>;
-                      })
-                    }
-                  </ul>
-                  {
-                    highlights.length > 0 && (
-                      <>
-                        <p>
-                          <strong>{labels.highlights}:</strong>
-                        </p>
-                        <ul class="detail-list">
-                          {highlights.map((item) => <li>{item}</li>)}
-                        </ul>
-                      </>
-                    )
-                  }
-                  <hr class="no-print" />
-                </footer>
+                <div class="tech-row">
+                  <strong>{lang === "es" ? "Tecnologías" : "Tech Stack"}:</strong>
+                  <span>{exp.technologies.flatMap((t) => t.items).join(", ")}</span>
+                </div>
               </article>
             </li>
           );
-        }
-      )
-    }
-  </ul>
-  <p class="print-history-note print">
-    <strong>{isSpanish ? "Nota:" : "Note:"}</strong> {isSpanish ? "Para consultar la trayectoria completa y proyectos anteriores a 2024, visite el portafolio en vivo:" : "To review the complete career trajectory and projects prior to 2024, visit the live portfolio:"} <a href="https://playkru.com">https://playkru.com</a>
-  </p>
+        })
+      }
+    </ul>
+  </div>
 </Section>
+
 <style>
-  ul {
+  .experience-container {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 1.5rem;
   }
-  article h3 {
-    color: #111;
-    font-weight: 500;
+
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
-  article h4 {
-    color: #222;
-    font-weight: 400;
+
+  .single-experience-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
+
+  .single-experience-card article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
+
+  header h3 {
+    color: #111827;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  header h4 {
+    color: #4b5563;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
   time {
-    color: #555;
-    font-size: 0.9rem;
-    min-width: 102px;
+    color: #6b7280;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    min-width: 110px;
+    text-align: right;
   }
-  hr {
-    opacity: 0.5;
-  }
-  p {
-    margin-bottom: 6px;
+
+  .exp-summary {
+    color: #374151;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    margin: 0;
   }
 
   .detail-list {
     list-style: disc;
-    padding-left: 1.15rem;
-    margin: 0 0 0.75rem;
+    padding-left: 1.25rem;
+    margin: 0.25rem 0;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.3rem;
   }
 
   .detail-list li {
-    color: #444;
-    font-size: 0.88rem;
-    line-height: 1.35;
-  }
-
-  .tech-list {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin: 0 0 0.75rem;
-  }
-
-  .tech-list li {
-    font-size: 0.82rem;
+    color: #4b5563;
+    font-size: 0.86rem;
     line-height: 1.4;
-    color: #444;
-    display: block;
   }
 
-  .tech-cat {
-    font-weight: 600;
-    color: #222;
+  .tech-row {
+    font-size: 0.82rem;
+    color: #4b5563;
+    background: #f9fafb;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #f3f4f6;
+  }
+
+  .tech-row strong {
+    color: #1f2937;
     margin-right: 4px;
   }
 
-  .tech-val {
-    color: #555;
+  /* CENS Grouped Entity */
+  .cens-group-wrapper {
+    background: #fcfcfd;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
-  @media (width <= 768px) {
-    time {
-      text-align: right;
-    }
+  .cens-group-header {
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .cens-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cens-title-row h3 {
+    color: #0f172a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .group-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0369a1;
+    background: #e0f2fe;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  .cens-group-note {
+    color: #64748b;
+    font-size: 0.82rem;
+    margin-top: 4px;
+    line-height: 1.35;
+  }
+
+  .cens-subcards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .cens-subcard {
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 8px;
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .cens-subcard h4 {
+    color: #1e293b;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .subcard-org {
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+
+  .subcard-summary {
+    color: #334155;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin: 0;
   }
 
   @media print {
-    ul {
-      gap: 14px;
+    .experience-list {
+      gap: 1.25rem;
     }
-    article {
-      break-inside: avoid;
-      page-break-inside: avoid;
+    .cens-group-wrapper {
+      background: none !important;
+      border: 1px solid #ddd !important;
+      padding: 0.75rem !important;
     }
-    header {
-      margin-bottom: 2px;
+    .cens-subcard {
+      border: 1px solid #eee !important;
+      padding: 0.5rem !important;
     }
-    article h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #000;
+    .tech-row {
+      background: none !important;
+      border: 1px solid #eee !important;
+      padding: 4px 6px !important;
+      font-size: 0.75rem !important;
     }
-    article h4 {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #333;
-    }
-    time {
-      font-size: 0.78rem;
-      color: #555;
-    }
-    p {
-      margin-bottom: 3px;
-      font-size: 0.78rem;
-      line-height: 1.35;
-      color: #222;
-    }
-    .detail-list {
-      margin: 0 0 4px;
-      padding-left: 1rem;
-      gap: 2px;
-    }
-    .detail-list li {
-      font-size: 0.76rem;
-      line-height: 1.3;
-      color: #222;
-    }
-    .tech-list {
-      margin: 0 0 4px;
-      gap: 2px;
-    }
-    .tech-list li {
-      font-size: 0.72rem;
-      line-height: 1.3;
-      color: #333;
-      padding: 0;
-      background: transparent;
-      border: none;
-    }
-    .tech-cat {
-      font-weight: 700;
-      color: #000;
-    }
-    .tech-val {
-      color: #222;
-    }
-    .print-history-note {
-      margin-top: 12px;
-      padding-top: 6px;
-      border-top: 1px dashed #ccc;
-      font-size: 0.75rem;
-      color: #555;
-    }
-    .print-history-note a {
-      color: #111;
-      text-decoration: underline;
+    .single-experience-card,
+    .cens-subcard,
+    .cens-group-wrapper {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
     }
   }
 </style>

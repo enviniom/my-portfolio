@@ -1,29 +1,66 @@
+---
+import type { Locale } from "../../content";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "en" } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
 
 <div class="top-bar no-print">
-  <button id="print-cv-btn" type="button" title="Imprimir / Guardar CV en PDF (Ctrl+P)" aria-label="Imprimir o Guardar CV en PDF">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <button
+    id="print-cv-btn"
+    type="button"
+    title={lang === "es" ? "Imprimir o guardar en PDF (Ctrl+P)" : "Print or save as PDF (Ctrl+P)"}
+    aria-label={lang === "es" ? "Imprimir o guardar en PDF" : "Print or save as PDF"}
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="6 9 6 2 18 2 18 9"></polyline>
       <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
       <rect x="6" y="14" width="12" height="8"></rect>
     </svg>
     <span>PDF</span>
   </button>
-  <select name="language" id="language">
-    <option value="en">English</option>
-    <option value="es">Español</option>
-  </select>
+
+  <div class="lang-switch-group">
+    <a
+      href={`${baseUrl}/`}
+      class={`lang-toggle ${lang === "en" ? "active" : ""}`}
+      title="English"
+    >
+      EN
+    </a>
+    <span class="sep">|</span>
+    <a
+      href={`${baseUrl}/es/`}
+      class={`lang-toggle ${lang === "es" ? "active" : ""}`}
+      title="Español"
+    >
+      ES
+    </a>
+  </div>
 </div>
+
+<script>
+  const printBtn = document.getElementById("print-cv-btn");
+  printBtn?.addEventListener("click", () => {
+    window.print();
+  });
+</script>
 
 <style>
   div.top-bar {
-    max-width: 700px;
-    margin: -25px auto 10px;
+    max-width: 820px;
+    margin: -25px auto 16px;
     display: flex;
     width: 100%;
     justify-content: flex-end;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
+
   button#print-cv-btn {
     display: inline-flex;
     align-items: center;
@@ -31,53 +68,49 @@
     background-color: #f3f4f6;
     color: #1f2937;
     border: 1px solid #e5e7eb;
-    padding: 0.3rem 0.7rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
   }
+
   button#print-cv-btn:hover {
     background-color: #e5e7eb;
     border-color: #d1d5db;
     color: #111827;
   }
-  select {
-    width: 100px;
-    border: 1px solid #e5e7eb;
-    background-color: #f3f4f6;
-    color: #1f2937;
-    padding: 0.3rem 0.5rem;
+
+  .lang-switch-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #f3f4f6;
+    padding: 3px 8px;
     border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 500;
+    border: 1px solid #e5e7eb;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .lang-toggle {
+    color: #6b7280;
+    text-decoration: none;
+    padding: 2px 4px;
+    transition: color 0.15s ease;
+  }
+
+  .lang-toggle.active {
+    color: #111827;
+    text-decoration: underline;
+  }
+
+  .lang-toggle:hover {
+    color: #111827;
+  }
+
+  .sep {
+    color: #d1d5db;
   }
 </style>
-
-<script>
-  const select = document.getElementById("language") as HTMLSelectElement;
-  let val = 'en';
-  if (window.location.pathname.includes('es')) {
-    val = 'es';
-  }
-  select.value = val;
-
-  const changeLanguage = (lang: string) => {
-    window.location.href = `/my-portfolio/${lang}`;
-  }
-
-  select?.addEventListener("change", (event) => {
-    let lang = '';
-    if ((event?.target as HTMLSelectElement).value == "es") {
-      lang = 'es/';
-    }
-    changeLanguage(lang);
-  });
-
-  const printBtn = document.getElementById("print-cv-btn");
-  printBtn?.addEventListener("click", () => {
-    window.print();
-  });
-</script>

@@ -1,8 +1,12 @@
 ---
-import type { Interests } from "@/cv";
 import Section from "../Section.astro";
+import type { PortfolioData } from "@/content";
 
-const interests = Astro.props.interests as Interests;
+interface Props {
+  interests: PortfolioData["interests"];
+}
+
+const { interests } = Astro.props;
 ---
 
 <div class="no-print">
@@ -10,9 +14,9 @@ const interests = Astro.props.interests as Interests;
     <ul>
       {
         interests.items.map(({ name }) => (
-         <li>
-          <span>{name}</span>
-          </li>   
+          <li>
+            <span>{name}</span>
+          </li>
         ))
       }
     </ul>
@@ -24,6 +28,9 @@ const interests = Astro.props.interests as Interests;
     display: inline-flex;
     gap: 8px;
     flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
   li {
     border-radius: 6px;

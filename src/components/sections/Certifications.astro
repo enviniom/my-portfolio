@@ -1,0 +1,213 @@
+---
+import Section from "../Section.astro";
+import type { EnrichedCertification, SiteLabels } from "@/content";
+
+interface Props {
+  certifications: {
+    title: string;
+    items: EnrichedCertification[];
+  };
+  labels: SiteLabels;
+}
+
+const { certifications, labels } = Astro.props;
+---
+
+<Section title={certifications.title}>
+  <div class="certifications-container">
+    {
+      certifications.items.map((cert) => (
+        <article class="cert-card">
+          <header class="cert-header">
+            <div class="cert-info">
+              <h3>{cert.name}</h3>
+              <span class="cert-issuer">{cert.issuer}</span>
+            </div>
+            <time class="cert-date">{cert.issuedAt}</time>
+          </header>
+
+          {cert.assessment && (
+            <div class="cert-score-box">
+              <div class="main-score">
+                <span class="score-label">{labels.englishLevel || "Nivel C1 Avanzado"}:</span>
+                <strong class="score-value">{cert.assessment.score}</strong>
+                <span class="score-badge">{cert.assessment.level}</span>
+              </div>
+
+              {cert.assessment.breakdown && (
+                <div class="breakdown-grid">
+                  {cert.assessment.breakdown.map((item) => (
+                    <div class="breakdown-item">
+                      <span class="item-name">{item.name}</span>
+                      <strong class="item-score">{item.score || item.level}</strong>
+                      <span class="item-level">{item.level}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {cert.description && <p class="cert-desc">{cert.description}</p>}
+
+          <footer class="cert-footer">
+            {cert.verificationUrl && (
+              <a
+                href={cert.verificationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="verify-link"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                <span>{labels.viewCertificate}: cert.efset.org/en/9euwZ3</span>
+              </a>
+            )}
+          </footer>
+        </article>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .certifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .cert-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .cert-info h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .cert-issuer {
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+
+  .cert-date {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  .cert-score-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .main-score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .score-label {
+    font-size: 0.88rem;
+    color: #334155;
+  }
+
+  .score-value {
+    font-size: 1.1rem;
+    color: #0369a1;
+  }
+
+  .score-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0369a1;
+    background: #e0f2fe;
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+
+  .breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 8px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 0.6rem;
+  }
+
+  .breakdown-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    padding: 6px 8px;
+    border-radius: 6px;
+  }
+
+  .item-name {
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+
+  .item-score {
+    font-size: 0.9rem;
+    color: #0f172a;
+  }
+
+  .item-level {
+    font-size: 0.72rem;
+    color: #0369a1;
+    font-weight: 500;
+  }
+
+  .cert-desc {
+    font-size: 0.85rem;
+    color: #334155;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .cert-footer {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .verify-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #0284c7;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .verify-link:hover {
+    color: #0369a1;
+    text-decoration: underline;
+  }
+</style>
