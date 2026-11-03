@@ -1,0 +1,851 @@
+---
+import type { ResumeDocument } from "../../lib/resume/types";
+import type { Locale, ProfileId, EnrichedCertificationBreakdown } from "@/content/types";
+
+interface Props {
+  document: ResumeDocument;
+}
+
+const { document: doc } = Astro.props;
+const { header, summary, skills, experiences, projects, education, certification, labels, profileId, locale } = doc;
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const profileTabs: { id: ProfileId; label: Record<Locale, string> }[] = [
+  {
+    id: "backend",
+    label: { en: "Backend (Java / Go)", es: "Backend (Java / Go)" },
+  },
+  {
+    id: "dotnet-fullstack",
+    label: { en: ".NET Full Stack (C# / Angular)", es: ".NET Full Stack (C# / Angular)" },
+  },
+  {
+    id: "distributed-systems",
+    label: { en: "Distributed Systems (Netty / High-Concurrency)", es: "Sistemas Distribuidos (Netty / Alta Concurrencia)" },
+  },
+];
+
+const pdfFileName = `cv-jhon-colmenares-${profileId}-${locale}.pdf`;
+const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
+---
+
+<div class="resume-page-wrapper">
+  <!-- Screen Navigation & Action Bar -->
+  <header class="no-print screen-toolbar">
+    <div class="toolbar-container">
+      <div class="toolbar-left">
+        <a href={locale === "es" ? `${baseUrl}/es/` : `${baseUrl}/`} class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>{locale === "es" ? "Volver al Portafolio" : "Back to Portfolio"}</span>
+        </a>
+      </div>
+
+      <nav class="toolbar-profiles" aria-label="Profile selector">
+        {profileTabs.map((tab) => (
+          <a
+            href={`${baseUrl}/resume/${locale}/${tab.id}/`}
+            class={`profile-pill ${tab.id === profileId ? "active" : ""}`}
+          >
+            {tab.label[locale]}
+          </a>
+        ))}
+      </nav>
+
+      <div class="toolbar-actions">
+        <div class="lang-switch" role="group" aria-label="Language switch">
+          <a
+            href={`${baseUrl}/resume/en/${profileId}/`}
+            class={`lang-btn ${locale === "en" ? "active" : ""}`}
+            title="English version"
+          >
+            EN
+          </a>
+          <span class="lang-sep">|</span>
+          <a
+            href={`${baseUrl}/resume/es/${profileId}/`}
+            class={`lang-btn ${locale === "es" ? "active" : ""}`}
+            title="Versión en español"
+          >
+            ES
+          </a>
+        </div>
+
+        <a
+          href={pdfDownloadUrl}
+          download={pdfFileName}
+          class="action-btn download-btn"
+          title={locale === "es" ? "Descargar archivo PDF pre-generado" : "Download pre-generated PDF"}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>{locale === "es" ? "Descargar PDF" : "Download PDF"}</span>
+        </a>
+
+        <button
+          type="button"
+          id="print-btn"
+          class="action-btn print-btn"
+          title={locale === "es" ? "Imprimir o guardar en PDF (Ctrl+P)" : "Print or save to PDF (Ctrl+P)"}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>{locale === "es" ? "Imprimir" : "Print"}</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ATS Resume Sheet -->
+  <main class="resume-sheet">
+    <!-- Header -->
+    <header class="resume-header">
+      <h1 class="applicant-name">{header.name}</h1>
+      <p class="target-title">{header.title}</p>
+      <div class="contact-line">
+        <span class="contact-item">
+          <strong>{locale === "es" ? "Ubicación" : "Location"}:</strong> {header.location}
+        </span>
+        <span class="bullet">•</span>
+        <span class="contact-item">
+          <a href={`mailto:${header.email}`}>{header.email}</a>
+        </span>
+        <span class="bullet">•</span>
+        <span class="contact-item">
+          <a href={`tel:${header.phone}`}>{header.phone}</a>
+        </span>
+        <span class="bullet">•</span>
+        <span class="contact-item">
+          <a href={header.linkedIn} target="_blank" rel="noopener noreferrer">linkedin.com/in/enviniom</a>
+        </span>
+        <span class="bullet">•</span>
+        <span class="contact-item">
+          <a href={header.gitHub} target="_blank" rel="noopener noreferrer">github.com/enviniom</a>
+        </span>
+        <span class="bullet">•</span>
+        <span class="contact-item">
+          <a href={header.url} target="_blank" rel="noopener noreferrer">enviniom.github.io/my-portfolio</a>
+        </span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="resume-section">
+      <h2 class="section-heading">{locale === "es" ? "PERFIL PROFESIONAL" : "PROFESSIONAL SUMMARY"}</h2>
+      <p class="summary-text">{summary}</p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="resume-section">
+      <h2 class="section-heading">{labels.skills.toUpperCase()}</h2>
+      <div class="skills-block">
+        {skills.map((category) => (
+          <div class="skill-row">
+            <span class="skill-category-title">{category.title}:</span>
+            <span class="skill-keywords">{category.skills.join(" • ")}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Relevant Experience -->
+    <section class="resume-section">
+      <h2 class="section-heading">{labels.experience.toUpperCase()}</h2>
+      <div class="experience-list">
+        {experiences.map((exp) => (
+          <article class="resume-item experience-item">
+            <div class="item-header">
+              <div class="item-title-group">
+                <h3 class="item-role">{exp.role}</h3>
+                <span class="item-org">{exp.organization}</span>
+              </div>
+              <time class="item-period">{exp.period}</time>
+            </div>
+            <p class="item-summary">{exp.summary}</p>
+            <ul class="item-bullets">
+              {exp.responsibilities.map((resp) => (
+                <li>{resp}</li>
+              ))}
+            </ul>
+            <p class="item-tech">
+              <strong>{locale === "es" ? "Tecnologías clave" : "Key Tech"}:</strong>{" "}
+              {exp.technologies.slice(0, 10).join(", ")}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Selected Projects -->
+    <section class="resume-section">
+      <h2 class="section-heading">{labels.projects.toUpperCase()}</h2>
+      <div class="projects-list">
+        {projects.map((proj) => (
+          <article class="resume-item project-item">
+            <div class="item-header">
+              <h3 class="item-role">{proj.name}</h3>
+              <span class="project-tech-badge">{proj.technologies.slice(0, 5).join(", ")}</span>
+            </div>
+            <p class="item-summary">{proj.description}</p>
+            <ul class="item-bullets">
+              {proj.highlights.map((hl) => (
+                <li>{hl}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2 class="section-heading">{labels.education.toUpperCase()}</h2>
+      <div class="education-list">
+        {education.map((edu) => (
+          <div class="education-item">
+            <div class="item-header">
+              <span class="edu-degree"><strong>{edu.studyType}</strong> — {edu.area}</span>
+              <time class="item-period">{edu.period}</time>
+            </div>
+            <span class="edu-institution">{edu.institution}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Certifications & Languages -->
+    {certification && (
+      <section class="resume-section">
+        <h2 class="section-heading">{labels.certification.toUpperCase()} & {labels.languages.toUpperCase()}</h2>
+        <div class="cert-item">
+          <div class="item-header">
+            <span class="cert-name">
+              <strong>{certification.name}</strong> ({certification.issuer}) —{" "}
+              <span class="cert-score">{labels.englishLevel}</span>
+            </span>
+            <time class="item-period">{certification.issuedAt}</time>
+          </div>
+          {certification.verificationUrl && (
+            <p class="cert-verify">
+              <a href={certification.verificationUrl} target="_blank" rel="noopener noreferrer">
+                {labels.verifyCert}: {certification.verificationUrl}
+              </a>
+            </p>
+          )}
+          {certification.assessment?.breakdown && (
+            <div class="cert-breakdown">
+              {certification.assessment.breakdown.map((b: EnrichedCertificationBreakdown) => (
+                <span class="breakdown-pill">
+                  {b.name}: <strong>{b.score || b.level}</strong> ({b.level})
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+  </main>
+</div>
+
+<script>
+  const printBtn = document.getElementById("print-btn");
+  printBtn?.addEventListener("click", () => {
+    window.print();
+  });
+</script>
+
+<style>
+  /* ----------------------------------------------------
+     BASE SCREEN STYLING & TOOLBAR
+     ---------------------------------------------------- */
+  .resume-page-wrapper {
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    padding-bottom: 40px;
+    color: #111827;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .screen-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .toolbar-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #4b5563;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .back-link:hover {
+    color: #111827;
+  }
+
+  .toolbar-profiles {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .profile-pill {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 6px;
+    background: #f3f4f6;
+    color: #374151;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+  .profile-pill:hover {
+    background: #e5e7eb;
+    color: #111827;
+  }
+  .profile-pill.active {
+    background: #1f2937;
+    color: #ffffff;
+    border-color: #111827;
+  }
+
+  .toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #f3f4f6;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .lang-btn {
+    color: #6b7280;
+    text-decoration: none;
+    padding: 2px 4px;
+  }
+  .lang-btn.active {
+    color: #111827;
+    text-decoration: underline;
+  }
+  .lang-sep {
+    color: #d1d5db;
+  }
+
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .download-btn {
+    background: #0284c7;
+    color: #ffffff;
+    border: 1px solid #0284c7;
+  }
+  .download-btn:hover {
+    background: #0369a1;
+  }
+
+  .print-btn {
+    background: #ffffff;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+  }
+  .print-btn:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+  }
+
+  /* ----------------------------------------------------
+     ATS RESUME SHEET (SCREEN)
+     ---------------------------------------------------- */
+  .resume-sheet {
+    background: #ffffff;
+    width: 216mm;
+    max-width: calc(100vw - 32px);
+    min-height: 279mm;
+    margin: 24px auto 0;
+    padding: 14mm 16mm;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1a1a1a;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 768px) {
+    .resume-sheet {
+      padding: 1rem;
+      margin: 12px auto 0;
+      font-size: 8.8pt;
+    }
+    .toolbar-container {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+    }
+    .toolbar-actions {
+      justify-content: space-between;
+    }
+  }
+
+  /* Header */
+  .resume-header {
+    text-align: center;
+    margin-bottom: 10pt;
+    border-bottom: 1.5pt solid #111827;
+    padding-bottom: 8pt;
+  }
+
+  .applicant-name {
+    font-size: 19pt;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #111827;
+    margin: 0 0 2pt 0;
+    text-transform: uppercase;
+  }
+
+  .target-title {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #2563eb;
+    margin: 0 0 5pt 0;
+  }
+
+  .contact-line {
+    font-size: 8.5pt;
+    color: #374151;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4pt;
+  }
+
+  .contact-line a {
+    color: #1f2937;
+    text-decoration: none;
+  }
+  .contact-line a:hover {
+    text-decoration: underline;
+  }
+
+  .bullet {
+    color: #9ca3af;
+    font-weight: bold;
+  }
+
+  /* Sections */
+  .resume-section {
+    margin-bottom: 10pt;
+  }
+
+  .section-heading {
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #111827;
+    border-bottom: 1pt solid #374151;
+    padding-bottom: 2pt;
+    margin: 0 0 6pt 0;
+  }
+
+  .summary-text {
+    font-size: 9pt;
+    line-height: 1.35;
+    color: #1f2937;
+    margin: 0;
+    text-align: justify;
+  }
+
+  /* Skills */
+  .skills-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3pt;
+  }
+
+  .skill-row {
+    font-size: 8.8pt;
+    line-height: 1.3;
+  }
+
+  .skill-category-title {
+    font-weight: 700;
+    color: #111827;
+    margin-right: 4pt;
+  }
+
+  .skill-keywords {
+    color: #374151;
+  }
+
+  /* Experience & Projects Items */
+  .experience-list,
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7pt;
+  }
+
+  .resume-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5pt;
+  }
+
+  .item-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 6pt;
+    flex-wrap: wrap;
+  }
+
+  .item-role {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+  }
+
+  .item-org {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #4b5563;
+  }
+
+  .item-period {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #4b5563;
+    white-space: nowrap;
+  }
+
+  .item-summary {
+    font-size: 8.8pt;
+    color: #1f2937;
+    margin: 1.5pt 0 3pt 0;
+    line-height: 1.3;
+  }
+
+  .item-bullets {
+    margin: 0 0 3pt 0;
+    padding-left: 14pt;
+    list-style-type: disc;
+  }
+
+  .item-bullets li {
+    font-size: 8.5pt;
+    line-height: 1.3;
+    color: #374151;
+    margin-bottom: 1.5pt;
+  }
+
+  .item-tech {
+    font-size: 8.2pt;
+    color: #4b5563;
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .project-tech-badge {
+    font-size: 8pt;
+    color: #4b5563;
+    font-style: italic;
+  }
+
+  /* Education */
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4pt;
+  }
+
+  .education-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 8.8pt;
+  }
+
+  .edu-degree {
+    color: #111827;
+  }
+
+  .edu-institution {
+    font-size: 8.2pt;
+    color: #4b5563;
+    display: block;
+  }
+
+  /* Certifications */
+  .cert-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 8.8pt;
+  }
+
+  .cert-name {
+    color: #111827;
+  }
+
+  .cert-score {
+    color: #0369a1;
+    font-weight: 600;
+  }
+
+  .cert-verify {
+    font-size: 8pt;
+    margin: 1pt 0 3pt 0;
+  }
+
+  .cert-verify a {
+    color: #0284c7;
+    text-decoration: underline;
+  }
+
+  .cert-breakdown {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4pt;
+    margin-top: 2pt;
+  }
+
+  .breakdown-pill {
+    font-size: 7.8pt;
+    background: #f3f4f6;
+    padding: 1.5pt 4pt;
+    border-radius: 3pt;
+    border: 1pt solid #e5e7eb;
+    color: #374151;
+  }
+
+  /* ----------------------------------------------------
+     STRICT 2-PAGE ATS PRINT CSS
+     ---------------------------------------------------- */
+  @page {
+    size: letter;
+    margin: 8mm 10mm 8mm 10mm;
+  }
+
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+
+    .resume-page-wrapper {
+      background: transparent !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      min-height: auto !important;
+    }
+
+    .resume-sheet {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+      font-size: 8.6pt !important;
+      line-height: 1.22 !important;
+      color: #000000 !important;
+    }
+
+    .resume-header {
+      margin-bottom: 5pt !important;
+      padding-bottom: 4pt !important;
+      border-bottom: 1.2pt solid #000000 !important;
+    }
+
+    .applicant-name {
+      font-size: 15pt !important;
+      color: #000000 !important;
+      margin-bottom: 1pt !important;
+    }
+
+    .target-title {
+      font-size: 9.8pt !important;
+      color: #000000 !important;
+      margin-bottom: 3pt !important;
+    }
+
+    .contact-line {
+      font-size: 7.8pt !important;
+      color: #000000 !important;
+      gap: 3pt !important;
+    }
+
+    .contact-line a {
+      color: #000000 !important;
+      text-decoration: none !important;
+    }
+
+    .section-heading {
+      font-size: 9pt !important;
+      color: #000000 !important;
+      border-bottom: 0.8pt solid #000000 !important;
+      margin: 0 0 3pt 0 !important;
+      padding-bottom: 1pt !important;
+    }
+
+    .summary-text {
+      font-size: 8.2pt !important;
+      line-height: 1.22 !important;
+      color: #000000 !important;
+    }
+
+    .skills-block {
+      gap: 2pt !important;
+    }
+
+    .skill-row {
+      font-size: 8pt !important;
+      line-height: 1.2 !important;
+    }
+
+    .skill-category-title {
+      color: #000000 !important;
+    }
+
+    .skill-keywords {
+      color: #000000 !important;
+    }
+
+    .experience-list,
+    .projects-list {
+      gap: 4.5pt !important;
+    }
+
+    .item-role {
+      font-size: 8.8pt !important;
+      color: #000000 !important;
+    }
+
+    .item-org,
+    .item-period {
+      font-size: 8pt !important;
+      color: #000000 !important;
+    }
+
+    .item-summary {
+      font-size: 8pt !important;
+      line-height: 1.2 !important;
+      color: #000000 !important;
+      margin: 1pt 0 1.5pt 0 !important;
+    }
+
+    .item-bullets {
+      margin: 0 0 1.5pt 0 !important;
+      padding-left: 11pt !important;
+    }
+
+    .item-bullets li {
+      font-size: 7.8pt !important;
+      line-height: 1.2 !important;
+      color: #000000 !important;
+      margin-bottom: 1pt !important;
+    }
+
+    .item-tech {
+      font-size: 7.5pt !important;
+      line-height: 1.15 !important;
+      color: #000000 !important;
+    }
+
+    .project-tech-badge {
+      font-size: 7.5pt !important;
+      color: #000000 !important;
+    }
+
+    .education-list {
+      gap: 3pt !important;
+    }
+
+    .education-item,
+    .cert-item {
+      font-size: 8pt !important;
+      line-height: 1.2 !important;
+    }
+
+    .edu-degree,
+    .cert-name,
+    .cert-score {
+      color: #000000 !important;
+    }
+
+    .edu-institution,
+    .cert-verify a {
+      color: #000000 !important;
+      font-size: 7.5pt !important;
+    }
+
+    .breakdown-pill {
+      background: none !important;
+      border: 0.5pt solid #888888 !important;
+      color: #000000 !important;
+      font-size: 7.2pt !important;
+      padding: 1pt 3pt !important;
+    }
+
+    .resume-section {
+      margin-bottom: 5pt !important;
+    }
+
+    .resume-item,
+    .education-item,
+    .cert-item {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+  }
+</style>

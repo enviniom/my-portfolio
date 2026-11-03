@@ -1,0 +1,36 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import ResumeView from "../../../components/resume/ResumeView.astro";
+import { getResumeDocument } from "../../../lib/resume/selectors";
+import type { Locale, ProfileId } from "../../../content/types";
+
+export function getStaticPaths() {
+  const profiles: ProfileId[] = ["backend", "dotnet-fullstack", "distributed-systems"];
+  const locales: Locale[] = ["en", "es"];
+
+  return profiles.flatMap((profile) =>
+    locales.map((lang) => ({
+      params: { lang, profile },
+      props: {
+        document: getResumeDocument(profile, lang),
+      },
+    }))
+  );
+}
+
+interface Props {
+  document: ReturnType<typeof getResumeDocument>;
+}
+
+const { document } = Astro.props;
+const pageTitle = `${document.header.name} — ${document.header.title} (Resume)`;
+---
+
+<Layout
+  title={pageTitle}
+  summary={document.summary}
+  lang={document.locale}
+  canonicalUrl={`https://enviniom.github.io/my-portfolio/resume/${document.locale}/${document.profileId}/`}
+>
+  <ResumeView document={document} />
+</Layout>
