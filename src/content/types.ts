@@ -1,6 +1,6 @@
 export type Locale = 'es' | 'en';
 
-export type ProfileId = 'backend' | 'dotnet-fullstack' | 'distributed-systems';
+export type ProfileId = 'master' | 'backend' | 'dotnet-fullstack' | 'distributed-systems';
 
 export type ExperienceId =
   | 'miia'

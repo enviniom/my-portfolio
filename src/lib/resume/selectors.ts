@@ -39,10 +39,11 @@ export function getResumeDocument(profileId: ProfileId, locale: Locale): ResumeD
       return {
         id: exp.id,
         organization: exp.organization,
+        ...(exp.clientGrouping ? { clientGrouping: exp.clientGrouping } : {}),
         role: exp.role[locale],
         period: `${start} — ${end}`,
         summary: exp.summary[locale],
-        responsibilities: exp.responsibilities[locale].slice(0, 3), // Curated for ATS 2-page density
+        responsibilities: exp.responsibilities[locale].slice(0, 3), // Curated for ATS density
         technologies: flatTechs,
         highlights: exp.highlights[locale].slice(0, 1),
       };
@@ -61,7 +62,7 @@ export function getResumeDocument(profileId: ProfileId, locale: Locale): ResumeD
         name: proj.name,
         technologies: proj.technologies,
         description: proj.description[locale],
-        highlights: proj.highlights[locale].slice(0, 2),
+        highlights: proj.highlights[locale].slice(0, profileId === 'master' ? 1 : 2),
       };
     })
     .filter((item): item is ResumeProjectItem => Boolean(item));
@@ -69,9 +70,11 @@ export function getResumeDocument(profileId: ProfileId, locale: Locale): ResumeD
   // Categorize skills and order priority skills first
   const skills: ResumeSkillCategory[] = contentSkills.map((cat) => ({
     title: cat.title[locale],
-    skills: cat.skills
-      .filter((s) => s.priorityProfiles.includes(profileId) || resumeProfile.prioritySkillNames.includes(s.name))
-      .map((s) => s.name),
+    skills: profileId === 'master'
+      ? cat.skills.map((s) => s.name)
+      : cat.skills
+          .filter((s) => s.priorityProfiles.includes(profileId) || resumeProfile.prioritySkillNames.includes(s.name))
+          .map((s) => s.name),
   })).filter((cat) => cat.skills.length > 0);
 
   // Education
@@ -152,7 +155,7 @@ export interface ProfileValidationResult {
 }
 
 export function validateAllResumeProfiles(): ProfileValidationResult[] {
-  const profiles: ProfileId[] = ['backend', 'dotnet-fullstack', 'distributed-systems'];
+  const profiles: ProfileId[] = ['master', 'backend', 'dotnet-fullstack', 'distributed-systems'];
   const locales: Locale[] = ['es', 'en'];
   const results: ProfileValidationResult[] = [];
 

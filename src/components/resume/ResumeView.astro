@@ -13,6 +13,10 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const profileTabs: { id: ProfileId; label: Record<Locale, string> }[] = [
   {
+    id: "master",
+    label: { en: "Complete CV (Full Career)", es: "CV Completo (Trayectoria)" },
+  },
+  {
     id: "backend",
     label: { en: "Backend (Java / Go)", es: "Backend (Java / Go)" },
   },
@@ -28,6 +32,29 @@ const profileTabs: { id: ProfileId; label: Record<Locale, string> }[] = [
 
 const pdfFileName = `cv-jhon-colmenares-${profileId}-${locale}.pdf`;
 const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
+
+// Process timeline for experiences (grouping recurring CENS contracts when in master profile)
+type TimelineItem =
+  | { type: "single"; exp: typeof experiences[0] }
+  | { type: "cens_group"; items: typeof experiences[0][] };
+
+let timeline: TimelineItem[] = [];
+if (profileId === "master") {
+  const censItems = experiences.filter((e) => e.clientGrouping === "cens-grupo-epm");
+  let censInserted = false;
+  for (const exp of experiences) {
+    if (exp.clientGrouping === "cens-grupo-epm") {
+      if (!censInserted) {
+        timeline.push({ type: "cens_group", items: censItems });
+        censInserted = true;
+      }
+    } else {
+      timeline.push({ type: "single", exp });
+    }
+  }
+} else {
+  timeline = experiences.map((exp) => ({ type: "single", exp }));
+}
 ---
 
 <div class="resume-page-wrapper">
@@ -106,7 +133,7 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
   </header>
 
   <!-- ATS Resume Sheet -->
-  <main class="resume-sheet">
+  <main class={`resume-sheet profile-${profileId}`}>
     <!-- Header -->
     <header class="resume-header">
       <h1 class="applicant-name">{header.name}</h1>
@@ -157,50 +184,106 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
       </div>
     </section>
 
-    <!-- Relevant Experience -->
-    <section class="resume-section">
-      <h2 class="section-heading">{labels.experience.toUpperCase()}</h2>
+    <!-- Relevant Experience / Full Career -->
+    <section class="resume-section experience-section">
+      <h2 class="section-heading">
+        {profileId === "master"
+          ? (locale === "es" ? "HISTORIAL PROFESIONAL COMPLETO" : "COMPLETE PROFESSIONAL EXPERIENCE")
+          : labels.experience.toUpperCase()}
+      </h2>
       <div class="experience-list">
-        {experiences.map((exp) => (
-          <article class="resume-item experience-item">
-            <div class="item-header">
-              <div class="item-title-group">
-                <h3 class="item-role">{exp.role}</h3>
-                <span class="item-org">{exp.organization}</span>
+        {timeline.map((item) => {
+          if (item.type === "cens_group") {
+            return (
+              <div class="resume-item cens-group-block">
+                <div class="cens-group-header">
+                  <div class="item-title-group">
+                    <h3 class="item-role cens-group-title">
+                      {locale === "es"
+                        ? "CENS Grupo EPM — Contratos por Proyectos de Software"
+                        : "CENS Grupo EPM — Project-based Software Engagements"}
+                    </h3>
+                  </div>
+                  <time class="item-period">2020, 2023, 2025, 2026</time>
+                </div>
+                <p class="cens-group-note">
+                  {locale === "es"
+                    ? "Contratos específicos de ingeniería para el diseño, modernización y despliegue de sistemas empresariales sobre .NET (C#, ASP.NET Core), Angular y SQL Server."
+                    : "Recurring project-based contracts designing, modernizing, and deploying mission-critical systems using .NET (C#, ASP.NET Core), Angular, and SQL Server."}
+                </p>
+                <div class="cens-subcontracts">
+                  {item.items.map((subExp) => (
+                    <div class="cens-subcontract-item">
+                      <div class="item-header">
+                        <h4 class="subcontract-role">
+                          <strong>{subExp.role}</strong> · <span class="subcontract-summary">{subExp.summary}</span>
+                        </h4>
+                        <time class="item-period">{subExp.period}</time>
+                      </div>
+                      <ul class="item-bullets">
+                        {subExp.responsibilities.map((resp) => (
+                          <li>{resp}</li>
+                        ))}
+                      </ul>
+                      <p class="item-tech">
+                        <strong>{locale === "es" ? "Tecnologías clave" : "Key Tech"}:</strong>{" "}
+                        {subExp.technologies.slice(0, 10).join(", ")}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <time class="item-period">{exp.period}</time>
-            </div>
-            <p class="item-summary">{exp.summary}</p>
-            <ul class="item-bullets">
-              {exp.responsibilities.map((resp) => (
-                <li>{resp}</li>
-              ))}
-            </ul>
-            <p class="item-tech">
-              <strong>{locale === "es" ? "Tecnologías clave" : "Key Tech"}:</strong>{" "}
-              {exp.technologies.slice(0, 10).join(", ")}
-            </p>
-          </article>
-        ))}
+            );
+          }
+
+          const { exp } = item;
+          return (
+            <article class="resume-item experience-item">
+              <div class="item-header">
+                <div class="item-title-group">
+                  <h3 class="item-role">{exp.role}</h3>
+                  <span class="item-org">{exp.organization}</span>
+                </div>
+                <time class="item-period">{exp.period}</time>
+              </div>
+              <p class="item-summary">{exp.summary}</p>
+              <ul class="item-bullets">
+                {exp.responsibilities.map((resp) => (
+                  <li>{resp}</li>
+                ))}
+              </ul>
+              <p class="item-tech">
+                <strong>{locale === "es" ? "Tecnologías clave" : "Key Tech"}:</strong>{" "}
+                {exp.technologies.slice(0, 10).join(", ")}
+              </p>
+            </article>
+          );
+        })}
       </div>
     </section>
 
-    <!-- Selected Projects -->
+    <!-- Projects Section -->
     <section class="resume-section projects-section">
-      <h2 class="section-heading">{labels.projects.toUpperCase()}</h2>
+      <h2 class="section-heading">
+        {profileId === "master"
+          ? (locale === "es" ? "PROYECTOS DE INGENIERÍA" : "ENGINEERING PROJECTS")
+          : labels.projects.toUpperCase()}
+      </h2>
       <div class="projects-list">
         {projects.map((proj) => (
           <article class="resume-item project-item">
             <div class="item-header">
               <h3 class="item-role">{proj.name}</h3>
-              <span class="project-tech-badge">{proj.technologies.slice(0, 5).join(", ")}</span>
+              <span class="project-tech-badge">{proj.technologies.slice(0, 6).join(", ")}</span>
             </div>
             <p class="item-summary">{proj.description}</p>
-            <ul class="item-bullets">
-              {proj.highlights.map((hl) => (
-                <li>{hl}</li>
-              ))}
-            </ul>
+            {proj.highlights && proj.highlights.length > 0 && (
+              <ul class="item-bullets">
+                {proj.highlights.map((hl) => (
+                  <li>{hl}</li>
+                ))}
+              </ul>
+            )}
           </article>
         ))}
       </div>
@@ -551,6 +634,54 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     break-inside: avoid;
   }
 
+  .cens-group-block {
+    border-left: 2px solid #2563eb;
+    padding-left: 10px;
+    margin-bottom: 8px;
+    break-inside: auto;
+  }
+  .cens-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+  .cens-group-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #1e3a8a;
+  }
+  .cens-group-note {
+    font-size: 8.5pt;
+    color: #4b5563;
+    margin: 1px 0 6px 0;
+    font-style: italic;
+  }
+  .cens-subcontracts {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 4px;
+  }
+  .cens-subcontract-item {
+    border-bottom: 1px dashed #e5e7eb;
+    padding-bottom: 5px;
+    break-inside: avoid;
+  }
+  .cens-subcontract-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .subcontract-role {
+    font-size: 9.2pt;
+    margin: 0;
+    color: #111827;
+  }
+  .subcontract-summary {
+    font-weight: normal;
+    color: #374151;
+  }
+
   .item-header {
     display: flex;
     justify-content: space-between;
@@ -751,11 +882,13 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
       border-bottom: 0.8pt solid #000000 !important;
       margin: 0 0 3.5pt 0 !important;
       padding-bottom: 1pt !important;
+      break-after: avoid !important;
+      page-break-after: avoid !important;
     }
 
     .summary-text {
-      font-size: 8.4pt !important;
-      line-height: 1.24 !important;
+      font-size: 9.2pt !important;
+      line-height: 1.28 !important;
       color: #000000 !important;
     }
 
@@ -764,8 +897,8 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     }
 
     .skill-row {
-      font-size: 8.2pt !important;
-      line-height: 1.22 !important;
+      font-size: 9pt !important;
+      line-height: 1.28 !important;
     }
 
     .skill-category-title {
@@ -784,25 +917,27 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
       gap: 5.5pt !important;
     }
 
-    .resume-section.projects-section {
+    .profile-backend .resume-section.projects-section,
+    .profile-dotnet-fullstack .resume-section.projects-section,
+    .profile-distributed-systems .resume-section.projects-section {
       page-break-before: always !important;
       break-before: page !important;
     }
 
     .item-role {
-      font-size: 8.8pt !important;
+      font-size: 9.6pt !important;
       color: #000000 !important;
     }
 
     .item-org,
     .item-period {
-      font-size: 8.2pt !important;
+      font-size: 8.8pt !important;
       color: #000000 !important;
     }
 
     .item-summary {
-      font-size: 8.2pt !important;
-      line-height: 1.23 !important;
+      font-size: 9pt !important;
+      line-height: 1.28 !important;
       color: #000000 !important;
       margin: 1pt 0 1.5pt 0 !important;
     }
@@ -813,20 +948,66 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     }
 
     .item-bullets li {
-      font-size: 8pt !important;
-      line-height: 1.21 !important;
+      font-size: 9pt !important;
+      line-height: 1.28 !important;
       color: #000000 !important;
       margin-bottom: 1pt !important;
     }
 
     .item-tech {
-      font-size: 7.8pt !important;
-      line-height: 1.18 !important;
+      font-size: 8.4pt !important;
+      line-height: 1.22 !important;
       color: #000000 !important;
     }
 
     .project-tech-badge {
-      font-size: 7.8pt !important;
+      font-size: 8.4pt !important;
+      color: #000000 !important;
+    }
+
+    .cens-group-block {
+      border-left: 1.5pt solid #444444 !important;
+      padding-left: 6pt !important;
+      margin-bottom: 5pt !important;
+      page-break-inside: auto !important;
+      break-inside: auto !important;
+    }
+
+    .cens-group-title {
+      font-size: 9.6pt !important;
+      color: #000000 !important;
+    }
+
+    .cens-group-note {
+      font-size: 8.4pt !important;
+      font-style: italic !important;
+      color: #333333 !important;
+      margin: 1pt 0 3pt 0 !important;
+    }
+
+    .cens-subcontracts {
+      gap: 3.5pt !important;
+    }
+
+    .cens-subcontract-item {
+      padding-left: 3pt !important;
+      border-bottom: 0.5pt dashed #888888 !important;
+      padding-bottom: 2.5pt !important;
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+
+    .cens-subcontract-item:last-child {
+      border-bottom: none !important;
+    }
+
+    .subcontract-role {
+      font-size: 9pt !important;
+      color: #000000 !important;
+    }
+
+    .subcontract-summary {
+      font-weight: normal !important;
       color: #000000 !important;
     }
 
@@ -836,8 +1017,8 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
 
     .education-item,
     .cert-item {
-      font-size: 8.2pt !important;
-      line-height: 1.24 !important;
+      font-size: 9pt !important;
+      line-height: 1.28 !important;
     }
 
     .edu-degree,
@@ -849,14 +1030,14 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     .edu-institution,
     .cert-verify a {
       color: #000000 !important;
-      font-size: 7.8pt !important;
+      font-size: 8.4pt !important;
     }
 
     .breakdown-pill {
       background: none !important;
       border: 0.5pt solid #888888 !important;
       color: #000000 !important;
-      font-size: 7.5pt !important;
+      font-size: 8pt !important;
       padding: 1pt 3.5pt !important;
     }
 

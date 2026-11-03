@@ -1,6 +1,58 @@
 import type { ResumeProfileConfig } from './types';
 
 export const resumeProfiles: Record<string, ResumeProfileConfig> = {
+  master: {
+    id: 'master',
+    targetRole: {
+      es: 'Ingeniero de Software Senior (Trayectoria Completa)',
+      en: 'Senior Software Engineer (Full Career History)',
+    },
+    title: {
+      es: 'Senior Software Engineer (Java | Go | .NET | Angular | Sistemas Distribuidos)',
+      en: 'Senior Software Engineer (Java | Go | .NET | Angular | Distributed Systems)',
+    },
+    summary: {
+      es: 'Ingeniero de Software Senior con más de 8 años de experiencia profesional en el diseño, desarrollo y despliegue de sistemas distribuidos, arquitecturas de backend de alto rendimiento y aplicaciones empresariales. Trayectoria comprobada liderando el ciclo de vida completo de ingeniería de software: desde requisitos y modelado de datos hasta despliegues en producción sobre Linux, Docker y AWS. Dominio técnico diverso que abarca ecosistemas como Java (Spring Boot, Netty), .NET (C#, ASP.NET Core), Go, PHP (CakePHP, Laravel) y frontend moderno (Angular, Svelte, TypeScript), enfocado en soluciones confiables, escalables y de alto impacto operativo.',
+      en: 'Senior Software Engineer with 8+ years of experience in software engineering, designing, building, and operating high-performance backend systems, distributed architectures, and enterprise web applications. Proven track record across the full software lifecycle: from architectural design and data modeling to production deployments on Linux, Docker, and AWS. Broad technical background spanning Java (Spring Boot, Netty), .NET (C#, ASP.NET Core), Go, PHP, and modern frontend frameworks (Angular, Svelte, TypeScript), focused on delivering resilient, maintainable, and high-impact systems.',
+    },
+    prioritySkillNames: [],
+    featuredExperienceIds: [
+      'miia',
+      'cens-sicont',
+      'dreammakers',
+      'dtl360-sustitucion',
+      'jemaproject',
+      'cens-catalog-2025',
+      'arivo',
+      'brinks',
+      'cens-catalog-2023',
+      'preconcretos-sag3p',
+      'dtl360-metaretos',
+      'casa-funerales-rincon',
+      'preconcretos-hr',
+      'cens-catalog-2020',
+      'beers-and-more',
+      'globocar',
+    ],
+    featuredProjectIds: [
+      'miia-receptor-gps',
+      'sicont',
+      'neofluxai',
+      'jemapack',
+      'saphyr',
+      'raffles',
+      'ftw-360',
+      'cens-catalogo-2025',
+      'cens-catalogo-2023',
+      'sag3p',
+      'custodia',
+      'hr-system',
+      'metaretos',
+      'cens-catalogo-2020',
+      'beer-fresh',
+      'kinansu',
+    ],
+  },
   backend: {
     id: 'backend',
     targetRole: {
@@ -12,8 +64,8 @@ export const resumeProfiles: Record<string, ResumeProfileConfig> = {
       en: 'Senior Backend Engineer (Java | Go | Distributed Systems)',
     },
     summary: {
-      es: 'Ingeniero de Software Senior con más de 8 años de experiencia especializado en desarrollo backend de alto rendimiento, microservicios y sistemas distribuidos. Sólido dominio en Java (Spring Boot, Netty), Go y C#/.NET para procesamiento de telemetría en tiempo real, decodificación binaria de protocolos, APIs REST y bases de datos relacionales (PostgreSQL, SQL Server). Capacidad comprobada para liderar el ciclo completo: desde levantamiento de requisitos y arquitectura hasta despliegues en contenedores Docker y servidores Linux en producción.',
-      en: 'Senior Software Engineer with 8+ years of experience specializing in high-performance backend systems, microservices, and distributed architectures. Strong proficiency in Java (Spring Boot, Netty), Go, and C#/.NET for real-time telemetry processing, binary protocol decoding, REST APIs, and relational databases (PostgreSQL, SQL Server). Proven track record of end-to-end ownership: from technical requirements and architectural design to containerized Docker deployments on production Linux servers.',
+      es: 'Ingeniero de Software Senior con más de 8 años de experiencia en ingeniería de software, especializado en desarrollo backend de alto rendimiento, microservicios y sistemas distribuidos. Sólido dominio en Java (Spring Boot, Netty), Go y C#/.NET para procesamiento de telemetría en tiempo real, decodificación binaria de protocolos, APIs REST y bases de datos relacionales (PostgreSQL, SQL Server). Capacidad comprobada para liderar el ciclo completo: desde levantamiento de requisitos y arquitectura hasta despliegues en contenedores Docker y servidores Linux en producción.',
+      en: 'Senior Software Engineer with 8+ years of experience in software engineering, specializing in high-performance backend systems, microservices, and distributed architectures. Strong proficiency in Java (Spring Boot, Netty), Go, and C#/.NET for real-time telemetry processing, binary protocol decoding, REST APIs, and relational databases (PostgreSQL, SQL Server). Proven track record of end-to-end ownership: from technical requirements and architectural design to containerized Docker deployments on production Linux servers.',
     },
     prioritySkillNames: [
       'Java',
@@ -51,8 +103,8 @@ export const resumeProfiles: Record<string, ResumeProfileConfig> = {
       en: 'Senior Full Stack .NET & Angular Developer (C# | ASP.NET Core | Angular)',
     },
     summary: {
-      es: 'Desarrollador Full Stack Senior con más de 8 años de experiencia construyendo aplicaciones empresariales web seguras y escalables con el ecosistema .NET (C#, ASP.NET Core 7/9/10, Web API, MVC) y Angular (v15 a v21). Amplia experiencia en modelado y optimización de bases de datos relacionales (SQL Server, PostgreSQL) con Entity Framework Core y Dapper, integración con Directorio Activo (SSO) y despliegue en entornos empresariales (Windows Server / IIS y Linux).',
-      en: 'Senior Full Stack Developer with 8+ years of experience building secure, scalable enterprise web applications using the .NET ecosystem (C#, ASP.NET Core 7/9/10, Web API, MVC) and Angular (v15 to v21). Extensive background in relational database modeling and optimization (SQL Server, PostgreSQL) with Entity Framework Core and Dapper, Active Directory SSO integration, and enterprise deployments across Windows Server/IIS and Linux environments.',
+      es: 'Desarrollador Full Stack Senior con más de 8 años de experiencia en ingeniería de software, especializado en la construcción de aplicaciones empresariales web seguras y escalables con el ecosistema .NET (C#, ASP.NET Core) y Angular (v15 a v21). Amplia experiencia en modelado y optimización de bases de datos relacionales (SQL Server, PostgreSQL) con Entity Framework Core y Dapper, integración con Directorio Activo (SSO) y despliegue en entornos empresariales (Windows Server / IIS y Linux).',
+      en: 'Senior Full Stack Developer with 8+ years of experience in software engineering, specializing in building secure, scalable enterprise web applications using the .NET ecosystem (C#, ASP.NET Core) and Angular (v15 to v21). Extensive background in relational database modeling and optimization (SQL Server, PostgreSQL) with Entity Framework Core and Dapper, Active Directory SSO integration, and enterprise deployments across Windows Server/IIS and Linux environments.',
     },
     prioritySkillNames: [
       'C#',
@@ -92,8 +144,8 @@ export const resumeProfiles: Record<string, ResumeProfileConfig> = {
       en: 'Distributed Systems & Real-Time Backend Engineer (Java | Netty | Go)',
     },
     summary: {
-      es: 'Ingeniero de Software Senior especializado en sistemas distribuidos, alta concurrencia y redes en tiempo real. Experiencia comprobada en el diseño e implementación de servidores de red con Netty (TCP/UDP), decodificación de protocolos binarios de múltiples marcas de telemetría IoT, motores geoespaciales de geocercas, colas de mensajería asíncronas con RabbitMQ y arquitecturas resilientes sobre Docker y AWS.',
-      en: 'Senior Software Engineer specializing in distributed architectures, high-concurrency event processing, and real-time networking. Proven experience designing and operating custom network gateways with Netty (TCP/UDP), multi-vendor binary IoT telemetry protocol decoders, real-time geospatial geofencing engines, asynchronous message brokers with RabbitMQ, and resilient cloud architectures on Docker and AWS.',
+      es: 'Ingeniero de Software Senior con más de 8 años de experiencia en ingeniería de software, enfocado en sistemas distribuidos, alta concurrencia y redes en tiempo real. Experiencia comprobada en el diseño e implementación de servidores de red con Netty (TCP/UDP), decodificación de protocolos binarios de telemetría IoT, motores geoespaciales de geocercas, colas de mensajería asíncronas con RabbitMQ y arquitecturas resilientes sobre Docker y AWS.',
+      en: 'Senior Software Engineer with 8+ years of experience in software engineering, focusing on distributed architectures, high-concurrency event processing, and real-time networking. Proven experience designing and operating custom network gateways with Netty (TCP/UDP), multi-vendor binary IoT telemetry protocol decoders, real-time geospatial geofencing engines, asynchronous message brokers with RabbitMQ, and resilient cloud architectures on Docker and AWS.',
     },
     prioritySkillNames: [
       'Netty',
@@ -109,15 +161,15 @@ export const resumeProfiles: Record<string, ResumeProfileConfig> = {
     ],
     featuredExperienceIds: [
       'miia',
-      'cens-sicont',
       'dtl360-metaretos',
       'dreammakers',
+      'jemaproject',
       'arivo',
     ],
     featuredProjectIds: [
       'miia-receptor-gps',
-      'sicont',
       'metaretos',
+      'jemapack',
     ],
   },
 };

@@ -5,7 +5,7 @@ import { getResumeDocument } from "../../../lib/resume/selectors";
 import type { Locale, ProfileId } from "../../../content/types";
 
 export function getStaticPaths() {
-  const profiles: ProfileId[] = ["backend", "dotnet-fullstack", "distributed-systems"];
+  const profiles: ProfileId[] = ["master", "backend", "dotnet-fullstack", "distributed-systems"];
   const locales: Locale[] = ["en", "es"];
 
   return profiles.flatMap((profile) =>

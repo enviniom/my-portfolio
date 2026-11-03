@@ -120,8 +120,15 @@ checkValidationTools();
 const chromeBin = findChromeBinary();
 console.log(`Using Chromium headless binary: ${chromeBin}`);
 
-const profiles = ['backend', 'dotnet-fullstack', 'distributed-systems'];
+const profiles = ['master', 'backend', 'dotnet-fullstack', 'distributed-systems'];
 const locales = ['en', 'es'];
+
+const profilePageLimits = {
+  master: { min: 3, max: 6, expected: '3-6 pages (comprehensive)' },
+  backend: { min: 2, max: 2, expected: 'exactamente 2 páginas' },
+  'dotnet-fullstack': { min: 2, max: 2, expected: 'exactamente 2 páginas' },
+  'distributed-systems': { min: 2, max: 2, expected: 'exactamente 2 páginas' },
+};
 
 const results = [];
 const warnings = [];
@@ -183,15 +190,25 @@ for (const profileId of profiles) {
       throw new Error(`Format validation failed for ${pdfFileName}: expected US Letter (612 x 792 pts), got ${pageSizeDesc}`);
     }
 
-    if (pageCount !== 2) {
+    const pageLimit = profilePageLimits[profileId] || { min: 2, max: 2, expected: '2 páginas' };
+    if (pageCount < pageLimit.min || pageCount > pageLimit.max) {
       warnings.push({
         fileName: pdfFileName,
         pages: pageCount,
+        expected: pageLimit.expected,
         pageSizeDesc,
       });
     }
 
-    // 2. Text validation via pdftotext (dynamic strings from domain content)
+    // 2. Absence of empty pages
+    for (let p = 1; p <= pageCount; p++) {
+      const pageText = execSync(`pdftotext -f ${p} -l ${p} "${publicPdfPath}" -`, { encoding: 'utf-8' }).trim();
+      if (pageText.length === 0) {
+        throw new Error(`Empty page detected in ${pdfFileName} at page ${p}.`);
+      }
+    }
+
+    // 3. Text validation via pdftotext (dynamic strings from domain content)
     let textValid = false;
     try {
       const textOut = execSync(`pdftotext "${publicPdfPath}" -`, { encoding: 'utf-8' });
@@ -204,7 +221,7 @@ for (const profileId of profiles) {
       throw new Error(`pdftotext failed on ${pdfFileName}: ${err.message}`);
     }
 
-    // 3. Link validation (raw PDF buffer check for URI action and mailto)
+    // 4. Link validation (raw PDF buffer check for URI action and mailto)
     const pdfRaw = readFileSync(publicPdfPath);
     const hasMailtoLink = pdfRaw.includes(Buffer.from(`mailto:${profile.email}`));
     const hasUriLinks = pdfRaw.includes(Buffer.from('/URI'));
@@ -216,6 +233,7 @@ for (const profileId of profiles) {
       locale,
       sizeKb: (stats.size / 1024).toFixed(1),
       pages: pageCount,
+      expected: pageLimit.expected,
       dimensions: pageSizeDesc,
       textValid,
       linksValid,
@@ -228,12 +246,12 @@ console.log('\n--- PDF RESUME GENERATION SUMMARY ---');
 console.table(results);
 
 if (warnings.length > 0) {
-  console.warn('\n⚠️  WARNING: The following resume(s) did not fit on exactly 2 pages:');
+  console.warn('\n⚠️  WARNING: The following resume(s) did not match their expected page limits:');
   for (const w of warnings) {
-    console.warn(`  - ${w.fileName}: ${w.pages} pages (Dimensions: ${w.pageSizeDesc})`);
+    console.warn(`  - ${w.fileName}: ${w.pages} pages (Expected: ${w.expected})`);
   }
 } else {
-  console.log('\n✓ All 6 resumes fit cleanly on exactly 2 pages.');
+  console.log('\n✓ All 8 resumes fit cleanly within their expected page limits.');
 }
 
 const invalidText = results.filter((r) => !r.textValid);
@@ -246,4 +264,4 @@ if (invalidLinks.length > 0) {
   throw new Error(`Link validation failed for: ${invalidLinks.map((i) => i.fileName).join(', ')}`);
 }
 
-console.log('✓ All 6 resumes validated: selectable ATS text, interactive links, and US Letter format confirmed.\n');
+console.log('✓ All 8 resumes validated: selectable ATS text, interactive links, and US Letter format confirmed.\n');

@@ -24,6 +24,7 @@ export interface ResumeSkillCategory {
 export interface ResumeExperienceItem {
   id: ExperienceId;
   organization: string;
+  clientGrouping?: 'cens-grupo-epm' | undefined;
   role: string;
   period: string;
   summary: string;

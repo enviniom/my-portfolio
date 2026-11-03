@@ -10,13 +10,18 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const resumeProfilesList = [
   {
+    id: "master",
+    name: lang === "es" ? "CV Completo (Trayectoria)" : "Complete CV (Full Career)",
+    pdfName: `cv-jhon-colmenares-master-${lang}.pdf`,
+  },
+  {
     id: "backend",
-    name: lang === "es" ? "Backend Senior (Java / Go)" : "Senior Backend (Java / Go)",
+    name: lang === "es" ? "Backend (Java / Go)" : "Backend (Java / Go)",
     pdfName: `cv-jhon-colmenares-backend-${lang}.pdf`,
   },
   {
     id: "dotnet-fullstack",
-    name: lang === "es" ? "Full Stack .NET (C# / Angular)" : "Full Stack .NET (C# / Angular)",
+    name: lang === "es" ? ".NET Full Stack (C# / Angular)" : ".NET Full Stack (C# / Angular)",
     pdfName: `cv-jhon-colmenares-dotnet-fullstack-${lang}.pdf`,
   },
   {
@@ -60,7 +65,7 @@ const resumeProfilesList = [
     </summary>
     <div class="cv-dropdown-panel">
       <div class="cv-dropdown-header">
-        <span class="cv-dropdown-title">{lang === "es" ? "Versiones CV ATS (2 págs)" : "ATS Resumes (2 Pages)"}</span>
+        <span class="cv-dropdown-title">{lang === "es" ? "Currículums ATS y Maestro" : "ATS Resumes & Master CV"}</span>
       </div>
       <ul class="cv-dropdown-list">
         {resumeProfilesList.map((p) => (
