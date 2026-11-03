@@ -10,13 +10,16 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node scripts/generate-resumes.mjs",
+    "generate:resumes": "node scripts/generate-resumes.mjs",
+    "validate": "astro check && astro build && node scripts/generate-resumes.mjs",
+    "validate:data": "astro check",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "0.9.9",
-    "astro": "6.3.1",
+    "astro": "7.4.4",
     "typescript": "6.0.3"
   }
 }

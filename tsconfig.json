@@ -4,9 +4,6 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "paths": {
-      "@cv": ["./src/cv.json"],
-      "@cv_es": ["./src/cv_es.json"],
-      "@cv_en": ["./src/cv_en.json"],
       "@/*": ["./src/*"]
     }
   }
