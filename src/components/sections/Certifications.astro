@@ -1,6 +1,6 @@
 ---
 import Section from "../Section.astro";
-import type { EnrichedCertification, SiteLabels } from "@/content";
+import type { EnrichedCertification, SiteLabels } from "../../content";
 
 interface Props {
   certifications: {
@@ -11,6 +11,15 @@ interface Props {
 }
 
 const { certifications, labels } = Astro.props;
+
+function formatDisplayUrl(urlStr: string): string {
+  try {
+    const parsed = new URL(urlStr);
+    return `${parsed.hostname}${parsed.pathname}`;
+  } catch {
+    return urlStr.replace(/^https?:\/\//, "");
+  }
+}
 ---
 
 <Section title={certifications.title}>
@@ -22,6 +31,9 @@ const { certifications, labels } = Astro.props;
             <div class="cert-info">
               <h3>{cert.name}</h3>
               <span class="cert-issuer">{cert.issuer}</span>
+              {cert.credentialId && (
+                <span class="cert-id">ID: {cert.credentialId}</span>
+              )}
             </div>
             <time class="cert-date">{cert.issuedAt}</time>
           </header>
@@ -29,9 +41,9 @@ const { certifications, labels } = Astro.props;
           {cert.assessment && (
             <div class="cert-score-box">
               <div class="main-score">
-                <span class="score-label">{labels.englishLevel || "Nivel C1 Avanzado"}:</span>
+                <span class="score-label">{labels.englishLevel || "Puntuación global"}:</span>
                 <strong class="score-value">{cert.assessment.score}</strong>
-                <span class="score-badge">{cert.assessment.level}</span>
+                {cert.assessment.level && <span class="score-badge">{cert.assessment.level}</span>}
               </div>
 
               {cert.assessment.breakdown && (
@@ -40,7 +52,7 @@ const { certifications, labels } = Astro.props;
                     <div class="breakdown-item">
                       <span class="item-name">{item.name}</span>
                       <strong class="item-score">{item.score || item.level}</strong>
-                      <span class="item-level">{item.level}</span>
+                      {item.level && <span class="item-level">{item.level}</span>}
                     </div>
                   ))}
                 </div>
@@ -49,6 +61,13 @@ const { certifications, labels } = Astro.props;
           )}
 
           {cert.description && <p class="cert-desc">{cert.description}</p>}
+
+          {cert.skills && cert.skills.length > 0 && (
+            <div class="cert-skills-row">
+              <span class="skills-label">Skills:</span>
+              <span class="skills-list">{cert.skills.join(", ")}</span>
+            </div>
+          )}
 
           <footer class="cert-footer">
             {cert.verificationUrl && (
@@ -62,7 +81,7 @@ const { certifications, labels } = Astro.props;
                   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                   <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
                 </svg>
-                <span>{labels.viewCertificate}: cert.efset.org/en/9euwZ3</span>
+                <span>{labels.viewCertificate}: {formatDisplayUrl(cert.verificationUrl)}</span>
               </a>
             )}
           </footer>
@@ -105,6 +124,14 @@ const { certifications, labels } = Astro.props;
   .cert-issuer {
     font-size: 0.85rem;
     color: #64748b;
+    display: block;
+  }
+
+  .cert-id {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    display: inline-block;
+    margin-top: 2px;
   }
 
   .cert-date {
@@ -188,6 +215,19 @@ const { certifications, labels } = Astro.props;
     color: #334155;
     line-height: 1.4;
     margin: 0;
+  }
+
+  .cert-skills-row {
+    font-size: 0.8rem;
+    color: #4b5563;
+    background: #f8fafc;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  .skills-label {
+    font-weight: 600;
+    color: #1f2937;
+    margin-right: 4px;
   }
 
   .cert-footer {

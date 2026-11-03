@@ -1,4 +1,10 @@
-import type { Locale, ProfileId, EnrichedCertification } from '@/content/types';
+import type {
+  Locale,
+  ProfileId,
+  EnrichedCertification,
+  CertificationItem,
+  CertificationAssessmentBreakdown,
+} from '../../content/types';
 import type {
   ResumeDocument,
   ResumeExperienceItem,
@@ -12,8 +18,8 @@ import {
   projects as contentProjects,
   skills as contentSkills,
   education as contentEducation,
-  certifications,
-} from '@/content';
+  certifications as contentCertifications,
+} from '../../content';
 
 export function getResumeDocument(profileId: ProfileId, locale: Locale): ResumeDocument {
   const resumeProfile = resumeProfiles[profileId] || resumeProfiles.backend;
@@ -76,44 +82,39 @@ export function getResumeDocument(profileId: ProfileId, locale: Locale): ResumeD
     period: `${edu.startDate.substring(0, 4)} — ${edu.endDate.substring(0, 4)}`,
   }));
 
-  const cert = certifications.find((c) => c.category === 'language') || certifications[0];
-  const certification: EnrichedCertification | undefined = cert
-    ? {
-        id: cert.id,
-        name: cert.name,
-        issuer: cert.issuer,
-        category: cert.category,
-        issuedAt: cert.issuedAt,
-        expiresAt: cert.expiresAt,
-        credentialId: cert.credentialId,
-        verificationUrl: cert.verificationUrl,
-        pdfUrl: cert.pdfUrl,
-        badgeUrl: cert.badgeUrl,
-        description: cert.description ? cert.description[locale] : undefined,
-        skills: cert.skills,
-        assessment: cert.assessment
-          ? {
-              score: cert.assessment.score,
-              level: cert.assessment.level,
-              breakdown: cert.assessment.breakdown?.map((b) => ({
-                name: b.name[locale],
-                score: b.score,
-                level: b.level,
-              })),
-            }
-          : undefined,
-      }
-    : undefined;
+  const resumeCertifications: EnrichedCertification[] = contentCertifications.map((c: CertificationItem) => ({
+    id: c.id,
+    name: c.name,
+    issuer: c.issuer,
+    category: c.category,
+    issuedAt: c.issuedAt,
+    expiresAt: c.expiresAt,
+    credentialId: c.credentialId,
+    verificationUrl: c.verificationUrl,
+    pdfUrl: c.pdfUrl,
+    badgeUrl: c.badgeUrl,
+    description: c.description ? c.description[locale] : undefined,
+    skills: c.skills,
+    assessment: c.assessment
+      ? {
+          score: c.assessment.score,
+          level: c.assessment.level,
+          breakdown: c.assessment.breakdown?.map((b: CertificationAssessmentBreakdown) => ({
+            name: b.name[locale],
+            score: b.score,
+            level: b.level,
+          })),
+        }
+      : undefined,
+  }));
 
   const labels = {
     skills: locale === 'es' ? 'Habilidades Técnicas' : 'Technical Skills',
     experience: locale === 'es' ? 'Experiencia Profesional Relevante' : 'Relevant Professional Experience',
     projects: locale === 'es' ? 'Proyectos de Ingeniería Seleccionados' : 'Selected Engineering Projects',
     education: locale === 'es' ? 'Educación' : 'Education',
-    certification: locale === 'es' ? 'Certificación de Inglés' : 'English Certification',
-    languages: locale === 'es' ? 'Idiomas' : 'Languages',
-    englishLevel: locale === 'es' ? 'Nivel C1 Avanzado (62/100)' : 'C1 Advanced Level (62/100)',
-    verifyCert: locale === 'es' ? 'Verificar certificado oficial' : 'Verify official certificate',
+    certifications: locale === 'es' ? 'Certificaciones' : 'Certifications',
+    verifyCert: locale === 'es' ? 'Verificar credencial' : 'Verify credential',
   };
 
   const linkedIn = profile.profiles.find((p) => p.network === 'LinkedIn')?.url || 'https://www.linkedin.com/in/enviniom/';
@@ -137,7 +138,7 @@ export function getResumeDocument(profileId: ProfileId, locale: Locale): ResumeD
     experiences,
     projects,
     education,
-    certification,
+    certifications: resumeCertifications,
     labels,
   };
 }

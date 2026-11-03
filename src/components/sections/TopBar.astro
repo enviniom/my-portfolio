@@ -7,23 +7,89 @@ interface Props {
 
 const { lang = "en" } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const resumeProfilesList = [
+  {
+    id: "backend",
+    name: lang === "es" ? "Backend Senior (Java / Go)" : "Senior Backend (Java / Go)",
+    pdfName: `cv-jhon-colmenares-backend-${lang}.pdf`,
+  },
+  {
+    id: "dotnet-fullstack",
+    name: lang === "es" ? "Full Stack .NET (C# / Angular)" : "Full Stack .NET (C# / Angular)",
+    pdfName: `cv-jhon-colmenares-dotnet-fullstack-${lang}.pdf`,
+  },
+  {
+    id: "distributed-systems",
+    name: lang === "es" ? "Sistemas Distribuidos (Netty / Go)" : "Distributed Systems (Netty / Go)",
+    pdfName: `cv-jhon-colmenares-distributed-systems-${lang}.pdf`,
+  },
+];
 ---
 
 <div class="top-bar no-print">
+  <!-- Portfolio Print Button -->
   <button
     id="print-cv-btn"
     type="button"
-    title={lang === "es" ? "Imprimir o guardar en PDF (Ctrl+P)" : "Print or save as PDF (Ctrl+P)"}
-    aria-label={lang === "es" ? "Imprimir o guardar en PDF" : "Print or save as PDF"}
+    title={lang === "es" ? "Imprimir o guardar portafolio completo en PDF (Ctrl+P)" : "Print or save full portfolio as PDF (Ctrl+P)"}
+    aria-label={lang === "es" ? "Imprimir portafolio en PDF" : "Print portfolio as PDF"}
   >
-    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="6 9 6 2 18 2 18 9"></polyline>
       <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
       <rect x="6" y="14" width="12" height="8"></rect>
     </svg>
-    <span>PDF</span>
+    <span>{lang === "es" ? "Imprimir" : "Print"}</span>
   </button>
 
+  <!-- Discrete ATS Resumes Dropdown -->
+  <details class="cv-dropdown" id="cv-dropdown-menu">
+    <summary class="cv-dropdown-btn" title={lang === "es" ? "Ver o descargar versiones de CV ATS en PDF" : "View or download 2-page ATS resumes"}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+      </svg>
+      <span>{lang === "es" ? "CV ATS" : "ATS CVs"}</span>
+      <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </summary>
+    <div class="cv-dropdown-panel">
+      <div class="cv-dropdown-header">
+        <span class="cv-dropdown-title">{lang === "es" ? "Versiones CV ATS (2 págs)" : "ATS Resumes (2 Pages)"}</span>
+      </div>
+      <ul class="cv-dropdown-list">
+        {resumeProfilesList.map((p) => (
+          <li class="cv-dropdown-item">
+            <span class="cv-profile-name">{p.name}</span>
+            <div class="cv-profile-actions">
+              <a
+                href={`${baseUrl}/resume/${lang}/${p.id}/`}
+                class="cv-btn-link cv-web-link"
+                title={lang === "es" ? `Ver versión web de ${p.name}` : `View web version of ${p.name}`}
+              >
+                Web
+              </a>
+              <a
+                href={`${baseUrl}/resumes/${p.pdfName}`}
+                download={p.pdfName}
+                class="cv-btn-link cv-pdf-link"
+                title={lang === "es" ? `Descargar PDF de ${p.name}` : `Download PDF for ${p.name}`}
+              >
+                PDF
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </details>
+
+  <!-- Language Switcher -->
   <div class="lang-switch-group">
     <a
       href={`${baseUrl}/`}
@@ -48,6 +114,14 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
   printBtn?.addEventListener("click", () => {
     window.print();
   });
+
+  // Close dropdown on outside click
+  const dropdown = document.getElementById("cv-dropdown-menu");
+  document.addEventListener("click", (e) => {
+    if (dropdown && dropdown.hasAttribute("open") && !dropdown.contains(e.target as Node)) {
+      dropdown.removeAttribute("open");
+    }
+  });
 </script>
 
 <style>
@@ -58,28 +132,136 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
     width: 100%;
     justify-content: flex-end;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    position: relative;
   }
 
-  button#print-cv-btn {
+  button#print-cv-btn,
+  .cv-dropdown-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     background-color: #f3f4f6;
     color: #1f2937;
     border: 1px solid #e5e7eb;
-    padding: 0.35rem 0.75rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 8px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
+    user-select: none;
+    list-style: none;
   }
 
-  button#print-cv-btn:hover {
+  .cv-dropdown-btn::-webkit-details-marker {
+    display: none;
+  }
+
+  button#print-cv-btn:hover,
+  .cv-dropdown-btn:hover {
     background-color: #e5e7eb;
     border-color: #d1d5db;
     color: #111827;
+  }
+
+  .cv-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .cv-dropdown-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    min-width: 290px;
+    padding: 8px;
+    z-index: 100;
+  }
+
+  .cv-dropdown-header {
+    padding: 6px 8px 8px;
+    border-bottom: 1px solid #f3f4f6;
+    margin-bottom: 6px;
+  }
+
+  .cv-dropdown-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280;
+  }
+
+  .cv-dropdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cv-dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+  }
+
+  .cv-dropdown-item:hover {
+    background-color: #f9fafb;
+  }
+
+  .cv-profile-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #1f2937;
+    flex: 1;
+    line-height: 1.3;
+  }
+
+  .cv-profile-actions {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .cv-btn-link {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .cv-web-link {
+    background: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+  }
+
+  .cv-web-link:hover {
+    background: #e5e7eb;
+    color: #111827;
+  }
+
+  .cv-pdf-link {
+    background: #111827;
+    color: #ffffff;
+    border: 1px solid #111827;
+  }
+
+  .cv-pdf-link:hover {
+    background: #374151;
+    border-color: #374151;
   }
 
   .lang-switch-group {
@@ -112,5 +294,11 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   .sep {
     color: #d1d5db;
+  }
+
+  @media print {
+    .no-print {
+      display: none !important;
+    }
   }
 </style>

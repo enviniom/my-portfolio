@@ -17,26 +17,36 @@ Este repositorio es mi CV web profesional. El objetivo es mostrar experiencia, p
 
 ## Stack Tecnologico
 
-- Astro 6.3.1
+- Astro 7.4.4
 - TypeScript 6.0.3
-- JSON como fuente de contenido del CV
+- Arquitectura modular por dominios en TypeScript (`src/content/`)
+- Generación automatizada de 6 versiones PDF ATS (Letter)
 - Deploy automatico en GitHub Pages con GitHub Actions
 
 ## Estructura Relevante
 
-- `src/cv_es.json`: contenido del CV en espanol.
-- `src/cv_en.json`: contenido del CV en ingles.
-- `src/components/sections/`: secciones visuales del CV.
-- `src/pages/index.astro`: pagina principal (ingles).
-- `src/pages/es/index.astro`: pagina en espanol.
-- `.github/workflows/deploy.yml`: pipeline de deploy.
+- `src/content/`: Fuente única de datos profesionales organizada por dominios con tipado estricto y bilingüe (`{ es, en }`):
+  - `profile.ts`: Datos personales, contacto y redes.
+  - `experience.ts`: Trayectoria laboral y compromisos de ingeniería.
+  - `projects.ts`: Proyectos destacados y arquitectura.
+  - `education.ts`: Formación académica.
+  - `skills.ts`: Habilidades técnicas y categorías.
+  - `certifications.ts`: Certificaciones oficiales (idiomas, cloud, técnicas).
+- `src/components/sections/`: Secciones visuales del portafolio.
+- `src/components/resume/`: Componente de renderizado de CV ATS imprimible en 2 páginas.
+- `src/pages/index.astro`: Portafolio web principal (inglés).
+- `src/pages/es/index.astro`: Portafolio web en español.
+- `src/pages/resume/[lang]/[profile].astro`: Páginas web dedicadas para los 3 perfiles ATS en ambos idiomas.
+- `scripts/generate-resumes.mjs`: Generador y validador de los 6 PDFs ATS en formato Letter.
+- `.github/workflows/deploy.yml`: Pipeline de deploy.
 
 ## Requisitos Locales
 
 - Node.js 22.22.0
 - pnpm 11.0.9
-
-El proyecto fija versiones para evitar diferencias entre entorno local y CI/CD.
+- **Generación y Validación de PDFs**:
+  - Binario de Chromium: Google Chrome / Chromium del sistema, o `npx playwright install chromium`. En GitHub Actions (`ubuntu-latest`), `/usr/bin/google-chrome` se encuentra preinstalado.
+  - Herramientas de validación de PDF (`poppler-utils`): `pdfinfo` y `pdftotext`. En Debian/Ubuntu: `sudo apt install poppler-utils`. En GitHub Actions (`ubuntu-latest`), se encuentran preinstaladas.
 
 ## Ejecutar En Local
 
@@ -58,9 +68,8 @@ Abrir en navegador: http://localhost:4321
 
 ## Como Personalizar Tu CV
 
-1. Actualiza datos personales, experiencia y proyectos en `src/cv_es.json` y `src/cv_en.json`.
-2. Ajusta secciones visuales en `src/components/sections/` si queres cambiar el layout.
-3. Ejecuta `pnpm build` para validar antes de publicar.
+1. Actualiza tus datos en los módulos de dominio dentro de `src/content/` (`profile.ts`, `experience.ts`, etc.).
+2. Ejecuta `pnpm validate` o `pnpm build` para validar integridad y regenerar los PDFs.
 
 ## Deploy
 

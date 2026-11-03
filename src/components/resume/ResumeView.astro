@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { document: doc } = Astro.props;
-const { header, summary, skills, experiences, projects, education, certification, labels, profileId, locale } = doc;
+const { header, summary, skills, experiences, projects, education, certifications, labels, profileId, locale } = doc;
 
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -186,7 +186,7 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     </section>
 
     <!-- Selected Projects -->
-    <section class="resume-section">
+    <section class="resume-section projects-section">
       <h2 class="section-heading">{labels.projects.toUpperCase()}</h2>
       <div class="projects-list">
         {projects.map((proj) => (
@@ -222,34 +222,49 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
       </div>
     </section>
 
-    <!-- Certifications & Languages -->
-    {certification && (
+    <!-- Certifications -->
+    {certifications && certifications.length > 0 && (
       <section class="resume-section">
-        <h2 class="section-heading">{labels.certification.toUpperCase()} & {labels.languages.toUpperCase()}</h2>
-        <div class="cert-item">
-          <div class="item-header">
-            <span class="cert-name">
-              <strong>{certification.name}</strong> ({certification.issuer}) —{" "}
-              <span class="cert-score">{labels.englishLevel}</span>
-            </span>
-            <time class="item-period">{certification.issuedAt}</time>
-          </div>
-          {certification.verificationUrl && (
-            <p class="cert-verify">
-              <a href={certification.verificationUrl} target="_blank" rel="noopener noreferrer">
-                {labels.verifyCert}: {certification.verificationUrl}
-              </a>
-            </p>
-          )}
-          {certification.assessment?.breakdown && (
-            <div class="cert-breakdown">
-              {certification.assessment.breakdown.map((b: EnrichedCertificationBreakdown) => (
-                <span class="breakdown-pill">
-                  {b.name}: <strong>{b.score || b.level}</strong> ({b.level})
+        <h2 class="section-heading">{labels.certifications.toUpperCase()}</h2>
+        <div class="certifications-list">
+          {certifications.map((cert) => (
+            <div class="cert-item">
+              <div class="item-header">
+                <span class="cert-name">
+                  <strong>{cert.name}</strong> ({cert.issuer})
+                  {cert.assessment?.score && (
+                    <span class="cert-score"> — {cert.assessment.score} ({cert.assessment.level})</span>
+                  )}
+                  {cert.credentialId && (
+                    <span class="cert-cred-id"> · ID: {cert.credentialId}</span>
+                  )}
                 </span>
-              ))}
+                <time class="item-period">{cert.issuedAt}</time>
+              </div>
+              {cert.description && <p class="cert-desc">{cert.description}</p>}
+              {cert.verificationUrl && (
+                <p class="cert-verify">
+                  <a href={cert.verificationUrl} target="_blank" rel="noopener noreferrer">
+                    {labels.verifyCert}: {cert.verificationUrl.replace(/^https?:\/\//, '')}
+                  </a>
+                </p>
+              )}
+              {cert.skills && cert.skills.length > 0 && (
+                <p class="cert-skills">
+                  <strong>Skills:</strong> {cert.skills.join(', ')}
+                </p>
+              )}
+              {cert.assessment?.breakdown && (
+                <div class="cert-breakdown">
+                  {cert.assessment.breakdown.map((b: EnrichedCertificationBreakdown) => (
+                    <span class="breakdown-pill">
+                      {b.name}: <strong>{b.score || b.level}</strong> ({b.level})
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
-          )}
+          ))}
         </div>
       </section>
     )}
@@ -696,21 +711,21 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
       padding: 0 !important;
       box-shadow: none !important;
       border: none !important;
-      font-size: 8.6pt !important;
-      line-height: 1.22 !important;
+      font-size: 8.8pt !important;
+      line-height: 1.25 !important;
       color: #000000 !important;
     }
 
     .resume-header {
-      margin-bottom: 5pt !important;
+      margin-bottom: 6pt !important;
       padding-bottom: 4pt !important;
       border-bottom: 1.2pt solid #000000 !important;
     }
 
     .applicant-name {
-      font-size: 15pt !important;
+      font-size: 15.5pt !important;
       color: #000000 !important;
-      margin-bottom: 1pt !important;
+      margin-bottom: 1.5pt !important;
     }
 
     .target-title {
@@ -720,9 +735,9 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     }
 
     .contact-line {
-      font-size: 7.8pt !important;
+      font-size: 8pt !important;
       color: #000000 !important;
-      gap: 3pt !important;
+      gap: 4pt !important;
     }
 
     .contact-line a {
@@ -731,16 +746,16 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     }
 
     .section-heading {
-      font-size: 9pt !important;
+      font-size: 9.2pt !important;
       color: #000000 !important;
       border-bottom: 0.8pt solid #000000 !important;
-      margin: 0 0 3pt 0 !important;
+      margin: 0 0 3.5pt 0 !important;
       padding-bottom: 1pt !important;
     }
 
     .summary-text {
-      font-size: 8.2pt !important;
-      line-height: 1.22 !important;
+      font-size: 8.4pt !important;
+      line-height: 1.24 !important;
       color: #000000 !important;
     }
 
@@ -749,8 +764,8 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     }
 
     .skill-row {
-      font-size: 8pt !important;
-      line-height: 1.2 !important;
+      font-size: 8.2pt !important;
+      line-height: 1.22 !important;
     }
 
     .skill-category-title {
@@ -761,9 +776,17 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
       color: #000000 !important;
     }
 
-    .experience-list,
+    .experience-list {
+      gap: 4pt !important;
+    }
+
     .projects-list {
-      gap: 4.5pt !important;
+      gap: 5.5pt !important;
+    }
+
+    .resume-section.projects-section {
+      page-break-before: always !important;
+      break-before: page !important;
     }
 
     .item-role {
@@ -773,13 +796,13 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
 
     .item-org,
     .item-period {
-      font-size: 8pt !important;
+      font-size: 8.2pt !important;
       color: #000000 !important;
     }
 
     .item-summary {
-      font-size: 8pt !important;
-      line-height: 1.2 !important;
+      font-size: 8.2pt !important;
+      line-height: 1.23 !important;
       color: #000000 !important;
       margin: 1pt 0 1.5pt 0 !important;
     }
@@ -790,31 +813,31 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     }
 
     .item-bullets li {
-      font-size: 7.8pt !important;
-      line-height: 1.2 !important;
+      font-size: 8pt !important;
+      line-height: 1.21 !important;
       color: #000000 !important;
       margin-bottom: 1pt !important;
     }
 
     .item-tech {
-      font-size: 7.5pt !important;
-      line-height: 1.15 !important;
+      font-size: 7.8pt !important;
+      line-height: 1.18 !important;
       color: #000000 !important;
     }
 
     .project-tech-badge {
-      font-size: 7.5pt !important;
+      font-size: 7.8pt !important;
       color: #000000 !important;
     }
 
     .education-list {
-      gap: 3pt !important;
+      gap: 4pt !important;
     }
 
     .education-item,
     .cert-item {
-      font-size: 8pt !important;
-      line-height: 1.2 !important;
+      font-size: 8.2pt !important;
+      line-height: 1.24 !important;
     }
 
     .edu-degree,
@@ -826,15 +849,15 @@ const pdfDownloadUrl = `${baseUrl}/resumes/${pdfFileName}`;
     .edu-institution,
     .cert-verify a {
       color: #000000 !important;
-      font-size: 7.5pt !important;
+      font-size: 7.8pt !important;
     }
 
     .breakdown-pill {
       background: none !important;
       border: 0.5pt solid #888888 !important;
       color: #000000 !important;
-      font-size: 7.2pt !important;
-      padding: 1pt 3pt !important;
+      font-size: 7.5pt !important;
+      padding: 1pt 3.5pt !important;
     }
 
     .resume-section {

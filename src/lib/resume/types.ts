@@ -63,15 +63,13 @@ export interface ResumeDocument {
     studyType: string;
     period: string;
   }[];
-  certification?: EnrichedCertification;
+  certifications: EnrichedCertification[];
   labels: {
     skills: string;
     experience: string;
     projects: string;
     education: string;
-    certification: string;
-    languages: string;
-    englishLevel: string;
+    certifications: string;
     verifyCert: string;
   };
 }

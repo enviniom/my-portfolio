@@ -9,70 +9,178 @@ import { projects } from './projects';
 import { skills } from './skills';
 import { education } from './education';
 import { certifications } from './certifications';
+import { resumeProfiles } from '../lib/resume/profiles';
 
-// Date format validator: YYYY-MM or YYYY-MM-DD
-const DATE_REGEX = /^\d{4}-\d{2}(-\d{2})?$/;
 // URL validator: http(s) or absolute path
 const URL_REGEX = /^(https?:\/\/|\/)/;
 
-// Integrity validation: ensure 100% referential integrity and translation completeness
-function validateIntegrity() {
-  const projectIds = new Set(projects.map((p) => p.id));
-  const experienceIds = new Set(experiences.map((e) => e.id));
-  const certIds = new Set<string>();
+/**
+ * Validates that a date string matches YYYY-MM or YYYY-MM-DD
+ * and corresponds to an actual, valid calendar date (e.g. rejecting Feb 30 or Apr 31).
+ */
+function validateDateString(entityName: string, id: string, fieldName: string, dateStr: string | null | undefined): void {
+  if (dateStr === null || dateStr === undefined) return;
 
-  // 1. Validate experiences
+  const match = dateStr.match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);
+  if (!match) {
+    throw new Error(`Integrity Error: ${entityName} "${id}" has invalid ${fieldName} date format "${dateStr}". Expected YYYY-MM or YYYY-MM-DD.`);
+  }
+
+  const year = parseInt(match[1], 10);
+  const month = parseInt(match[2], 10);
+  const day = match[3] ? parseInt(match[3], 10) : 1;
+
+  if (month < 1 || month > 12) {
+    throw new Error(`Integrity Error: ${entityName} "${id}" has invalid month ${month} in ${fieldName} date "${dateStr}". Month must be 01-12.`);
+  }
+
+  const dateObj = new Date(year, month - 1, day);
+  if (
+    dateObj.getFullYear() !== year ||
+    dateObj.getMonth() !== month - 1 ||
+    dateObj.getDate() !== day
+  ) {
+    throw new Error(`Integrity Error: ${entityName} "${id}" has non-existent calendar date "${dateStr}" in ${fieldName}.`);
+  }
+}
+
+// Integrity validation: ensure 100% referential integrity, date validity, and translation completeness
+export function validateIntegrity(): void {
+  const experienceIds = new Set<string>();
+  const projectIds = new Set<string>();
+  const certIds = new Set<string>();
+  const educationIds = new Set<string>();
+
+  // 1. Validate profile mandatory translations
+  if (!profile.name?.trim()) {
+    throw new Error(`Integrity Error: Profile name cannot be empty.`);
+  }
+  if (!profile.label.es?.trim() || !profile.label.en?.trim()) {
+    throw new Error(`Integrity Error: Profile missing mandatory 'label' translation in 'es' or 'en'.`);
+  }
+  if (!profile.summary.es?.trim() || !profile.summary.en?.trim()) {
+    throw new Error(`Integrity Error: Profile missing mandatory 'summary' translation in 'es' or 'en'.`);
+  }
+  if (!profile.summaryHighlights.es?.length || !profile.summaryHighlights.en?.length) {
+    throw new Error(`Integrity Error: Profile missing mandatory 'summaryHighlights' translations in 'es' or 'en'.`);
+  }
+
+  // 2. Validate experiences
   for (const exp of experiences) {
-    if (!exp.role.es || !exp.role.en) {
-      throw new Error(`Integrity Error: Experience ${exp.id} missing role translation`);
+    // Check duplicate ID
+    if (experienceIds.has(exp.id)) {
+      throw new Error(`Integrity Error: Duplicate experience ID detected: "${exp.id}".`);
     }
-    if (!exp.summary.es || !exp.summary.en) {
-      throw new Error(`Integrity Error: Experience ${exp.id} missing summary translation`);
+    experienceIds.add(exp.id);
+
+    // Validate dates
+    validateDateString('Experience', exp.id, 'startDate', exp.startDate);
+    validateDateString('Experience', exp.id, 'endDate', exp.endDate);
+
+    // End date after start date
+    if (exp.endDate !== null && exp.endDate < exp.startDate) {
+      throw new Error(`Integrity Error: Experience "${exp.id}" endDate (${exp.endDate}) is earlier than startDate (${exp.startDate}).`);
+    }
+
+    // Consistency between isCurrent and endDate
+    if (exp.isCurrent === true && exp.endDate !== null) {
+      throw new Error(`Integrity Error: Experience "${exp.id}" is marked as current (isCurrent=true) but has an endDate ("${exp.endDate}"). Current roles must have endDate: null.`);
+    }
+    if (exp.isCurrent === false && exp.endDate === null) {
+      throw new Error(`Integrity Error: Experience "${exp.id}" is not current (isCurrent=false) but has endDate: null. Completed roles must specify an endDate.`);
+    }
+
+    // Mandatory translations
+    if (!exp.role.es?.trim() || !exp.role.en?.trim()) {
+      throw new Error(`Integrity Error: Experience "${exp.id}" missing mandatory 'role' translation.`);
+    }
+    if (!exp.summary.es?.trim() || !exp.summary.en?.trim()) {
+      throw new Error(`Integrity Error: Experience "${exp.id}" missing mandatory 'summary' translation.`);
     }
     if (!exp.responsibilities.es?.length || !exp.responsibilities.en?.length) {
-      throw new Error(`Integrity Error: Experience ${exp.id} missing responsibilities`);
+      throw new Error(`Integrity Error: Experience "${exp.id}" missing mandatory 'responsibilities' list.`);
     }
-    for (const pid of exp.projectIds) {
-      if (!projectIds.has(pid)) {
-        throw new Error(`Integrity Error: Experience ${exp.id} references non-existent project ${pid}`);
+    for (const resp of [...exp.responsibilities.es, ...exp.responsibilities.en]) {
+      if (!resp?.trim()) {
+        throw new Error(`Integrity Error: Experience "${exp.id}" has an empty responsibility entry.`);
       }
     }
   }
 
-  // 2. Validate projects
+  // 3. Validate projects
   for (const proj of projects) {
-    if (!proj.description.es || !proj.description.en) {
-      throw new Error(`Integrity Error: Project ${proj.id} missing description translation`);
+    // Check duplicate ID
+    if (projectIds.has(proj.id)) {
+      throw new Error(`Integrity Error: Duplicate project ID detected: "${proj.id}".`);
+    }
+    projectIds.add(proj.id);
+
+    // Mandatory translations
+    if (!proj.description.es?.trim() || !proj.description.en?.trim()) {
+      throw new Error(`Integrity Error: Project "${proj.id}" missing mandatory 'description' translation.`);
     }
     if (!proj.highlights.es?.length || !proj.highlights.en?.length) {
-      throw new Error(`Integrity Error: Project ${proj.id} missing highlights translation`);
+      throw new Error(`Integrity Error: Project "${proj.id}" missing mandatory 'highlights' list.`);
     }
+    for (const hl of [...proj.highlights.es, ...proj.highlights.en]) {
+      if (!hl?.trim()) {
+        throw new Error(`Integrity Error: Project "${proj.id}" has an empty highlight entry.`);
+      }
+    }
+
+    // Experience reference check
     if (proj.experienceId && !experienceIds.has(proj.experienceId)) {
-      throw new Error(`Integrity Error: Project ${proj.id} references non-existent experience ${proj.experienceId}`);
+      throw new Error(`Integrity Error: Project "${proj.id}" references non-existent experience "${proj.experienceId}".`);
     }
   }
 
-  // 3. Validate certifications
+  // Cross-reference: experience projectIds
+  for (const exp of experiences) {
+    for (const pid of exp.projectIds) {
+      if (!projectIds.has(pid)) {
+        throw new Error(`Integrity Error: Experience "${exp.id}" references non-existent project "${pid}".`);
+      }
+    }
+  }
+
+  // 4. Validate education
+  for (const edu of education) {
+    if (educationIds.has(edu.id)) {
+      throw new Error(`Integrity Error: Duplicate education ID detected: "${edu.id}".`);
+    }
+    educationIds.add(edu.id);
+
+    validateDateString('Education', edu.id, 'startDate', edu.startDate);
+    validateDateString('Education', edu.id, 'endDate', edu.endDate);
+
+    if (edu.endDate < edu.startDate) {
+      throw new Error(`Integrity Error: Education "${edu.id}" endDate (${edu.endDate}) is earlier than startDate (${edu.startDate}).`);
+    }
+
+    if (!edu.studyType.es?.trim() || !edu.studyType.en?.trim()) {
+      throw new Error(`Integrity Error: Education "${edu.id}" missing mandatory 'studyType' translation.`);
+    }
+    if (!edu.area.es?.trim() || !edu.area.en?.trim()) {
+      throw new Error(`Integrity Error: Education "${edu.id}" missing mandatory 'area' translation.`);
+    }
+  }
+
+  // 5. Validate certifications
   for (const cert of certifications) {
     if (certIds.has(cert.id)) {
-      throw new Error(`Integrity Error: Duplicate certification ID: ${cert.id}`);
+      throw new Error(`Integrity Error: Duplicate certification ID detected: "${cert.id}".`);
     }
     certIds.add(cert.id);
 
     if (!cert.name?.trim() || !cert.issuer?.trim()) {
-      throw new Error(`Integrity Error: Certification ${cert.id} must have non-empty name and issuer`);
+      throw new Error(`Integrity Error: Certification "${cert.id}" must have non-empty name and issuer.`);
     }
 
-    if (!DATE_REGEX.test(cert.issuedAt)) {
-      throw new Error(`Integrity Error: Certification ${cert.id} has invalid issuedAt format: ${cert.issuedAt}`);
-    }
-
+    validateDateString('Certification', cert.id, 'issuedAt', cert.issuedAt);
     if (cert.expiresAt) {
-      if (!DATE_REGEX.test(cert.expiresAt)) {
-        throw new Error(`Integrity Error: Certification ${cert.id} has invalid expiresAt format: ${cert.expiresAt}`);
-      }
+      validateDateString('Certification', cert.id, 'expiresAt', cert.expiresAt);
       if (cert.expiresAt < cert.issuedAt) {
-        throw new Error(`Integrity Error: Certification ${cert.id} expiresAt (${cert.expiresAt}) is before issuedAt (${cert.issuedAt})`);
+        throw new Error(`Integrity Error: Certification "${cert.id}" expiresAt (${cert.expiresAt}) is before issuedAt (${cert.issuedAt}).`);
       }
     }
 
@@ -82,35 +190,55 @@ function validateIntegrity() {
       badgeUrl: cert.badgeUrl,
     })) {
       if (urlVal && !URL_REGEX.test(urlVal)) {
-        throw new Error(`Integrity Error: Certification ${cert.id} has invalid URL format for ${key}: ${urlVal}`);
+        throw new Error(`Integrity Error: Certification "${cert.id}" has invalid URL format for ${key}: "${urlVal}".`);
       }
     }
 
     if (cert.description && (!cert.description.es?.trim() || !cert.description.en?.trim())) {
-      throw new Error(`Integrity Error: Certification ${cert.id} description must have both 'es' and 'en' translations`);
+      throw new Error(`Integrity Error: Certification "${cert.id}" description must provide both 'es' and 'en' translations.`);
     }
 
     if (cert.assessment?.breakdown) {
       for (const item of cert.assessment.breakdown) {
         if (!item.name.es?.trim() || !item.name.en?.trim()) {
-          throw new Error(`Integrity Error: Certification ${cert.id} assessment breakdown item missing 'es' or 'en' name`);
+          throw new Error(`Integrity Error: Certification "${cert.id}" assessment breakdown item missing 'es' or 'en' name.`);
         }
         if (!item.score && !item.level) {
-          throw new Error(`Integrity Error: Certification ${cert.id} assessment breakdown item must provide at least score or level`);
+          throw new Error(`Integrity Error: Certification "${cert.id}" assessment breakdown item must provide at least score or level.`);
         }
       }
     }
   }
 
-  // 4. Verify language references
+  // 6. Verify language certificate references
   for (const lang of languages) {
+    if (!lang.language.es?.trim() || !lang.language.en?.trim()) {
+      throw new Error(`Integrity Error: Language item missing mandatory 'language' translation.`);
+    }
+    if (!lang.fluency.es?.trim() || !lang.fluency.en?.trim()) {
+      throw new Error(`Integrity Error: Language item missing mandatory 'fluency' translation.`);
+    }
     if (lang.certificateRef && !certIds.has(lang.certificateRef)) {
-      throw new Error(`Integrity Error: Language references non-existent certification ID: ${lang.certificateRef}`);
+      throw new Error(`Integrity Error: Language references non-existent certification ID: "${lang.certificateRef}".`);
+    }
+  }
+
+  // 7. Verify CV Profile references (featuredExperienceIds and featuredProjectIds)
+  for (const [profKey, profConfig] of Object.entries(resumeProfiles)) {
+    for (const expId of profConfig.featuredExperienceIds) {
+      if (!experienceIds.has(expId)) {
+        throw new Error(`Integrity Error: Resume profile "${profKey}" references non-existent featured experience ID "${expId}".`);
+      }
+    }
+    for (const projId of profConfig.featuredProjectIds) {
+      if (!projectIds.has(projId)) {
+        throw new Error(`Integrity Error: Resume profile "${profKey}" references non-existent featured project ID "${projId}".`);
+      }
     }
   }
 }
 
-// Run validation at compile time/import
+// Run validation at compile time / module load
 validateIntegrity();
 
 export interface EnrichedExperience {
