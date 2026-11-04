@@ -24,8 +24,8 @@ jobs:
         uses: withastro/action@v6
         with:
           # path: . # La ubicación raíz de tu proyecto de Astro dentro del repositorio. (opcional)
-          node-version: 22.22.0 # Igual que desarrollo local.
-          package-manager: pnpm@11.0.9 # Igual que desarrollo local.
+          node-version: 24 # Node 24 or newer
+          package-manager: pnpm@12.16.1 # Match local development environment
 
   deploy:
     needs: build
