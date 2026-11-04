@@ -1,10 +1,5 @@
 ---
 import Section from "../Section.astro";
-import Mail from "../icons/Mail.astro";
-import Phone from "../icons/Phone.astro";
-import LinkedIn from "../icons/LinkedIn.astro";
-import GitHub from "../icons/GitHub.astro";
-import X from "../icons/X.astro";
 import WorldMap from "../icons/WorldMap.astro";
 import type { PortfolioData } from "../../content";
 
@@ -16,11 +11,10 @@ const { basics } = Astro.props;
 const { name, label, image, location, profiles, phone, email } = basics;
 const { city, region } = location;
 
-const SOCIAL_ICONS: Record<string, any> = {
-  GitHub,
-  LinkedIn,
-  X,
-};
+// Split name for high-contrast typographic contrast (light first name + bold last name)
+const nameParts = name.trim().split(/\s+/);
+const firstName = nameParts[0] || "JHON";
+const lastName = nameParts.slice(1).join(" ") || "COLMENARES";
 
 const linkedInProfile = profiles.find((p) => p.network === "LinkedIn");
 const gitHubProfile = profiles.find((p) => p.network === "GitHub");
@@ -37,15 +31,32 @@ const printItems = [
 ---
 
 <Section>
-  <div class="container">
-    <div class="info">
-      <h1>{name}</h1>
-      <h2>{label}</h2>
-      <span class="location no-print">
-        <WorldMap />
-        {city}, {region}
-      </span>
-      <footer>
+  <div class="hero-card">
+    <div class="hero-main">
+      <!-- Left Content: Editorial Identity & Summary -->
+      <div class="hero-content">
+        <header class="hero-identity">
+          <h1 class="hero-name">
+            <span class="name-first">{firstName}</span>{" "}
+            <span class="name-last">{lastName}</span>
+          </h1>
+          <div class="hero-divider" aria-hidden="true"></div>
+          <p class="hero-role">{label}</p>
+        </header>
+
+        <div class="hero-meta no-print">
+          <span class="meta-item location">
+            <WorldMap />
+            <span>{city}, {region}</span>
+          </span>
+          <span class="meta-sep" aria-hidden="true">•</span>
+          <span class="meta-item status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Remote / Hybrid</span>
+          </span>
+        </div>
+
+        <!-- Print-only Contact Info -->
         <div class="print contact-print">
           {printItems.map((item, idx) => (
             <span>
@@ -54,143 +65,239 @@ const printItems = [
             </span>
           ))}
         </div>
-        {
-          email && (
-            <a
-              href={`mailto:${email}`}
-              title={`Email: ${email}`}
-              aria-label={`Email: ${email}`}
-              rel="noopener noreferrer"
-              target="_blank"
-              class="no-print"
-            >
-              <Mail />
-            </a>
-          )
-        }
-        {
-          phone && (
-            <a
-              href={`tel:${phone}`}
-              title={`Tel: ${phone}`}
-              aria-label={`Tel: ${phone}`}
-              rel="noopener noreferrer"
-              target="_blank"
-              class="no-print"
-            >
-              <Phone />
-            </a>
-          )
-        }
-        {
-          profiles.map(({ network, url }) => {
-            const Icon = SOCIAL_ICONS[network];
-            if (!Icon) return null;
-            return (
-              <a
-                href={url}
-                title={`Perfil en ${network}`}
-                aria-label={`Perfil en ${network}`}
-                rel="noopener noreferrer"
-                target="_blank"
-                class="no-print"
-              >
-                <Icon />
-              </a>
-            );
-          })
-        }
-      </footer>
+      </div>
+
+      <!-- Right Column: Editorial Framed Portrait -->
+      <figure class="hero-portrait no-print">
+        <div class="portrait-frame">
+          <img
+            src={image}
+            alt={name}
+            width="150"
+            height="150"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      </figure>
     </div>
-    <figure class="no-print">
-      <img src={image} alt={name} />
-    </figure>
   </div>
 </Section>
 
 <style>
-  .container {
+  /* ----------------------------------------------------
+     EDITORIAL HERO SECTION
+     ---------------------------------------------------- */
+  .hero-card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .hero-main {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 2.2rem;
   }
-  h1 {
-    font-size: 2rem;
-    color: #111;
-  }
-  h2 {
-    color: #444;
-    font-weight: 500;
-    font-size: 1.1rem;
-    text-wrap: balance;
-  }
-  img {
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    border-radius: 10px;
-    width: 150px;
-    border: 1px solid #e5e7eb;
-  }
-  span.location {
-    color: #666;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.85rem;
-    letter-spacing: -0.05rem;
-  }
-  .info {
+
+  .hero-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding-right: 16px;
+    gap: 0.65rem;
   }
-  footer {
+
+  .hero-identity {
     display: flex;
-    gap: 10px;
-    margin-top: 5px;
+    flex-direction: column;
   }
-  footer a {
-    color: #777;
+
+  /* Typographic Contrast (Matches PDF Header) */
+  .hero-name {
+    margin: 0;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: #111827;
+  }
+
+  .name-first {
+    font-size: clamp(2rem, 4.2vw, 2.65rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+  }
+
+  .name-last {
+    font-size: clamp(2rem, 4.2vw, 2.65rem);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+  }
+
+  /* Crisp Editorial Divider */
+  .hero-divider {
+    height: 2px;
+    width: 100%;
+    background-color: #111827;
+    margin: 0.55rem 0 0.65rem 0;
+  }
+
+  .hero-role {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.38;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  /* Metadata Badges */
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #4b5563;
+    margin-top: 2px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    border: 1px solid #eee;
-    padding: 4px;
-    height: 32px;
-    width: 32px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-  }
-  footer a:hover {
-    background-color: #f3f4f6;
-    color: #111;
-    border-color: #ccc;
+    gap: 5px;
   }
 
+  .meta-sep {
+    color: #9ca3af;
+    user-select: none;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #10b981;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  }
+
+  /* Executive Brief Summary */
+  .hero-summary {
+    font-size: 0.94rem;
+    line-height: 1.55;
+    color: #374151;
+    margin: 0.4rem 0 0 0;
+    text-wrap: pretty;
+  }
+
+  /* Editorial Framed Portrait */
+  .hero-portrait {
+    flex-shrink: 0;
+    margin: 4px 0 0 0;
+  }
+
+  .portrait-frame {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #111827;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 0px #111827;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .portrait-frame:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px #111827;
+  }
+
+  .portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%) contrast(104%);
+    transition: filter 0.3s ease;
+  }
+
+  .portrait-frame:hover img {
+    filter: grayscale(0%);
+  }
+
+  /* Mobile Responsive (< 768px) */
   @media (max-width: 768px) {
-    .container {
+    .hero-main {
       flex-direction: column-reverse;
       align-items: flex-start;
+      gap: 1.25rem;
     }
-    .info {
-      padding-right: 0;
+
+    .hero-portrait {
+      margin-top: 0;
+    }
+
+    .portrait-frame {
+      width: 120px;
+      height: 120px;
+      box-shadow: 4px 4px 0px #111827;
+    }
+
+    .hero-role {
+      font-size: 0.98rem;
+    }
+
+    .hero-summary {
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
   }
 
+  /* Print Styles */
   @media print {
     .no-print {
       display: none !important;
     }
+
+    .hero-card {
+      margin-bottom: 12px;
+    }
+
+    .hero-name {
+      color: #000000;
+    }
+
+    .name-first,
+    .name-last {
+      font-size: 22pt;
+    }
+
+    .hero-divider {
+      background-color: #000000;
+      height: 1.5px;
+      margin: 4pt 0 6pt 0;
+    }
+
+    .hero-role {
+      font-size: 10.5pt;
+      color: #000000;
+    }
+
+    .hero-summary {
+      font-size: 9.2pt;
+      color: #000000;
+      margin-top: 4pt;
+    }
+
     .contact-print {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      font-size: 0.8rem;
-      color: #333;
+      font-size: 8.5pt;
+      color: #000000;
+      margin-top: 6pt;
     }
+
     .sep {
       margin-left: 6px;
     }

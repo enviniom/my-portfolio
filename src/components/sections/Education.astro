@@ -10,23 +10,26 @@ const { education } = Astro.props;
 ---
 
 <Section title={education.title}>
-  <ul>
+  <ul class="education-list">
     {
       education.items.map(({ institution, area, studyType, startDate, endDate, score }) => {
         const start = startDate.substring(0, 4);
         const end = endDate.substring(0, 4);
 
         return (
-          <li>
+          <li class="education-item">
             <article>
-              <header>
-                <div>
-                  <h3>{institution}</h3>
-                  <h4>{studyType} — {area}</h4>
+              <header class="edu-header">
+                <div class="edu-info">
+                  <h3 class="edu-degree">{studyType} — {area}</h3>
+                  <div class="edu-meta-row">
+                    <span class="edu-institution">{institution}</span>
+                    <span class="meta-sep">|</span>
+                    <time class="edu-date">{start} — {end}</time>
+                  </div>
                 </div>
-                <time>{start} — {end}</time>
+                {score && <span class="score-badge">{score}</span>}
               </header>
-              {score && <p class="score">{score}</p>}
             </article>
           </li>
         );
@@ -36,45 +39,86 @@ const { education } = Astro.props;
 </Section>
 
 <style>
-  ul {
+  .education-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  article h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #111827;
-    margin: 0;
+  .education-item {
+    padding-bottom: 1.15rem;
+    border-bottom: 1px solid #f3f4f6;
   }
 
-  article h4 {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #4b5563;
-    margin: 2px 0 0 0;
+  .education-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
-  header {
+  .edu-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
 
-  time {
-    color: #6b7280;
+  .edu-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .edu-degree {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  .edu-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: #4b5563;
+  }
+
+  .edu-institution {
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  .meta-sep {
+    color: #9ca3af;
+    font-weight: 300;
+  }
+
+  .edu-date {
+    color: #4b5563;
     font-size: 0.85rem;
-    min-width: 90px;
-    text-align: right;
   }
 
-  .score {
-    font-size: 0.8rem;
-    color: #0284c7;
-    margin-top: 4px;
+  .score-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #111827;
+    background: #f3f4f6;
+    border: 1px solid #111827;
+    padding: 2px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  @media print {
+    .education-item {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+      border-bottom: 1px solid #eee !important;
+    }
   }
 </style>

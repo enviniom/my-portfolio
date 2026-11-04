@@ -95,59 +95,66 @@ function formatDisplayUrl(urlStr: string): string {
   .certifications-container {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.35rem;
   }
 
   .cert-card {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    border-left: 3px solid #111827;
+    border-radius: 4px;
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
   }
 
   .cert-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
 
   .cert-info h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: #0f172a;
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: #111827;
     margin: 0;
+    letter-spacing: 0.01em;
   }
 
   .cert-issuer {
-    font-size: 0.85rem;
-    color: #64748b;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: #4b5563;
     display: block;
+    margin-top: 2px;
   }
 
   .cert-id {
-    font-size: 0.78rem;
-    color: #94a3b8;
+    font-size: 0.76rem;
+    color: #6b7280;
     display: inline-block;
     margin-top: 2px;
   }
 
   .cert-date {
     font-size: 0.85rem;
-    color: #64748b;
+    color: #4b5563;
     font-weight: 500;
+    white-space: nowrap;
   }
 
   .cert-score-box {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 0.85rem;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 0.95rem;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.65rem;
   }
 
   .main-score {
@@ -159,29 +166,32 @@ function formatDisplayUrl(urlStr: string): string {
 
   .score-label {
     font-size: 0.88rem;
-    color: #334155;
+    font-weight: 500;
+    color: #374151;
   }
 
   .score-value {
-    font-size: 1.1rem;
-    color: #0369a1;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #111827;
   }
 
   .score-badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #0369a1;
-    background: #e0f2fe;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    background: #111827;
     padding: 2px 8px;
-    border-radius: 12px;
+    border-radius: 3px;
   }
 
   .breakdown-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 8px;
-    border-top: 1px solid #e2e8f0;
-    padding-top: 0.6rem;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 0.65rem;
   }
 
   .breakdown-item {
@@ -189,44 +199,49 @@ function formatDisplayUrl(urlStr: string): string {
     flex-direction: column;
     gap: 2px;
     background: #ffffff;
-    border: 1px solid #f1f5f9;
+    border: 1px solid #e5e7eb;
     padding: 6px 8px;
-    border-radius: 6px;
+    border-radius: 3px;
   }
 
   .item-name {
-    font-size: 0.75rem;
-    color: #64748b;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    color: #6b7280;
   }
 
   .item-score {
-    font-size: 0.9rem;
-    color: #0f172a;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #111827;
   }
 
   .item-level {
     font-size: 0.72rem;
-    color: #0369a1;
-    font-weight: 500;
+    color: #111827;
+    font-weight: 600;
   }
 
   .cert-desc {
-    font-size: 0.85rem;
-    color: #334155;
-    line-height: 1.4;
+    font-size: 0.86rem;
+    color: #374151;
+    line-height: 1.45;
     margin: 0;
   }
 
   .cert-skills-row {
     font-size: 0.8rem;
-    color: #4b5563;
-    background: #f8fafc;
-    padding: 4px 8px;
-    border-radius: 4px;
+    color: #374151;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 6px 10px;
+    border-radius: 3px;
   }
   .skills-label {
-    font-weight: 600;
-    color: #1f2937;
+    font-weight: 700;
+    color: #111827;
     margin-right: 4px;
   }
 
@@ -241,13 +256,29 @@ function formatDisplayUrl(urlStr: string): string {
     gap: 6px;
     font-size: 0.82rem;
     font-weight: 600;
-    color: #0284c7;
+    color: #111827;
     text-decoration: none;
     transition: color 0.15s ease;
   }
 
   .verify-link:hover {
-    color: #0369a1;
+    color: #111827;
     text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media print {
+    .cert-card {
+      border: 1px solid #000 !important;
+      border-left: 3px solid #000 !important;
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+    .cert-score-box,
+    .breakdown-item,
+    .cert-skills-row {
+      background: none !important;
+      border-color: #ddd !important;
+    }
   }
 </style>

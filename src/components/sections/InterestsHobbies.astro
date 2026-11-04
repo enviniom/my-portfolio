@@ -26,18 +26,26 @@ const { interests } = Astro.props;
 <style>
   ul {
     display: inline-flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: 0;
   }
   li {
-    border-radius: 6px;
-    background-color: #eee;
-    color: black;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #111827;
+    font-size: 0.84rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    box-shadow: 1.5px 1.5px 0px rgba(17, 24, 39, 0.2);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  li:hover {
+    border-color: #111827;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px #111827;
   }
 </style>

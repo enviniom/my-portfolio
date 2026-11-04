@@ -16,10 +16,9 @@ const { skills } = Astro.props;
         <div class="category">
           <h3>{title}</h3>
           <ul>
-            {items.map(({ name, level }) => (
+            {items.map(({ name }) => (
               <li>
                 <span>{name}</span>
-                <small>{level}</small>
               </li>
             ))}
           </ul>
@@ -37,10 +36,12 @@ const { skills } = Astro.props;
   }
 
   .category h3 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #374151;
-    margin: 0 0 0.5rem 0;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #111827;
+    margin: 0 0 0.45rem 0;
   }
 
   ul {
@@ -53,27 +54,25 @@ const { skills } = Astro.props;
   }
 
   li {
-    border-radius: 6px;
-    background-color: #f3f4f6;
+    border-radius: 4px;
+    background-color: #ffffff;
     color: #111827;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.25rem 0.6rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.3rem 0.7rem;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    border: 1px solid #e5e7eb;
-    transition: background 0.15s ease;
+    border: 1px solid #d1d5db;
+    box-shadow: 1.5px 1.5px 0px rgba(17, 24, 39, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   }
 
   li:hover {
-    background-color: #e5e7eb;
-  }
-
-  small {
-    color: #6b7280;
-    font-size: 0.72rem;
-    font-weight: 600;
+    background-color: #111827;
+    color: #ffffff;
+    border-color: #111827;
+    transform: translate(-1px, -1px);
+    box-shadow: 2.5px 2.5px 0px #111827;
   }
 
   @media print {
@@ -91,12 +90,9 @@ const { skills } = Astro.props;
       background-color: #f9fafb;
       border: 1px solid #d1d5db;
       font-size: 0.72rem;
-      padding: 0.1rem 0.4rem;
+      padding: 0.15rem 0.45rem;
       color: #111;
-    }
-    small {
-      color: #555;
-      font-size: 0.65rem;
+      box-shadow: none;
     }
   }
 </style>
