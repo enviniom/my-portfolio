@@ -83,8 +83,8 @@ export const resumeProfiles: Record<string, ResumeProfileConfig> = {
       'miia',
       'dreammakers',
       'jemaproject',
-      'dtl360-metaretos',
       'preconcretos-sag3p',
+      'dtl360-metaretos',
     ],
     featuredProjectIds: [
       'miia-receptor-gps',
@@ -103,8 +103,8 @@ export const resumeProfiles: Record<string, ResumeProfileConfig> = {
       en: 'Senior Full Stack .NET & Angular Developer (C# | ASP.NET Core | Angular)',
     },
     summary: {
-      es: 'Desarrollador Full Stack Senior con más de 8 años de experiencia en ingeniería de software, especializado en la construcción de aplicaciones empresariales web seguras y escalables con el ecosistema .NET (C#, ASP.NET Core) y Angular (v15 a v21). Amplia experiencia en modelado y optimización de bases de datos relacionales (SQL Server, PostgreSQL) con Entity Framework Core y Dapper, integración con Directorio Activo (SSO) y despliegue en entornos empresariales (Windows Server / IIS y Linux).',
-      en: 'Senior Full Stack Developer with 8+ years of experience in software engineering, specializing in building secure, scalable enterprise web applications using the .NET ecosystem (C#, ASP.NET Core) and Angular (v15 to v21). Extensive background in relational database modeling and optimization (SQL Server, PostgreSQL) with Entity Framework Core and Dapper, Active Directory SSO integration, and enterprise deployments across Windows Server/IIS and Linux environments.',
+      es: 'Ingeniero de Software Senior con más de 8 años de experiencia profesional en el ciclo de vida de desarrollo de software, especializado en la construcción de aplicaciones empresariales escalables con el ecosistema .NET (C#, ASP.NET Core) y Angular. Sólida trayectoria en diseño y optimización de bases de datos relacionales (SQL Server, PostgreSQL) con Entity Framework Core y Dapper, integración con Directorio Activo (SSO) y despliegue en producción sobre entornos Windows Server/IIS y Linux.',
+      en: 'Senior Software Engineer with 8+ years of professional experience across the software development lifecycle, specializing in building secure, scalable enterprise web applications using the .NET ecosystem (C#, ASP.NET Core) and Angular. Proven background in relational database design and query optimization (SQL Server, PostgreSQL) with Entity Framework Core and Dapper, corporate Active Directory (SSO) integration, and production deployments across Windows Server/IIS and Linux environments.',
     },
     prioritySkillNames: [
       'C#',
@@ -122,8 +122,8 @@ export const resumeProfiles: Record<string, ResumeProfileConfig> = {
     ],
     featuredExperienceIds: [
       'cens-sicont',
-      'cens-catalog-2025',
       'dtl360-sustitucion',
+      'cens-catalog-2025',
       'cens-catalog-2023',
       'preconcretos-sag3p',
     ],
@@ -161,10 +161,10 @@ export const resumeProfiles: Record<string, ResumeProfileConfig> = {
     ],
     featuredExperienceIds: [
       'miia',
-      'dtl360-metaretos',
       'dreammakers',
       'jemaproject',
       'arivo',
+      'dtl360-metaretos',
     ],
     featuredProjectIds: [
       'miia-receptor-gps',

@@ -46,6 +46,7 @@ export interface ResumeDocument {
   locale: Locale;
   header: {
     name: string;
+    targetRole: string;
     title: string;
     email: string;
     phone: string;
